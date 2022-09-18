@@ -1,6 +1,6 @@
 # Estudiando el libro "Complex variables and applications"  de J. W. Brown y R. V. Churchill
 
-El presente documento consiste en apuntes sobre el libro "Complex variables and applications" de J. W. Brown y R. V. Churchill. Se hace hincapié en la solución de los problemas del final de cada capítulo del libro, pero también se incluyen los conceptos y demostraciones mas importantes.
+El presente documento consiste en apuntes sobre el libro "Complex variables and applications" de J. W. Brown y R. V. Churchill. Se hace hincapié en la solución de los problemas del final de cada capítulo del libro, pero también se incluyen los conceptos y demostraciones mas importantes. Este es un trabajo en proceso que irá evolucionando muy lentamente.
 
 ## Contenido del repositorio
 

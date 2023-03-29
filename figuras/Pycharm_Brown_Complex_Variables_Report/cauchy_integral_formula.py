@@ -53,7 +53,6 @@ yt = 6
 xc = xc + xt
 yc = yc + yt
 
-
 # valores maximos y minimos de los ejes
 max_ax = 15
 xmin = 0

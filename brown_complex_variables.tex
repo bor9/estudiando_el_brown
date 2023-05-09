@@ -104,6 +104,7 @@
 \DeclareMathOperator{\Log}{Log}
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
+\def\Res{\qopname\relax m{Res}}
 
 
 \title{Estudiando el libro ``Complex variables and applications''\\de J. W. Brown y R. V. Churchill}
@@ -301,7 +302,7 @@ La interpretación de la ecuación \ref{eq:argument_of_products} es la siguiente
 
 La ecuación \ref{eq:argument_of_products} es a veces válida si se reemplaza \(\arg\) por \(\Arg\), pero el siguiente ejemplo muestra que no siempre es el caso.
 
-\paragraph{Ejemplo} Cuando \(z_1=-1\) y \(z_2=i\),
+\paragraph{Ejemplo.} Cuando \(z_1=-1\) y \(z_2=i\),
 \[
  \Arg(z_1z_2)=\Arg(-i)=-\frac{\pi}{2}
  \qquad\qquad\textrm{pero}\qquad\qquad
@@ -341,7 +342,7 @@ de un punto \(z_0\), que consiste en todos los puntos \(z\) que se encuentran de
 \]
 que es el entono \(\epsilon\) de \(z_0\) pero sin considerar el punto \(z_0\).
 
-Se dice que un punto \(z_0\) es un \emph{punto interior} de un conjunto \(S\) si existe algún entorno de \(z_0\) que contiene solo puntos de \(S\) y se dice que \(z_0\) es un \emph{punto exterior} de \(S\) si existe un entorno de él que no contiene puntos de \(S\). Si \(z_0\) no cumple ninguna de estas condiciones se dice que es un \emph{punto de la frontera} de \(S\). Por lo tanto, un punto de la frontera es un punto cuyos entornos contienen al menos un punto de \(S\) y un punto que no es de \(S\). El conjunto de todos los puntos de la frontera se llama \emph{frontera} de \(S\). Por ejemplo, la circunferencia \(|z|=1\) es la frontera de cada un de los conjuntos
+Se dice que un punto \(z_0\) es un \emph{punto interior} de un conjunto \(S\) si existe algún entorno de \(z_0\) que contiene solo puntos de \(S\) y se dice que \(z_0\) es un \emph{punto exterior} de \(S\) si existe un entorno de él que no contiene puntos de \(S\). Si \(z_0\) no cumple ninguna de estas condiciones se dice que es un \emph{punto de la frontera} de \(S\). Por lo tanto, un punto de la frontera es un punto cuyos entornos contienen al menos un punto de \(S\) y un punto que no es de \(S\). El conjunto de todos los puntos de la frontera se llama \emph{frontera} de \(S\). Por ejemplo, la circunferencia \(|z|=1\) es la frontera de cada uno de los conjuntos
 \begin{equation}\label{eq:open_and_closed_sets_example}
  |z|<1
  \qquad\qquad\textrm{y}\qquad\qquad
@@ -355,6 +356,15 @@ Algunos conjuntos no son abiertos ni cerrados. Un conjunto \(S\) no es abierto s
 Un conjunto abierto \(S\) es \emph{conexo} o \emph{conectado} si cada par de puntos \(z_1\) y \(z_2\) en él pueden ser unidos por una \emph{línea poligonal}, que consiste en una cantidad finita de segmentos de recta unidos por los extremos, completamente contenida en \(S\). Por ejemplo, el anillo \(1<|z|<2\) es abierto y conexo. Un conjunto abierto no vacío que es conexo se llama \emph{dominio}. Notar que cualquier entorno es un dominio. Un dominio junto con algún, ningún o todos los puntos de su frontera es referido usualmente como una \emph{región}.
 
 Un conjunto \(S\) es \emph{acotado} si cada punto de \(S\) está dentro de algún círculo \(|z|\leq R\). En caso contrario es \emph{no acotado}. Ambos conjuntos en \ref{eq:open_and_closed_sets_example} son acotados, y la mitad del plano complejo \(\Re z\geq0\) es un conjunto no acotado.
+
+Se dice que un punto \(z_0\) es un \emph{punto de acumulación} o punto límite de un conjunto \(S\) si cada entorno reducido de \(z_0\) contiene al menos un punto de \(S\). Si un conjunto \(S\) es cerrado, contiene cada uno de sus puntos de acumulación. Si esto no fuera cierto y un punto de acumulación \(z_0\) no perteneciera a \(S\), debería ser un punto de la frontera de \(S\), lo que contradice el hecho de que un conjunto cerrado contiene todos los puntos de su frontera. Puede mostrarse además que lo recíproco también es cierto. Por lo tanto, un conjunto es cerrado si y solo si contiene todos sus puntos de acumulación.
+
+Evidentemente, un punto \(z_0\) \emph{no es} un punto de acumulación de un conjunto \(S\) si existe algún entorno reducido de \(z_0\) que no contiene al menos un punto de \(S\). Notar que el origen es el único punto de acumulación del conjunto 
+\[
+ z_n=\frac{i}{n}
+ \qquad\qquad\textrm{con}\qquad\qquad
+ n=1,\,2,\,\dots.
+\]
 
 \chapter{Funciones analíticas}
 
@@ -565,7 +575,7 @@ Una interpretación de una función \(x=f(x,\,y)=u(x,\,y)+iv(x,\,y)\) es la de u
 \[
  (\textit{a})\;w=iz;\qquad\qquad (\textit{b})\;w=\frac{z}{|z|}.
 \]
-\paragraph{Solución}
+\paragraph{Solución.}
 \begin{enumerate}
  \item[(\textit{a})] Expresando \(z\) en coordenadas polares, \(z=re^{i\theta}\), y considerando que \(i=e^{i\pi/2}\), la transformación es
  \[
@@ -1280,7 +1290,7 @@ que denota el cambio en el valor \(w=f(z)\) de \(f\) correspondiente a un cambio
  \frac{dw}{dz}=\lim_{\Delta z\to 0}\frac{\Delta w}{\Delta z}.
 \end{equation}
 
-\paragraph{Ejemplo} Se considera la función de valor real \(f(z)=|z|^2\). De esta forma
+\paragraph{Ejemplo.} Se considera la función de valor real \(f(z)=|z|^2\). De esta forma
 \begin{align*}
  \frac{\Delta w}{\Delta z}&=\frac{|z+\Delta z|^2-|z|^2}{\Delta z}\\
   &=\frac{(z+\Delta z)\overline{(z+\Delta z)}-z\overline{z}}{\Delta z}\\
@@ -1453,7 +1463,7 @@ Emplear los resultados de la sección \ref{sec:differentiation_rules} para calcu
  \end{array}
 \]
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{enumerate}
  \item[(\textit{a})]
@@ -1494,7 +1504,7 @@ Empleando los resultados de la sección \ref{sec:differentiation_rules} mostrar 
  \]
 \end{enumerate}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{enumerate}
  \item[(\textit{a})] Una función es diferenciable en un punto \(z_0\) si existe el límite de la ecuación \ref{eq:derivative_definition}. Para probar que un polinomio es diferenciable en todo el plano, hay que probar que dicho límite existe para todo \(z_0\). Se probará que el límite existe para la función \(z^n\). Si esto es cierto, por las reglas de la derivada del producto por una constante y de la suma (ver la sección \ref{sec:differentiation_rules}), también es cierto para un polinomio. 
@@ -1603,7 +1613,7 @@ Deducir la expresión de la derivada de \(z^n\) cuando \(n\) es un entero positi
  \item[(\textit{b})] la definición de derivada de la ecuación \ref{eq:derivative_definition_delta_z_alt} y la fórmula binomial dada por la ecuación \ref{eq:binomial_theorem}.
 \end{enumerate}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 Hay que mostrar que 
 \[
@@ -2012,7 +2022,7 @@ Esto significa que los dos últimos sumandos de la ecuación \ref{eq:differentia
 \]
 que es lo que se quería demostrar.
 
-\paragraph{Ejemplo} Se considera la función
+\paragraph{Ejemplo.} Se considera la función
 \[
  f(z)=e^z=e^{x+iy}=e^xe^{iy}=e^x(\cos y+i\sen y)=e^x\cos y+ie^x\sen y,
 \]
@@ -2111,7 +2121,7 @@ Entonces, existe \(f'(z_0)\) y su valor es
 \]
 cuando el lado derecho se evalúa en \((r_0,\,\theta_0)\).
 
-\paragraph{Ejemplo} El teorema puede emplearse para mostrar que cada rama
+\paragraph{Ejemplo.} El teorema puede emplearse para mostrar que cada rama
 \[
  f(z)=\sqrt{r}e^{i\theta/2}\qquad\textrm{con}\qquad r>0,\,\alpha<\theta<\alpha+2\pi,
 \]
@@ -2717,7 +2727,7 @@ se obtiene que
  \item[(\textit{b})] Emplear la expresión de \(f'(z_0)\) obtenida en la parte \((a)\) para mostrar que la derivada de la función \(f(z)=1/z\) con \(z\neq0\) es \(f'(z)=-1/z^2\), como se encontró en el Ejercicio 3\((a)\).
 \end{enumerate}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{enumerate}
  \item[(\textit{a})] Aplicando las ecuaciones \ref{eq:cauchy_riemann_equations_polar} de Cauchy-Riemann en forma polar para sustituir \(u_r\) y \(v_r\) en la ecuación \ref{eq:exercise_24_06_f_derivative}, se tiene que 
@@ -2785,7 +2795,7 @@ donde en \((a)\) se multiplicó la ecuación por \(-ii=1\) y en \((b)\) se tuvo 
  \(\partial f/\partial\overline{z}=0\) es la \emph{forma compleja} de las ecuaciones de Cauchy-Riemann.
 \end{enumerate}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{enumerate}
  \item[(\textit{a})] Aplicando la regla de la cadena para una función de dos variables reales, se tiene que 
@@ -4292,7 +4302,7 @@ los componentes son
 
 Describir el comportamiento de \(e^z=e^xe^{iy}\) cuando \((a)\) \(x\) tiende a \(-\infty\); \((b)\) \(y\) tiende a \(\infty\).
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{enumerate}
  \item[(\textit{a})] \(\displaystyle\lim_{x\to\-\infty}e^xe^{iy}=0\).
@@ -4465,7 +4475,7 @@ Por lo tanto,
 \end{equation}
 concluyendo que no siempre se cumple que \(\Log(e^z)=z\).
 
-\paragraph{Ejemplo} En el ejercicio 5 de la sección \ref{sec:logarithm_branches} se muestra que 
+\paragraph{Ejemplo.} En el ejercicio 5 de la sección \ref{sec:logarithm_branches} se muestra que 
 \[
  \log(i^{1/2})=\frac{1}{2}\log i,
 \]
@@ -4536,7 +4546,7 @@ Un \emph{corte de rama} es una porción de una línea o curva que se introduce p
 
 En el ejemplo de la sección \ref{sec:logarithm_function} se mostró que el conjunto de valores de \(\log(i^2)\) no es el mismo que el conjunto de valores de \(2\log i\). El siguiente ejemplo muestra que la igualdad puede ocurrir si se toma una rama específica del logaritmo. En ese caso, hay un único valor de \(\log(i^2)\) y de \(2\log i\).
 
-\paragraph{Ejemplo} Se mostrará que 
+\paragraph{Ejemplo.} Se mostrará que 
 \[
  \log(i^2)=2\log i
 \]
@@ -4831,7 +4841,7 @@ Encontrar todas las raíces de la ecuación \(\log z=i\pi/2\).
 
 Supóngase que el punto \(z=x+iy\) pertenece a la franja \(\alpha<y<\alpha+2\pi\). Mostrar que cuando se emplea la rama \(\log z=\ln r+i\theta\) con \(r>0,\,\alpha<\theta<\alpha+2\pi\), \(\log(e^z)=z\). Comparar con la ecuación \ref{eq:logarithm_of_exponential}.
 
-\paragraph{Solución}
+\paragraph{Solución.}
 \[
  \log(e^z)=\ln|e^z|+i\arg(e^z)
 \]
@@ -4858,7 +4868,7 @@ Mostrar que
  es analítica en todos lados excepto en los puntos \(\pm(1-i)/\sqrt{2}\) y en la porción \(x\leq4\) del eje real.
 \end{enumerate}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{enumerate}
  \item[(\textit{a})] Siendo \(f(z)=\Log(z-i)\), \(f(z)\) es analítica en \(z\) si \(z'=z-i\) cumple que \(|z'|>0,\,-\pi<\Arg z'<\pi\), es decir, \(f(z)\) es analítica si \(z'\) es cualquier punto del plano complejo excepto el origen y el eje real negativo. En la transformación \(z=z'+i\) el origen y el eje real negativo en el plano \(z'\) pasan a ser respectivamente el punto \(i\) y la semirrecta \(y=1,\,x<0\) en el plano \(z\). Por lo tanto, se concluye que \(f(z)\) es analítica en todo el plano excepto en el punto \(i\) y la semirrecta \(y=1,\,x<0\).
@@ -4945,7 +4955,7 @@ Esta identidad se interpreta en el sentido en que si se especifican dos de los t
 
 La ecuación \ref{eq:logarithm_of_products} no siempre es válida si se emplean los valores principales en los tres logaritmos. Los valores principales pueden emplearse si se imponen ciertas restricciones, como muestra el siguiente ejemplo.
 
-\paragraph{Ejemplo} Sean \(z_1\) y \(z_2\) dos números complejos no nulos ubicados a la izquierda del eje imaginario, de forma que
+\paragraph{Ejemplo.} Sean \(z_1\) y \(z_2\) dos números complejos no nulos ubicados a la izquierda del eje imaginario, de forma que
 \[
  \Re z_1>0
  \qquad\qquad\textrm{y}\qquad\qquad
@@ -5275,7 +5285,7 @@ Encontrar el valor principal de
  (\textit{c})\;(1-i)^{4i}.
 \]
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 El valor principal de la función potencia está dado cuando se cambia \(\log\) por \(\Log\) como indica la ecuación \ref{eq:power_function_pv}.
 
@@ -5879,7 +5889,7 @@ Indicar como se obtiene a partir de las expresiones de \(|\sen^2z|\) y \(|\cos^2
  (\textit{a})\;|\sen z|\geq|\sen x|;\qquad\qquad (\textit{b})\;|\cos z|\geq|\cos x|.
 \]
 
-\paragraph{Solución}
+\paragraph{Solución.}
 \begin{enumerate}
  \item[(\textit{a})] Como indica la ecuación \ref{eq:sin_and_cosine_square_modulus},
  \[
@@ -6138,7 +6148,7 @@ Mostrar que
  \item[(\textit{b})] \(\displaystyle\overline{\sen(iz)}=\sen(i\overline{z})\quad\textrm{si y solo si}\quad z=n\pi i\quad\textrm{con}\quad n=0,\,\pm1,\,\pm2,\,\dots\).
 \end{enumerate} 
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 Se parte observando que con \(z=x+iy\),
 \[
@@ -6644,7 +6654,7 @@ Mostrar que
  \qquad\qquad (\textit{b})\;\tanh(z+\pi i)=\tanh z.
 \]
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 Empleando las definiciones de \(\senh z\) y \(\cosh z\) dadas en \ref{eq:hyperbolic_functions_definition} y considerando que \(e^{z\pm\pi i}=e^{z}e^{\pm\pi i}=-e^{z}\) ya que \(e^{\pm\pi i}=-1\) se ve inmediatamente que:
 \begin{enumerate}
@@ -6799,7 +6809,7 @@ Empleando las identidades \ref{eq:hyperbolic_relations_senh_components} y \ref{e
  (\textit{a})\;\senh z=i;\qquad\qquad (\textit{b})\;\cosh z=\dfrac{1}{2}.
 \]
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{enumerate}
  \item[(\textit{a})] Representando \(\senh z\) en los componentes real e imaginario empleando la ecuación \ref{eq:hyperbolic_relations_senh_components}, se tiene que 
@@ -7499,7 +7509,7 @@ es una función compleja de variable real \(t\) y \(w'(t)\) existe:
  \item[(\textit{b})] \(\displaystyle\frac{d}{dt}[w(-t)]=-w'(-t)\) donde \(w'(-t)\) denota la derivada de \(w(t)\) respecto a \(t\) evaluada en \(-t\).
 \end{enumerate}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 \begin{enumerate}
  \item[(\textit{a})] Teniendo en cuenta que 
  \[
@@ -8183,7 +8193,7 @@ También puede deducirse que si \(C=C_1+C_2\), se cumple que
 
 El objetivo de esta sección y la siguiente es mostrar como se evalúan las integrales de contorno empleando la definición \ref{eq:contour_integral_definition} así como ilustrar el uso de algunas de las propiedades mencionadas en la sección \ref{sec:contour_integrals}. El desarrollo de primitivas se aplaza para la sección \ref{sec:antiderivatives}.
 
-\paragraph{Ejemplo 1} Se calculará la integral de contorno
+\paragraph{Ejemplo 1.} Se calculará la integral de contorno
 \[
  \int_{C_1}\frac{dz}{z}
 \]
@@ -8224,7 +8234,7 @@ Observar que los valores de las integrales \ref{eq:example_45_01_integral_c1} y 
  \int_C\frac{dz}{z}=\int_{C_1}\frac{dz}{z}-\int_{C_2}\frac{dz}{z}=\pi i-(-\pi i)=2\pi i.
 \]
 
-\paragraph{Ejemplo 2} Sea \(C\) un arco suave arbitrario
+\paragraph{Ejemplo 2.} Sea \(C\) un arco suave arbitrario
 \[
  z=z(t),\qquad\qquad\textrm{con}\qquad\qquad a\leq t\leq b,
 \]
@@ -8257,7 +8267,7 @@ La respuesta a la pregunta de cuando las integrales de contorno son independient
 
 El camino empleado en una integral de contorno puede contener un punto de un corte de rama. Esto se ilustra en el siguiente ejemplo.
 
-\paragraph{Ejemplo} Sea \(C\) el semicírculo superior 
+\paragraph{Ejemplo.} Sea \(C\) el semicírculo superior 
 \[
  z=3e^{i\theta},
  \qquad\qquad\textrm{con}\qquad\qquad 0\leq\theta\leq\pi,
@@ -8329,7 +8339,7 @@ Para las funciones \(f\) y contornos \(C\) en los ejercicios del 1 al 8, emplear
  \item[(\textit{c})] el círculo \(z=2e^{i\theta}\) con \(0\leq\theta\leq2\pi\).
 \end{itemize}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{itemize}
  \item[(\textit{a})] Con  \(z(\theta)=2e^{i\theta}\),
@@ -8679,7 +8689,7 @@ Sea \(C\) el círculo unidad centrado en el origen \(|z|=1\) orientado positivam
  Este ejercicio muestra como el valor de la integral de una función potencia depende en general de la rama empleada.
 \end{enumerate}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 \begin{enumerate}
  \item[(\textit{a})] En este caso, \(C\) es \(z=e^{i\theta}\) con \(-\pi<\theta<\pi\). Por lo tanto
  \[
@@ -10220,7 +10230,7 @@ Emplear el siguiente método para derivar la fórmula de integración
  obtener la fórmula de integración deseada haciendo que \(a\) tienda a infinito en la última ecuación de la parte (\textit{a}).
 \end{enumerate}
 
-\paragraph{Solución}
+\paragraph{Solución.}
 
 \begin{enumerate}
  \item[(\textit{a})] Sea \(C_1\) el lado horizontal inferior en el sentido indicado en la figura \ref{fig:exercise_53_04}. Considerando que \(C_1\) se puede parametrizar como \(z=x+i0\) con \(-a\leq x\leq a\),
@@ -10811,7 +10821,7 @@ Encontrar el valor de la integral de \(g(z)\) alrededor del círculo \(|z-i|=2\)
  (\textit{b})\;g(z)=\frac{1}{(z^2+4)^2}.
 \]
 
-\paragraph{Solución}
+\paragraph{Solución.}
 \begin{enumerate}
  \item[(\textit{a})] Considerando que 
  \[
@@ -13742,7 +13752,7 @@ Mostrar que la función definida como
 \]
 es completa (ver el ejemplo de la sección \ref{sec:series_integration_differentiation}).
 
-\paragraph{Solución} Partiendo de la representación en series de Maclaurin de la función \(\cos z\) (ver la ecuación \ref{eq:taylor_series_cos})
+\paragraph{Solución.} Partiendo de la representación en series de Maclaurin de la función \(\cos z\) (ver la ecuación \ref{eq:taylor_series_cos})
 \[
  \cos z=\sum_{n=0}^\infty(-1)^n\frac{z^{2n}}{(2n)!}=1-\frac{z^2}{2!}+\frac{z^4}{4!}-\dots
  \qquad\qquad\textrm{cuando}\qquad\qquad
@@ -14080,7 +14090,7 @@ y diferenciando en ambos lados de la igualdad considerando el teorema 2 de la se
 \end{align*}
 que es la función \(f_1(z)\). Como \(f_2(z)=f_1(z)\) en \(|z+1|<1\), se concluye que \(f_2(z)\) es la continuación analítica de \(f_1(z)\) desde el círculo \(|z+1|<1\) a todo el plano complejo excepto el punto \(z=0\), que es el punto singular de \(f_2(z)\).
 
-\section{Multiplicación y división de series de potencias}
+\section{Multiplicación y división de series de potencias}\label{sec:series_multiplication_division}
 
 Supóngase que cada una de las series de potencias
 \begin{equation}\label{eq:power_series_generic_definition_two}
@@ -14735,17 +14745,17 @@ y realizando explícitamente la división,
 \cline{2-6}
 1+\dfrac{1}{2!}z^2+\dfrac{1}{4!}z^4+\dfrac{1}{6!}z^6+\dots\bigg)  
                        & 1  & &  &  &  &\\
-                       & 1  & +\dfrac{1}{2!}z^2 & +\dfrac{1}{4!}z^4 & +\dfrac{1}{6!}z^4 & +\cdots&\\[\medskipamount]
+                       & 1  & +\dfrac{1}{2!}z^2 & +\dfrac{1}{4!}z^4 & +\dfrac{1}{6!}z^6 & +\cdots&\\[\medskipamount]
 \cline{2-6}
-                       &    & -\dfrac{1}{2!}z^2 & -\dfrac{1}{4!}z^4 & -\dfrac{1}{6!}z^4 & +\cdots&\\
-                       &    & -\dfrac{1}{2!}z^2 & -\dfrac{1}{4!}z^4 & -\dfrac{1}{2(4!)}z^4 & +\cdots&\\[\medskipamount]
+                       &    & -\dfrac{1}{2!}z^2 & -\dfrac{1}{4!}z^4 & -\dfrac{1}{6!}z^6 & +\cdots&\\
+                       &    & -\dfrac{1}{2!}z^2 & -\dfrac{1}{4}z^4 & -\dfrac{1}{2(4!)}z^6 & +\cdots&\\[\medskipamount]
 \cline{3-6}
                        &    &                & +\dfrac{5}{4!}z^4 & +\dfrac{14}{6!}z^6 & +\cdots&(a)\\
                        &    &                & +\dfrac{5}{4!}z^4 & +\dfrac{5}{2(4!)}z^6 & +\cdots&\\[\medskipamount]
 \cline{4-6}
                        &    &                &                   & -\dfrac{61}{6!}z^6 & +\cdots&(b)\\
                        &    &                &                   & -\dfrac{61}{6!}z^6 & +\cdots&\\[\medskipamount]
-\cline{4-6}
+\cline{5-6}
                        &    &                &                   &  & \vdots&
 \end{array}
 \]
@@ -14769,6 +14779,2539 @@ y asociando términos de igual potencia con la ecuación \ref{eq:euler_numbers_d
  E_4=5,\,\qquad 
  E_6=-61.
 \]
+
+\chapter{Residuos y polos}
+
+El teorema de Cuachy-Goursat (ver la sección \ref{sec:cauchy_goursat_theorem}) establece que si una función es analítica en todos los puntos interiores y sobre un contorno cerrado simple \(C\), la integral de la función sobre ese contorno es cero. Si sin embargo la función falla en ser analítica en un número finito de puntos interiores a \(C\), cada uno de esos puntos contibuye al valor de la integral a través de un número específico llamado residuo, como se verá en este capítulo. En este capítulo se desarrolla la teoría de residuos y en el siguiente se ilustra su uso en ciertas áreas de las matemáticas aplicadas.
+
+\section{Puntos singulares aislados}\label{sec:isolated_singular_points}
+
+En el capítulo \ref{sec:analytic_functions} se vio que si una función \(f\) es analítica en un punto \(z_0\), tiene derivada en cada punto de algún entorno de \(z_0\). Si por el contrario \(f\) falla en ser analítica en \(z_0\) pero es analítica en algún punto en cada entorno de \(z_0\), \(z_0\) es un punto singular de \(f\).
+
+La teoría de residuos en este capítulo se centra en un tipo especial de punto singular llamado \emph{punto singular aislado}. Se dice que un punto singular \(z_0\) es aislado si hay un entorno \(\epsilon\) reducido \(0<|z-z_0|<\epsilon\) de \(z_0\) en el cual \(f\) es analítica.  
+
+\paragraph{Ejemplo 1.} El origen \(z=0\) es un punto singular de la rama principal (ver la sección \ref{sec:logarithm_branches})
+\[
+ F(z)=\Log z=\ln r+i\Theta,
+ \qquad\qquad
+ r>0,\,-\pi<\Theta<\pi, 
+\]
+de la función logarítmica. Sin embargo, no es un punto singular aisaldo ya que cada entorno \(\epsilon\) reducido de él contiene puntos del eje real negativo, donde la rama ni siquiera está definida allí. La misma observación es válida para cualquier rama
+\[
+ f(z)=\log z=\ln r+i\theta,
+ \qquad\qquad
+ r>0,\,\alpha<\theta<\alpha+2\pi, 
+\]
+de la función logarítmica.
+
+\paragraph{Ejemplo 2.} La función
+\[
+ f(z)=\frac{1}{\sen(\pi/z)}
+\]
+no tiene derivada en el origen \(z=0\). Además, como \(\sen(\pi/z)=0\) cuando \(\pi/z=n\pi\) con \(n=\pm1,\,\pm2,\,\dots\) (ver el teorema de la sección \ref{sec:zeros_singularities_trigonometric}), la derivada de \(f\) falla en existir en los puntos \(z=1/n\) con \(n=\pm1,\,\pm2,\,\dots\). Como la derivada de \(f\) existe en cada punto que no está en el eje real, \(f\) es analítica en algún punto de cada entorno de los puntos
+\[
+ z=0
+ \qquad\qquad\textrm{y}\qquad\qquad
+ z=1/n
+ \quad\textrm{con}\quad
+ n=\pm1,\,\pm2,\,\dots.
+\]
+Por lo tanto, estos puntos son puntos singulares de \(f\).
+
+La singularidad \(z=0\) no es aislada, ya que cada entorno \(\epsilon\) reducido de ella contiene otros puntos singulares. Mas precisamente, si se especifica un número positivo \(\epsilon\), cuando \(m\) es cualquier entero positivo tal que \(m>1/\epsilon\), el hecho de que \(0<1/m<\epsilon\) significa que la singularidad \(z=1/m\) se encuentra dentro del entorno \(\epsilon\) reducido \(0<|z|<\epsilon\).
+
+El resto de los puntos \(z=1/n\) con \(n=\pm1,\,\pm2,\,\dots\) si son aislados. Para ver esto, sea \(m\) un entero positivo fijo. Se observa que \(f\) es analítica en el entorno reducido de \(z=1/m\) cuyo radio es 
+\[
+ \epsilon=\frac{1}{m}-\frac{1}{m+1}=\frac{1}{m(m+1)},
+\]
+como se muestra en la figura \ref{fig:example_75_03}. La misma observación puede hacerse cuando \(m\) es un entero negativo.
+\begin{figure}[!htb]
+  \begin{minipage}[c]{0.55\textwidth}
+    \includegraphics[width=\textwidth]{figuras/example_75_03.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.35\textwidth}
+    \caption{
+       Puntos singulares del ejemplo 2. La función es analítica en el entorno reducido de \(z=1/m\) con el radio \(\epsilon\) indicado y por lo tanto, los puntos singulares son aislados.
+    } \label{fig:example_75_03}
+  \end{minipage}
+\end{figure}
+
+En este capítulo es importante tener en mente que si una función es analítica en todos lados dentro de un contorno \(C\) cerrado simple excepto en una cantidad finita de puntos singulares \(z_1,\,z_2,\,\dots,\,z_n\), esos puntos deben ser aislados y los entornos reducidos alrededor de ellos pueden hacerse suficientemente pequeños de forma de estar contenidos en \(C\). Para ver que esto es así, sea \(z_k\) alguno de esos puntos. El radio \(\epsilon\) del entorno reducido necesitado puede ser cualquier número positivo menor que las distancias a los otros puntos singulares y también menor que la distancia de \(z_k\) al punto mas cercano de \(C\). 
+
+Finalmente se menciona que a veces es conveniente considerar el punto en el infinito (ver la sección \ref{sec:limits_infinity_point}) como un punto singular aislado. Específicamente, si hay un número positivo \(R_1\) tal que \(f\) es analítica en \(R_1<|z|<\infty\), se dice que \(f\) tiene un \emph{punto singular aislado en \(z_0=\infty\)}.
+
+\section{Residuos}\label{sec:residues}
+
+Cuando \(z_0\) es un punto singular aislado de una función \(f\), hay un número positivo \(R_2\) tal que \(f\) es analítica en cada punto \(z\) del disco perforado \(0<|z-z_0|<R_2\). En consecuencia, \(f(z)\) tiene la representación en series de Laurent
+\begin{equation}\label{eq:residues_laurent_expansion}
+ f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n+\frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\cdots+\frac{b_n}{(z-z_0)^n}+\cdots 
+ \qquad\textrm{en}\qquad
+ 0<|z-z_0|<R_2,  
+\end{equation}
+donde los coeficientes \(a_n\) y \(b_n\) tienen las representaciones integrales dadas por las ecuaciones \ref{eq:laurent_series_an_definition} y \ref{eq:laurent_series_bn_definition} respectivamente. En particular,
+\[
+ b_n=\frac{1}{2\pi i}\int_C\frac{f(z)}{(z-z_0)^{-n+1}}\,dz
+ \qquad\qquad\textrm{con}\qquad\qquad
+ n=1,\,2,\,\dots,
+\]
+donde \(C\) es cualquier contorno cerrado simple orientado positivamente alrededor de \(z_0\) contenido en el disco perforado \(0<|z-z_0|<R_2\), como se muestra en la figura \ref{fig:residues_integral_evaluation}. Cuando \(n=1\) la expresión de \(b_n\) es
+\[
+ b_1=\frac{1}{2\pi i}\int_C f(z)\,dz,
+\]
+es decir,
+\begin{equation}\label{eq:residues_integral_evaluation_b1}
+ \int_C f(z)\,dz=2\pi ib_1. 
+\end{equation}
+\begin{figure}[!htb]
+  \begin{minipage}[c]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figuras/residues_integral_evaluation.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.4\textwidth}
+    \caption{
+       Contorno empleado en el cálculo de los coeficientes de la representación en series de Laurent.
+    }\label{fig:residues_integral_evaluation}
+  \end{minipage}
+\end{figure}
+El número complejo \(b_1\), que es el coeficiente de \(1/(z-z_0)\) en la expansión en series de Laurent \ref{eq:residues_laurent_expansion} se llama \emph{residuo} de \(f\) en el punto singular aislado \(z_0\) y se denotará
+\[
+ b_1=\Res_{z=z_0}f(z).
+\]
+Por lo tanto, la ecuación \ref{eq:residues_integral_evaluation_b1} queda
+\begin{equation}\label{eq:residues_integral_evaluation_res}
+ \int_C f(z)\,dz=2\pi i\Res_{z=z_0}f(z).
+\end{equation}
+En ocasiones, simplemente se empleará \(B\) para denotar el residuo cuando la función \(f\) y el punto \(z_0\) son indicados claramente.
+
+La ecuación \ref{eq:residues_integral_evaluation_res} es una herramienta poderosa para evaluar ciertas integrales sobre contornos cerrados simples.
+
+\paragraph{Ejemplo 1.} Se considera la integral
+\[
+ \int_C\frac{e^z-1}{z^5}\,dz,
+\]
+donde \(C\) es el círculo unidad \(|z|=1\) orientado positivamente. Como el integrando es analítico en todos lados excepto en \(z=0\), tiene una representación en series de Laurent que es válida cuando \(0<|z|<\infty\). Por lo tanto, de acuerdo a la ecuación \ref{eq:residues_integral_evaluation_res}, el valor de la integral es \(2\pi i\) veces el residuo de su integrando en \(z=0\). 
+
+Para determinar el residuo, recordando la representación en series de Maclaurin \ref{eq:taylor_series_exponential}, se puede ver que 
+\[
+ \frac{e^z-1}{z^5}=\frac{1}{z^5}\sum_{n=1}^\infty\frac{z^n}{n!}=\sum_{n=1}^\infty\frac{z^{n-5}}{n!}
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<\infty.
+\]
+El coeficiente \(1/z\) en esta serie ocurre cuando \(n-5=-1\), o cuando \(n=4\). Por lo tanto,
+\[
+ \Res_{z=0}\frac{e^z-1}{z^5}=\frac{1}{4!}=\frac{1}{24},
+\]
+resultando en que 
+\[
+ \int_C\frac{e^z-1}{z^5}\,dz=2\pi i\left(\frac{1}{24}\right)=\frac{\pi i}{12}. 
+\]
+
+\paragraph{Ejemplo 2.} Se mostrará que 
+\begin{equation}\label{eq:residues_integral_evaluation_example_2}
+ \int_C\cosh\left(\frac{1}{z^2}\right)\,dz=0. 
+\end{equation}
+donde \(C\) es el círculo \(|z|=1\) orientado positivamente. La función compuesta \(\cosh(1/z^2)\) es analítica en todos lados excepto en el origen, ya que lo mismo es cierto para \(1/z^2\) y \(\cosh z\) es completa. El punto singular aislado \(z=0\) es interior a \(C\). De la representación en series de Maclaurin \ref{eq:taylor_series_cosh} reemplazando \(z\) por \(1/z^2\), se obtiene que 
+\[
+ \cosh\left(\frac{1}{z^2}\right)=1+\frac{1}{2!}\cdot\frac{1}{z^4}+\frac{1}{4!}\cdot\frac{1}{z^8}+\frac{1}{6!}\cdot\frac{1}{z^{12}}+\dots
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<\infty.
+\]
+Se observa que el residuo en el punto singular aislado es cero (\(b_1=0\)) y el resultado de la integral \ref{eq:residues_integral_evaluation_example_2} queda establecido.
+
+Con este ejemplo se recuerda que si bien la analiticidad de una función sobre y dentro de un contorno cerrado simple es una condición suficiente para que el valor de la integral sobre \(C\) sea cero, no es una condición necesaria.
+
+\section{Teorema de los residuos de Cauchy}\label{sec:cauchy_residues_theorem}
+
+Si, excepto por un número finito de puntos singulares, una función \(f\) es analítica dentro de un contorno \(C\) cerrado simple, esos puntos singulares deben ser todos aislados, como se discutió en la sección \ref{sec:isolated_singular_points}. El siguiente teorema, que se conoce como teorema de los residuos de Cauchy, es una declaración precisa del hecho de que si \(f\) es además analítica sobre \(C\) y \(C\) está orientado positivamente, el valor de la integral de \(f\) sobre \(C\) es \(2\pi i\) veces la suma de los residuos de \(f\) en los puntos singulares dentro de \(C\).
+
+\paragraph{Teorema.} Sea \(C\) un contorno cerrado simple orientado positivamente. Si una función \(f\) es analítica dentro de \(C\) excepto por un número finito de puntos singulares aislados \(z_k\) con \(k=1,\,2,\,\dots,\,n\) dentro de \(C\) (ver la figura \ref{fig:cauchy_residue_theorem}), entonces
+\begin{equation}\label{eq:cauchy_residue_theorem}
+ \int_C f(z)\,dz=2\pi i\sum_{k=1}^n \Res_{z=z_k}f(z). 
+\end{equation}
+\begin{figure}[!htb]
+  \begin{minipage}[c]{0.6\textwidth}
+    \includegraphics[width=\textwidth]{figuras/cauchy_residue_theorem.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.3\textwidth}
+    \caption{
+       Teorema de los residuos de Cauchy. 
+    }\label{fig:cauchy_residue_theorem}
+  \end{minipage}
+\end{figure}
+
+Para probar el teorema, sean los puntos \(z_k\) con \(k=1,\,2,\,\dots,\,n\) los centros de los círculos \(C_k\) orientados positivamente interiores a \(C\) y lo suficientemente pequeños de forma que no tengan puntos en común entre ellos, como se muestra en la figura \ref{fig:cauchy_residue_theorem}. Los círculos \(C_k\) junto con el contorno cerrado simple \(C\) conforman la frontera de una región cerrada en la cual \(f\) es analítica y cuyo interior es un dominio múltiplemente conectado que consiste en los puntos interiores a \(C\) y exteriores a cada \(C_k\). Por lo tanto, de acuerdo a la adaptación del teorema de Cauchy-Goursat a dichos dominios (ver la ecuación \ref{eq:cauchy_goursat_theorem_multiply_conected_extension}), se cumple que 
+\[
+ \int_Cf(z)\,dz-\sum_{k=1}^n\int_{C_k}f(z)\,dz=0.
+\]
+Esto se reduce a la ecuación \ref{eq:cauchy_residue_theorem} debido a que la ecuación \ref{eq:residues_integral_evaluation_res} indica que 
+\[
+ \int_{C_k}f(z)\,dz=2\pi i\Res_{z=z_k}f(z),
+\]
+completando la prueba.
+
+\section{Residuo en el infinito}\label{sec:residue_at_infinity}
+
+Supóngase que una función \(f\) es analítica en todo el plano complejo excepto por un número finito de puntos singulares aislados interiores a un contorno \(C\) cerrado simple orientado positivamente. Luego, sea \(R_1\) un número positivo suficientemente grande tal que el contorno \(C\) esté contenido en el círculo \(|z|<R_1\), como se muestra en la figura \ref{fig:residue_at_infinity}. La función \(f\) es analítica en el dominio \(R_1<|z|<\infty\) y, como se mencionó al final de la sección \ref{sec:isolated_singular_points}, el punto en el infinito se dice que es un punto singular aislado de \(f\).
+\begin{figure}[!htb]
+  \begin{minipage}[c]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figuras/residue_at_infinity.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.4\textwidth}
+    \caption{
+       Contornos empleados en la definición del residuo en el infinito.
+    }\label{fig:residue_at_infinity}
+  \end{minipage}
+\end{figure}
+
+Ahora, sea \(C_0\) el círculo \(|z|=R_0\) con orientación horaria donde \(R_0>R_1\). El \emph{residuo de f en el infinito} se define como
+\begin{equation}\label{eq:residue_at_infinity_definition}
+ \int_{C_0}f(z)\,dz=2\pi i\Res_{z=\infty}f(z). 
+\end{equation}
+Notar que el círculo \(C_0\) mantiene el punto al infinito a la izquierda, así como el punto singular en el plano finito se encuentra a la izquierda del contorno en la ecuación \ref{eq:residues_integral_evaluation_res}. Como \(f\) es analítica en la región cerrada y acotada determinada por \(C\) y \(C_0\), el principio de deformación de caminos, dado por la ecuación \ref{eq:cauchy_goursat_principle_of_deformation_of_paths}, dice que 
+\begin{equation}\label{eq:residue_at_infinity_path_deformation_tmp}
+ \int_Cf(z)\,dz=\int_{-C_0}f(z)\,dz=-\int_{C_0}f(z)\,dz. 
+\end{equation}
+Por lo tanto, en vista de la definición \ref{eq:residue_at_infinity_definition},
+\begin{equation}\label{eq:residue_at_infinity_C_tmp}
+ \int_Cf(z)\,dz=-2\pi i\Res_{z=\infty}f(z). 
+\end{equation}
+
+Para encontrar este residuo, se escribe la serie de Laurent
+\begin{equation}\label{eq:residue_at_infinity_laurent_tmp}
+ f(z)=\sum_{n=-\infty}^\infty c_nz^n
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ R_1<|z|<\infty
+\end{equation}
+donde (ver la ecuación \ref{eq:laurent_series_definition_alt_cn})
+\[
+ c_n=\frac{1}{2\pi i}\int_{-C_0}\frac{f(z)}{z^{n+1}}\,dz
+ \qquad\qquad\textrm{con}\qquad\qquad
+ n=0,\,\pm1,\,\pm2,\,\dots. 
+\]
+Observar que con \(n=-1\), esta ecuación queda
+\begin{equation}\label{eq:residue_at_infinity_tmp}
+  c_{-1}=\frac{1}{2\pi i}\int_{-C_0}f(z)\,dz, 
+\end{equation}
+que está relacionada con la ecuación \ref{eq:residue_at_infinity_C_tmp} a través de la ecuación \ref{eq:residue_at_infinity_path_deformation_tmp}. Reemplazando \(z\) por \(1/z\) en la ecuación \ref{eq:residue_at_infinity_laurent_tmp} y luego multiplicando el resultado por \(1/z^2\), se ve que 
+\[
+ \frac{1}{z^2}f\left(\frac{1}{z}\right)=\sum_{n=-\infty}^\infty\frac{c_n}{z^{n+2}}
+  =\sum_{n=-\infty}^\infty\frac{c_{n-2}}{z^n}
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<\frac{1}{R_1},
+\]
+y como el residuo es el coeficiente del término \(1/z\) (ver la sección \ref{sec:residues}), que corresponde a \(n=1\) en esta ecuación, se tiene que 
+\[
+ c_{-1}=\Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right].
+\]
+Notar que la multiplicación por \(1/z^2\) es necesaria para que el residuo sea el coeficiente \(c_{-1}\) al hacer el cambio \(z\) por \(1/z\) en la ecuación \ref{eq:residue_at_infinity_laurent_tmp}, de forma que coincida con el coeficiente en la ecuación \ref{eq:residue_at_infinity_tmp}, obteniendo que
+\[
+ \int_{C_0}f(z)\,dz=-2\pi i\Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right].
+\]
+De esta ecuación y la definición \ref{eq:residue_at_infinity_definition}, resulta que 
+\begin{equation}\label{eq:residue_at_infinity_definition_z=0}
+ \Res_{z=\infty}f(z)=-\Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right] 
+\end{equation}
+Con las ecuaciones \ref{eq:residue_at_infinity_C_tmp} y \ref{eq:residue_at_infinity_definition_z=0} se establece el siguiente teorema. Este teorema es usualmente mas eficiente de usar que el teorema de los residuos de Cauchy (ver la sección \ref{sec:cauchy_residues_theorem}) ya que involucra únicamente un residuo.
+
+\paragraph{Teorema.} Si una función \(f\) es analítica en todos lados del plano complejo finito excepto por un número finito de puntos singulares aislados interiores a un contorno cerrado simple \(C\) orientado positivamente, se cumple que 
+\begin{equation}\label{eq:residue_at_infinity_integral_evaluation}
+ \int_Cf(z)\,dz=2\pi i\Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right]. 
+\end{equation}
+
+\subsection*{Ejercicios}
+
+\subsubsection*{Ejercicio 1}
+
+Encontrar el residuo en \(z=0\) de la función 
+\[
+ (\textit{a})\;\frac{1}{z+z^2};\qquad\qquad (\textit{b})\;z\cos\left(\frac{1}{z}\right);\qquad\qquad
+ (\textit{c})\;\frac{z-\sen z}{z};\qquad\qquad (\textit{d})\;\frac{\cot z}{z^4};\qquad\qquad
+ (\textit{e})\;\frac{\senh z}{z^4(1-z^2)}.
+\]
+
+\paragraph{Solución.}
+
+El residuo en el punto singular aislado \(z=0\) de una función corresponde al coeficiente del término \(1/z\) en la expansión de Laurent en torno a \(z=0\), por lo que en cada caso, hay que encontrar la expansión en series de Laurent en torno a \(z=0\) de la función.
+
+\begin{enumerate}
+ \item[(\textit{a})] Se observa que
+ \begin{align*}
+  \frac{1}{z+z^2}&=\frac{1}{z(1+z)}\\
+   &\overset{(a)}{=}\frac{1}{z}\sum_{n=0}^\infty(-1)^nz^n\\
+   &=\frac{1}{z}(1-z+z^2-z^3+\cdots)\\
+   &=\frac{1}{z}-1+z-z^2+\cdots
+   \qquad\qquad\textrm{cuando}\qquad\qquad
+   0<|z|<\infty,
+ \end{align*}
+ donde en \((a)\) se empleó la expansión \ref{eq:taylor_series_geometric} reemplazando \(z\) por \(-z\), y se consideró que es válida en \(|z|<\infty\). Como el coeficiente que multiplica al término \(1/z\) es 1,
+ \[
+  \Res_{z=0}\left(\frac{1}{z+z^2}\right)=1.
+ \]
+ \item[(\textit{b})] En este caso,
+ \begin{align*}
+  z\cos\left(\frac{1}{z}\right)&\overset{(a)}{=}z\sum_{n=0}^\infty\frac{(-1)^n}{(2n)!}\cdot\frac{1}{z^{2n}}\\
+   &=z\left(1-\frac{1}{2!}\cdot\frac{1}{z^2}+\frac{1}{4!}\cdot\frac{1}{z^4}-\frac{1}{6!}\cdot\frac{1}{z^6}+\dots\right)\\
+   &=z-\frac{1}{2!}\cdot\frac{1}{z}+\frac{1}{4!}\cdot\frac{1}{z^3}-\frac{1}{6!}\cdot\frac{1}{z^5}+\dots
+   \qquad\qquad\textrm{cuando}\qquad\qquad
+   0<|z|<\infty,
+ \end{align*}
+  donde en \((a)\) se empleó la expansión \ref{eq:taylor_series_cos} reemplazando \(z\) por \(1/z\), que es válida en \(0<|z|<\infty\). Se observa que
+ \[
+  \Res_{z=0}\left[z\cos\left(\frac{1}{z}\right)\right]=-\frac{1}{2}.
+ \]
+ \item[(\textit{c})] Ahora,
+ \begin{align*}
+  \frac{z-\sen z}{z}&=1-\frac{\sen z}{z}\\
+   &\overset{(a)}{=}1-\frac{1}{z}\sum_{n=0}^\infty(-1)^n\frac{z^{2n+1}}{(2n+1)!}\\
+   &=1-\frac{1}{z}\left(z-\frac{z^3}{3!}+\frac{z^5}{5!}-\dots\right)\\
+   &=1-\left(1-\frac{z^2}{3!}+\frac{z^4}{5!}-\dots\right)\\
+   &=\frac{z^2}{3!}-\frac{z^4}{5!}+\dots
+   \qquad\qquad\textrm{cuando}\qquad\qquad
+   0<|z|<\infty,
+ \end{align*}
+ donde en \((a)\) se empleó la ecuación \ref{eq:taylor_series_sen}. Como la serie de Laurent no tiene término \(1/z\), se concluye que
+ \[
+  \Res_{z=0}\left(\frac{z-\sen z}{z}\right)=0.
+ \]
+ \item[(\textit{d})] Considerando que 
+ \[
+  \cot z=\frac{\cos z}{\sen z}=\dfrac{1-\dfrac{z^2}{2!}+\dfrac{z^4}{4!}-\dots}{z-\dfrac{z^3}{3!}+\dfrac{z^5}{5!}-\dots}
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+   0<|z|<\pi,
+ \]
+ donde nuevamente se emplearon las representaciones \ref{eq:taylor_series_sen} y \ref{eq:taylor_series_cos}, y la región de validez proviene del hecho de que \(\sen z=0\) cuando \(z=n\pi\) con \(n=0,\,\pm1,\,\pm2,\,\dots\), como se mostró en el teorema de la sección \ref{sec:zeros_singularities_trigonometric}. Realizando la división larga de los polinomios,
+\[
+%\setlength\arraycolsep{0pt} 
+\setlength\extrarowheight{10pt}
+\begin{array}[t]{cccccc}
+                       & \dfrac{1}{z} & -\dfrac{1}{3}z & -\dfrac{1}{45}z^3 & +\cdots&\\[\medskipamount]
+\cline{2-5}
+z-\dfrac{1}{3!}z^3+
+\dfrac{1}{5!}z^5-\cdots 
+                \bigg) & 1  & -\dfrac{1}{2!}z^2 & +\dfrac{1}{4!}z^4 & +\cdots &\\
+                       & 1  & -\dfrac{1}{3!}z^2 & +\dfrac{1}{5!}z^4 & +\cdots &\\[\medskipamount]
+\cline{2-5}
+                       &    & -\dfrac{1}{3}z^2 &  +\dfrac{4}{5!}z^4 & +\cdots &(a)\\
+                       &    & -\dfrac{1}{3}z^2 &  +\dfrac{1}{3(3!)}z^4 & +\cdots &\\[\medskipamount]
+\cline{3-5}
+                       &    &                  &  -\dfrac{1}{45}z^4 & +\cdots &(b)\\
+                       &    &                  &  +\dfrac{1}{45}z^4 & +\cdots &\\[\medskipamount]
+\cline{4-5}
+                       &    &                  &   & \vdots&\\
+\end{array}
+\]
+ donde en \((a)\) se consideró que 
+ \[
+  -\left(\frac{1}{2!}-\frac{1}{3!}\right)z^2=-\frac{1}{3}z^2
+  \qquad\qquad\textrm{y}\qquad\qquad
+  \left(\frac{1}{4!}-\frac{1}{5!}\right)z^4=\left(\frac{5}{5!}-\frac{1}{5!}\right)z^4=\frac{4}{5!}z^4
+ \]
+ y en \((b)\) que 
+ \[
+  \left[\frac{4}{5!}-\frac{1}{3(3!)}\right]z^4=\frac{1}{3!}\left(\frac{4}{5\cdot4}-\frac{1}{3}\right)z^4
+  =\frac{1}{3!}\left(\frac{1}{5}-\frac{1}{3}\right)z^4=\frac{1}{3!}\left(\frac{3-5}{15}\right)z^4
+  =-\frac{2}{15(3!)}z^4=-\frac{1}{45}z^4.
+ \]
+ Se obtuvo que 
+ \[
+  \cot z=\frac{1}{z}-\frac{1}{3}z-\frac{1}{45}z^3+\cdots 
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+   0<|z|<\pi,
+ \]
+ y por lo tanto,
+ \[
+  \frac{\cot z}{z^4}=\frac{1}{z^5}-\frac{1}{3}\cdot\frac{1}{z^3}-\frac{1}{45}\frac{1}{z}+\cdots 
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+   0<|z|<\pi.
+ \]
+ Observando el coeficiente del término \(1/z\) se concluye que
+ \[
+  \Res_{z=0}\left(\frac{\cot z}{z^4}\right)=-\frac{1}{45}.
+ \]
+ \item[(\textit{e})] Considerando la representación en series \ref{eq:taylor_series_geometric} reemplazando \(z\) por \(z^2\) y la representación \ref{eq:taylor_series_senh}, se tiene que 
+ \begin{align*}
+  \frac{\senh z}{z^4(1-z^2)}&=\frac{1}{z^4}\left(\frac{1}{1-z^2}\right)\senh z\\
+   &=\frac{1}{z^4}(1+z^2+\cdots)\left(z+\frac{z^3}{3!}+\dots\right)
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+   0<|z|<1.  
+ \end{align*}
+La multiplicación de los dos polinomios entre paréntesis es
+\[
+%\setlength\arraycolsep{0pt} 
+\setlength\extrarowheight{10pt}
+\begin{array}[t]{cccc}
+ z &       & +\dfrac{1}{6}z^3 &+\cdots\\
+   &       & +z^3             &+\cdots\\[\medskipamount]   
+\cline{1-4}
+ z &       & +\dfrac{7}{6}z^3 &+\cdots
+\end{array}
+\]
+y por lo tanto,
+\[
+ \frac{\senh z}{z^4(1-z^2)}=\frac{1}{z^4}\left(z+\frac{7}{6}z^3+\cdots\right)
+ =\frac{1}{z^3}+\frac{7}{6}\cdot\frac{1}{z}+\cdots
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<1. 
+\]
+Se concluye que 
+\[
+ \Res_{z=0}\left[\frac{\senh z}{z^4(1-z^2)}\right]=\frac{7}{6}.
+\]
+\end{enumerate} 
+
+\subsubsection*{Ejercicio 2}
+
+Emplear el teorema de los residuos de Cauchy (ver la sección \ref{sec:cauchy_residues_theorem}) para evaluar la integral sobre el círculo \(|z|=3\) orientado positivamente de cada una de las siguientes funciones: 
+\[
+ (\textit{a})\;\frac{\exp(-z)}{z^2};\qquad\qquad (\textit{b})\;\frac{\exp(-z)}{(z-1)^2};\qquad\qquad
+ (\textit{c})\;z^2\exp\left(\frac{1}{z}\right);\qquad\qquad (\textit{d})\;\frac{z+1}{z^2-2z}.
+\]
+
+\paragraph{Solución.} Para calcular la integral empleando el teorema de los residuos de Cauchy dado por la ecuación \ref{eq:cauchy_residue_theorem}, hay que encontrar los residuos de las singularidades aisladas de la función dentro del círculo \(|z|\leq3\).
+
+\begin{enumerate}
+ \item[(\textit{a})] Se observa que la función tiene un punto singular aislado en \(z=0\). Empleando la representación en series de Laurent en torno a \(z=0\) de la ecuación \ref{eq:taylor_series_exponential} reemplazando \(z\) por \(-z\) se tiene que 
+ \begin{align*}
+  \frac{\exp(-z)}{z^2}&=\frac{1}{z^2}\left(1-\frac{z}{1!}+\frac{z^2}{2!}-\frac{z^3}{3!}+\dots\right)\\ 
+   &=\frac{1}{z^2}-\frac{1}{z}+\frac{1}{2}-\frac{1}{6}z+\dots,
+   \qquad\qquad\textrm{cuando}\qquad\qquad
+    0<|z|<\infty.
+ \end{align*}
+ Como 
+ \[
+  \Res_{z=0}\left[\frac{\exp(-z)}{z^2}\right]=-1,
+ \]
+ la ecuación \ref{eq:cauchy_residue_theorem} indica que 
+ \[
+  \int_C\frac{\exp(-z)}{z^2}\,dz=2\pi i(-1)=-2\pi i.
+ \]
+ \item[(\textit{b})] La función tiene un punto singular aislado en \(z=1\) que se encuentra dentro de \(C\). Para calcular el residuo en dicho punto, se realizará la expansión en series de Laurent en torno a \(z=1\). Para esto, se observa que 
+ \begin{align*}
+  e^{-z}&=\frac{1}{e}e^{-(z-1)}\\
+   &\overset{(a)}{=}\frac{1}{e}\sum_{n=0}^\infty\frac{(-1)^n}{n!}(z-1)^n\\
+   &=\frac{1}{e}\left[1-(z-1)+\frac{(z-1)^2}{2}-\dots\right]
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+  |z-1|<\infty, 
+ \end{align*}
+ donde en \((a)\) se empleó la representación \ref{eq:taylor_series_exponential} reemplazando \(z\) por \(z-1\). Por lo tanto,
+ \[
+  \frac{e^{-z}}{(z-1)^2}=\frac{1}{e}\left[\frac{1}{(z-1)^2}-\frac{1}{z-1}+\frac{1}{2}-\dots\right]
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+  0<|z-1|<\infty.
+ \]
+ Se obtuvo que 
+ \[
+  \Res_{z=1}\left[\frac{e^{-z}}{(z-1)^2}\right]=-\frac{1}{e}.
+ \]
+ De esta forma,
+ \[
+  \int_C\frac{e^{-z}}{(z-1)^2}\,dz=2\pi i\left(-\frac{1}{e}\right)=-\frac{2\pi i}{e}.
+ \]
+ \item[(\textit{c})] La función tiene el punto singular aislado \(z=0\) dentro de \(C\). La representación en series de Laurent en torno a ese punto es 
+ \begin{align*}
+   z^2\exp\left(\frac{1}{z}\right)&\overset{(a)}{=}z^2\sum_{n=0}^\infty\frac{1}{n!}\cdot\frac{1}{z^n}\\
+    &=z^2\left(1+\frac{1}{z}+\frac{1}{2}\cdot\frac{1}{z^2}+\frac{1}{6}\cdot\frac{1}{z^3}+\dots\right)\\
+    &=z^2+z+\frac{1}{2}+\frac{1}{6}\cdot\frac{1}{z}+\dots
+    \qquad\qquad\textrm{cuando}\qquad\qquad
+    0<|z|<\infty,
+ \end{align*}
+ donde en \((a)\) se empleó la representación \ref{eq:taylor_series_exponential} reemplazando \(z\) por \(1/z\). Como
+ \[
+  \Res_{z=0}\left[z^2\exp\left(\frac{1}{z}\right)\right]=\frac{1}{6}
+ \]
+ se concluye que 
+ \[
+  \int_Cz^2\exp\left(\frac{1}{z}\right)\,dz=2\pi i\left(\frac{1}{6}\right)=\frac{\pi i}{3}.
+ \]
+ \item[(\textit{d})] La función
+ \[
+  \frac{z+1}{z^2-2z}=\frac{z+1}{z(z-2)}
+ \]
+ tiene puntos singulares aislados en \(z=0\) y \(z=2\), que son ambos interiores a \(C\). Para calcular el residuo en \(z=0\) se realiza la expansión en series de Laurent en torno a dicho punto:
+ \begin{align*}
+  \frac{z+1}{z(z-2)}&=\left(1+\frac{1}{z}\right)\left(\frac{-1}{2-z}\right)\\
+   &=-\frac{1}{2}\left(\frac{1}{z}+1\right)\left(\frac{1}{1-z/2}\right)\\
+   &\overset{(a)}{=}-\frac{1}{2}\left(\frac{1}{z}+1\right)\sum_{n=0}^\infty\frac{z^n}{2^n}\\
+   &=-\frac{1}{2}\left(\frac{1}{z}+1\right)\left(1+\frac{z}{2}+\frac{z^2}{4}+\cdots\right)\\
+   &=-\frac{1}{2}\left[\left(\frac{1}{z}+\frac{1}{2}+\frac{z}{4}+\cdots\right)+\left(1+\frac{z}{2}+\frac{z^2}{4}+\cdots\right)\right]\\
+   &=-\frac{1}{2}\left(\frac{1}{z}+\frac{3}{2}+\frac{3}{4}z+\cdots\right)
+   \qquad\qquad\textrm{cuando}\qquad\qquad
+    0<|z|<2,
+ \end{align*}
+ donde en \((a)\) se empleó la representación en series de Maclaurin \ref{eq:taylor_series_geometric} reemplazando \(z\) por \(z/2\), notando que entonces, la región de validez es \(|z/2|<1\).
+ Por lo tanto,
+ \[
+  \Res_{z=0}\left(\frac{z+1}{z^2-2z}\right)=-\frac{1}{2}.
+ \]
+ Para encontrar el residuo en \(z=2\) se ve que 
+ \begin{align*}
+  \frac{z+1}{z(z-2)}&=\left(\frac{z-2+3}{z-2}\right)\left(\frac{1}{z-2+2}\right)\\
+   &=\left(1+\frac{3}{z-2}\right)\left[\frac{1}{1+(z-2)/2}\right]\frac{1}{2}\\
+   &\overset{(a)}{=}\frac{1}{2}\left(\frac{3}{z-2}+1\right)\sum_{n=0}^{\infty}\frac{(-1)^n}{2^n}(z-2)^n\\
+   &=\frac{1}{2}\left(\frac{3}{z-2}+1\right)\left[1-\frac{1}{2}(z-2)+\frac{1}{4}(z-2)^2-\cdots\right]\\
+   &=\frac{1}{2}\left\{\left[\frac{3}{z-2}-\frac{3}{2}+\frac{3}{4}(z-2)-\cdots\right]+\left[1-\frac{1}{2}(z-2)+\frac{1}{4}(z-2)^2-\cdots\right]\right\},
+ \end{align*}
+ resultando en que 
+ \[
+  \frac{z+1}{z^2-2z}=\frac{1}{2}\left[\frac{3}{z-2}-\frac{1}{2}+\frac{1}{4}(z-2)+\cdots\right]
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+    0<|z-2|<2.
+ \]
+ Notar que en \((a)\) se empleó la representación \ref{eq:taylor_series_geometric} reemplazando \(z\) por \(-(z-2)/2\), cuya región de validez es \(|(z-2)/2|<1\). De aquí resulta que 
+ \[
+  \Res_{z=2}\left(\frac{z+1}{z^2-2z}\right)=\frac{3}{2},
+ \]
+ y de la ecuación \ref{eq:cauchy_residue_theorem} se obtiene que 
+ \[
+  \int_C\frac{z+1}{z^2-2z}\,dz=2\pi i\left(-\frac{1}{2}+\frac{3}{2}\right)=2\pi i.
+ \]
+ 
+ En este caso, el resultado puede obtenerse de forma mas directa realizando la descomposición en fracciones simples:
+ \[
+  \frac{z+1}{z(z-2)}=\frac{A}{z}+\frac{B}{z-2}
+  \qquad\qquad\Leftrightarrow\qquad\qquad 
+  \frac{z+1}{z(z-2)}=\frac{A(z-2)+Bz}{z(z-2)}.
+ \]
+ Operando, es fácil ver que \(A=-1/2\) y \(B=3/2\), resultando en que 
+ \[
+  \frac{z+1}{z(z-2)}=-\frac{1}{2}\cdot\frac{1}{z}+\frac{3}{2}\cdot\frac{1}{z-2}.
+ \]
+ Por lo tanto,
+ \[
+  \int_C\frac{z+1}{z(z-2)}\,dz=-\frac{1}{2}\int_C\frac{1}{z}\,dz+\frac{3}{2}\int_C\frac{1}{z-2}\,dz
+   =2\pi i\left(-\frac{1}{2}+\frac{3}{2}\right)=2\pi i,
+ \]
+ donde se observó que el integrando de las dos integrales del lado derecho de la primera igualdad ya están expresados en la representación de Laurent, y en el caso de ambas funciones el residuo es 1, por lo que el valor de ambas integrales es \(2\pi i\).
+\end{enumerate}
+
+\subsubsection*{Ejercicio 3}
+
+Evaluar la integral
+\[
+ \int_C\frac{4z-5}{z(z-1)}\,dz
+\]
+donde \(C\) es el círculo \(|z|=2\) orientado positivamente empleando el teorema de la sección \ref{sec:residue_at_infinity}, que involucra el cálculo de un solo residuo.
+
+\paragraph{Solución.} Los puntos singulares de la función son \(z=0\) y \(z=1\), ambos interiores a \(C\). Por lo tanto, se cumplen las hipótesis del teorema de la sección \ref{sec:residue_at_infinity} y la integral se puede calcular empleando la ecuación \ref{eq:residue_at_infinity_integral_evaluation}.
+
+Para comenzar, se observa que 
+\begin{align*}
+ \frac{1}{z^2}f\left(\frac{1}{z}\right)&=\frac{1}{z^2}\cdot\dfrac{\dfrac{4}{z}-5}{\dfrac{1}{z}\left(\dfrac{1}{z}-1\right)}\\
+  &=\left(\frac{4}{z}-5\right)\frac{1}{1-z}\\
+  &\overset{(a)}{=}\left(\frac{4}{z}-5\right)\sum_{n=0}^\infty z^n\\
+  &=\frac{4}{z}\sum_{n=0}^\infty z^n-5\sum_{n=0}^\infty z^n\\
+  &=4\sum_{n=0}^\infty z^{n-1}-5\sum_{n=0}^\infty z^n\\
+  &\overset{(b)}{=}4\sum_{n=-1}^\infty z^{n}-5\sum_{n=0}^\infty z^n\\
+  &=\frac{4}{z}+4\sum_{n=0}^\infty z^{n}-5\sum_{n=0}^\infty z^n\\
+  &=\frac{4}{z}-\sum_{n=0}^\infty z^n
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+  0<|z|<1,
+\end{align*}
+donde en \((a)\) se empleó la representación en series de Maclaurin \ref{eq:taylor_series_geometric} y en \((b)\) se remplazó \(n-1\) por \(n\). Por lo tanto,
+\[
+ \Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right]=4,
+\]
+y de la ecuación \ref{eq:residue_at_infinity_integral_evaluation}, se concluye que 
+\[
+ \int_C\frac{4z-5}{z(z-1)}\,dz=8\pi i.
+\]
+
+\subsubsection*{Ejercicio 4}
+
+Empleando el teorema de la sección \ref{sec:residue_at_infinity}, que involucra el cálculo de un solo residuo, evaluar la integral de cada una de estas funciones sobre el círculo \(|z|=2\) orientado positivamente:
+\[
+ (\textit{a})\;\frac{z^5}{1-z^3};\qquad\qquad (\textit{b})\;\frac{1}{1+z^2};\qquad\qquad
+ (\textit{c})\;\frac{1}{z}.
+\]
+
+\paragraph{Solución.}
+
+\begin{enumerate}
+ \item[(\textit{a})] La función 
+ \[
+  f(z)=\frac{z^5}{1-z^3}
+ \]
+ tiene un único punto singular en \(z=1\), que es interior a \(C\). Por lo tanto, la integral puede calcularse aplicando la ecuación \ref{eq:residue_at_infinity_integral_evaluation}. Observando que 
+ \begin{align*}
+  \frac{1}{z^2}f\left(\frac{1}{z}\right)&=\frac{1}{z^2}\cdot\dfrac{\dfrac{1}{z^5}}{1-\dfrac{1}{z^3}}\\
+    &=\frac{1}{z^7}\cdot\dfrac{1}{\dfrac{z^3-1}{z^3}}\\
+    &=-\frac{1}{z^4}\cdot\dfrac{1}{1-z^3}\\
+    &\overset{(a)}{=}-\frac{1}{z^4}\sum_{n=0}^\infty z^{3n}\\
+    &=-\frac{1}{z^4}(1+z^3+z^6+z^9+\cdots)\\
+    &=-\frac{1}{z^4}-\frac{1}{z}-z^2-z^5-\cdots
+    \qquad\qquad\textrm{cuando}\qquad\qquad
+    0<|z|<1,
+ \end{align*}
+donde en \((a)\) se empleó la representación \ref{eq:taylor_series_geometric} reemplazando \(z\) por \(z^3\). Se obtuvo que 
+\[
+ \Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right]=-1,
+\]
+concluyendo que 
+\[
+ \int_C\frac{z^5}{1-z^3}\,dz=-2\pi i.
+\]
+\item[(\textit{b})] La función 
+\[
+ f(z)=\frac{1}{1+z^2}
+\]
+tiene los puntos singulares \(z=\pm i\), ambos interiores a \(C\). Como
+\begin{align*}
+ \frac{1}{z^2}f\left(\frac{1}{z}\right)&=\frac{1}{z^2}\cdot\dfrac{1}{1+\dfrac{1}{z^2}}\\
+  &=\frac{1}{1+z^2}\\
+  &\overset{(a)}{=}\sum_{n=0}^\infty(-1)^nz^{2n}\\
+  &=1-z^2+z^4-z^6+\cdots
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+  0<|z|<1,
+\end{align*}
+donde en \((a)\) se empleó la representación \ref{eq:taylor_series_geometric} remplazando \(z\) por \(z^2\). Como la serie no tiene término \(1/z\),
+\[
+ \Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right]=0,
+\]
+concluyendo que 
+\[
+ \int_C\frac{1}{1+z^2}\,dz=0.
+\]
+\item[(\textit{c})] La función 
+\[
+ f(z)=\frac{1}{z}
+\]
+tiene una única singularidad en \(z=0\) interior a \(C\). Como ya esta representada como una serie de Laurent con 
+\[
+ \Res_{z=0}\frac{1}{z}=1,
+\]
+del teorema de los residuos de Cauchy (ecuación \ref{eq:cauchy_residue_theorem}) se obtiene inmediatamente que 
+\[
+ \int_C\frac{1}{z}\,dz=2\pi i.
+\]
+
+Para hacer el cálculo empleando la ecuación \ref{eq:residue_at_infinity_integral_evaluation}, se ve que 
+\begin{align*}
+ \frac{1}{z^2}f\left(\frac{1}{z}\right)&=\frac{1}{z^2}\cdot\dfrac{1}{\dfrac{1}{z^2}}\\
+  &=\frac{1}{z}
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+  0<|z|<\infty.
+\end{align*}
+y el resultado se obtiene observando que 
+\[
+ \Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right]=1.
+\]
+\end{enumerate}
+
+\subsubsection*{Ejercicio 5}
+
+Se \(C\) el círculo \(|z|=1\) orientado en sentid antihorario. Emplear los siguientes pasos para mostrar que 
+\[
+ \int_C\exp\left(z+\frac{1}{z}\right)\,dz=2\pi i\sum_{n=0}^\infty\frac{1}{n!(n+1)!}.
+\]
+
+\begin{enumerate}
+ \item[(\textit{a})] Empleando la serie de Maclaurin para \(e^z\) y haciendo referencia al teorema de la sección \ref{sec:series_integration_differentiation} que justifica la integración término a término, escribir la integral de arriba como
+ \[
+  \sum_{n=0}^\infty\frac{1}{n!}\int_Cz^ne^{1/z}\,dz.
+ \]
+ \item[(\textit{b})] Aplicando el teorema de la sección \ref{sec:cauchy_residues_theorem} evaluar las integrales de la parte (\textit{a}) para obtener el resultado deseado.
+\end{enumerate}
+
+\paragraph{Solución}
+
+\begin{enumerate}
+ \item[(\textit{a})] Empleando la representación \ref{eq:taylor_series_exponential},
+ \[
+  \exp\left(z+\frac{1}{z}\right)=e^ze^{1/z}=\left(\sum_{n=0}^\infty\frac{z^n}{n!}\right)e^{1/z}
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+  0<|z|<\infty.
+ \]
+ Por lo tanto,
+ \begin{align*}
+  \int_C\exp\left(z+\frac{1}{z}\right)\,dz&=\int_C\left(\sum_{n=0}^\infty\frac{z^n}{n!}\right)e^{1/z}\,dz\\
+   &=\sum_{n=0}^\infty\frac{1}{n!}\int_Cz^ne^{1/z}\,dz.
+ \end{align*}
+ \item[(\textit{b})] El integrando de las integrales obtenidas en la parte (\textit{a}) tiene una singularidad en \(z=0\) interior a \(C\). Además, se pueden escribir como
+ \[
+  z^ne^{1/z}=z^n\sum_{k=0}^\infty\frac{1}{k!}\cdot\frac{1}{z^k}=\sum_{k=0}^\infty\frac{1}{k!}\cdot\frac{1}{z^{k-n}},
+ \]
+ donde se empleó la representación \ref{eq:taylor_series_exponential} reemplazando \(z\) por \(1/z\).
+ Como el término \(1/z\) ocurre cuando \(k-n=1\) o \(k=n+1\), el coeficiente que lo multiplica es \(1/(n+1)!\) y por lo tanto,
+ \[
+  \Res_{z=0}\left(z^ne^{1/z}\right)=\frac{1}{(n+1)!},
+ \]
+ y de la ecuación \ref{eq:cauchy_residue_theorem}
+ \[
+  \int_Cz^ne^{1/z}\,dz=\frac{2\pi i}{(n+1)!}.
+ \]
+ Finalmente, sustituyendo este resultado en el resultado obtenido en la parte (\textit{a}) se obtiene que 
+\[
+ \int_C\exp\left(z+\frac{1}{z}\right)\,dz=2\pi i\sum_{n=0}^\infty\frac{1}{n!(n+1)!}.
+\]
+\end{enumerate} 
+
+\subsubsection*{Ejercicio 6}
+
+Supóngase que una función \(f\) es analítica en el plano finito excepto por una cantidad finita de puntos singulares \(z_1,\,z_2,\,\dots,\,z_n\). Mostrar que 
+\[
+ \Res_{z=z_1}f(z)+\Res_{z=z_2}f(z)+\cdots+\Res_{z=z_n}f(z)+\Res_{z=\infty}=0.
+\]
+
+\paragraph{Solución} El resultado es consecuencia inmediata del teorema de los residuos de Cauchy, dado por la ecuación \ref{eq:cauchy_residue_theorem}, y la definición del residuo en el infinito, dada por la ecuación \ref{eq:residue_at_infinity_definition}. El contorno \(C\) en ambas ecuaciones es cualquier contorno cerrado simple que contenga en su interior todos los puntos singulares.
+
+\subsubsection*{Ejercicio 7}
+
+Sea el grado de los polinomios 
+\[
+ P(z)=a_0+a_1z+a_2z^2+\cdots+a_nz^n
+ \qquad\qquad\textrm{con}\qquad\qquad
+ a_0\neq0
+\]
+y
+\[
+ Q(z)=b_0+b_1z+b_2z^2+\cdots+b_mz^m
+ \qquad\qquad\textrm{con}\qquad\qquad
+ b_0\neq0
+\]
+tal que \(m\geq n+2\). Emplear el teorema de la sección \ref{sec:residue_at_infinity} para mostrar que si todos los ceros de \(Q(z)\) son interiores a un contorno \(C\) cerrado simple se cumple que 
+\[
+ \int_C\frac{P(z)}{Q(z)}\,dz=0.
+\]
+Comparar con el resultado del ejercicio 4\((b)\).
+
+\paragraph{Solución.} Para la prueba, se calculará el residuo en el infinito, que debe ser nulo. Se observa que 
+\begin{align*}
+ \frac{1}{z^2}\dfrac{P\left(\dfrac{1}{z}\right)}{Q\left(\dfrac{1}{z}\right)}
+    &=\frac{1}{z^2}\cdot\dfrac{a_0+\dfrac{a_1}{z}+\dfrac{a_2}{z^2}+\cdots+\dfrac{a_n}{z^n}}{b_0+\dfrac{b_1}{z}+\dfrac{b_2}{z^2}+\cdots+\dfrac{b_m}{z^m}}\\
+    &=\frac{1}{z^2}\cdot\dfrac{z^m\left(a_0+\dfrac{a_1}{z}+\dfrac{a_2}{z^2}+\cdots+\dfrac{a_n}{z^n}\right)}{b_0z^m+b_1z^{m-1}+b_2z^{m-2}+\cdots+b_m}\\
+    &=\frac{a_0z^{m-2}+a_1z^{m-3}+a_2z^{m-4}+\cdots+a_nz^{m-n-2}}{b_0z^m+b_1z^{m-1}+b_2z^{m-2}+\cdots+b_m}.
+\end{align*}
+Como \(m-n-2\geq0\), el numerador es un polinomio, es decir, no tiene potencias negativas de \(z\). Además, como \(b_m\neq0\) el denominador no tiene raíz cero. Por lo tanto, existe un entorno del origen \(|z|<R_2\) en donde la función obtenida es analítica. Esto significa que puede representarse por una serie de Taylor (ver la sección \ref{sec:taylor_series}), por lo que la expansión no tiene potencias negativas de \(z\). Esto implica que la expansión no tiene término \(1/z\) y por lo tanto,
+\[
+ \Res_{z=0}\left[\frac{1}{z^2}\dfrac{P\left(\dfrac{1}{z}\right)}{Q\left(\dfrac{1}{z}\right)}\right]=0
+\]
+y de la ecuación \ref{eq:residue_at_infinity_integral_evaluation} se obtiene que 
+\[
+ \int_C\frac{P(z)}{Q(z)}\,dz=0.
+\]
+
+El cociente de polinomios del ejercicio 4\((b)\) cumple con las hipótesis de este problema, resultando en que la integral es cero.
+
+\section{Los tres tipos de puntos singulares aislados}\label{sec:isolated_singular_points_types}
+
+En la sección \ref{sec:residues} se vio que la teoría de los residuos se basa en el hecho de que si \(f\) tiene un punto singular aislado en \(z_0\), \(f(z)\) tiene la representación en series de Laurent
+\begin{equation}\label{eq:residues_laurent_expansion_2}
+ f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n+\frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\cdots+\frac{b_n}{(z-z_0)^n}+\cdots 
+\end{equation}
+en un disco perforado \(0<|z-z_0|<R_2\). La porción 
+\begin{equation}\label{eq:series_principal_part}
+ \frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\cdots+\frac{b_n}{(z-z_0)^n}+\cdots 
+\end{equation}
+de la serie, que involucra potencias negativas de \(z-z_0\) se llama \emph{parte principal} de \(f\) en \(z_0\). Se empleará la parte principal para clasificar a los puntos singulares aislados en tres tipos. Esta clasificación será de ayuda en el desarrollo de la teoría de residuos en las siguientes secciones.
+
+Hay dos casos extremos. Uno es cuando cada coeficiente de la parte principal \ref{eq:series_principal_part} es cero y el otro es cuando una cantidad infinita de ellos son no nulos.
+
+\subsection*{(\textit{a}) Puntos singulares evitables}
+
+Cuando cada \(b_n\) es cero, tal que 
+\begin{equation}\label{eq:singular_types_evitable_expansion}
+  f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n=a_0+a_1(z-z_0)+a_2(z-z_0)^2+\cdots
+  \qquad\quad\textrm{cuando}\quad\qquad
+  0<|z-z_0|<R_2, 
+\end{equation}
+\(z_0\) se llama \emph{punto singular evitable}. Notar que el residuo en un punto singular evitable es siempre cero. Si se define, o posiblemente se redefine, \(f\) en \(z_0\) tal que \(f(z_0)=a_0\), la expansión \ref{eq:singular_types_evitable_expansion} se hace valida en el disco completo \(|z-z_0|<R_2\). Como una serie de potencias siempre representa a una función analítica en el interior de su círculo de convergencia (ver la sección \ref{sec:series_integration_differentiation}), \(f\) es analítica en \(z_0\) cuando se le asigna el valor \(a_0\) allí. La singularidad \(z_0\) por tanto, fue removida.
+
+\subsection*{(\textit{b}) Puntos singulares esenciales}
+
+Si un número infinito de coeficientes \(b_n\) en la parte principal \ref{eq:series_principal_part} son no nulos, \(z_0\) se dice ser un \emph{punto singular esencial} de \(f\).
+
+\subsection*{(\textit{c}) Polos de orden \(m\)}
+
+Si la parte principal de \(f\) en \(z_0\) contiene al menos un término no nulo pero la cantidad de esos términos es finita, existe un entero positivo \(m\), con \(m\geq1\), tal que 
+\[
+ b_m\neq0
+ \qquad\qquad\textrm{y}\qquad\qquad
+ b_{m+1}=b_{m+2}=\cdots=0.
+\]
+De esta forma, la expansión \ref{eq:residues_laurent_expansion_2} toma la forma 
+\[
+  f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n+\frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\cdots+\frac{b_m}{(z-z_0)^m} 
+  \qquad\quad\textrm{cuando}\quad\qquad
+  0<|z-z_0|<R_2,
+\]
+donde \(b_m\neq0\). En este caso, el punto singular \(z_0\) se llama \emph{polo de orden \(m\)}. Un polo de orden \(m=1\) es usualmente referido como \emph{polo simple}.
+
+Se realiza un breve comentario sobre el origen etimológico del término polo. En realidad, no hay un acuerdo unánime sobre esto. Una postura, es que la traducción de la palabra ``pole'' en inglés es pilar o mástil, y esto describe el comportamiento de la función cerca del polo (ver la sección 6.2 de \cite{wunsch205complex}). Efectivamente, una gráfica tridimensional de \(|f(z)|\) en función de \(x\) y \(y\) en torno a un polo muestra a un pico de altura infinita que recuerda un pilar. Sin embargo, las primeras apariciones del término son en el libro ``Théorie des fonctions elliptiques'' (1875) de Briot y Bouquet\footnote{Ver ``
+Earliest Uses of Some Words of Mathematics'' en \url{https://mathshistory.st-andrews.ac.uk/Miller/mathword/}. Accedido el 2023-04-11.} y en en el libro ``Vorlesungen über Riemann’s Theorie der Abel’schen Integrale'' (1865) de Carl Neumann (ver el capítulo 2 de \cite{kolmogorov1996mathematics}). Pero la palabra ``pôle'' en francés o ``pol'' en alemán no se traduce como pilar, si no como polo en el sentido geográfico, y el empleo del término se justifica por el hecho de que dichos puntos son los que la función mapea al polo norte en la esfera de Riemann (ver la sección \ref{sec:limits_infinity_point}).
+
+A continuación se incluyen algunos ejemplos y en las siguientes secciones del capítulo se examinará con mayor profundidad los tres tipos de puntos singulares aislados. Se hará énfasis en métodos útiles y eficientes para identificar polos y encontrar los residuos correspondientes.
+
+En la sección \ref{} del final del capítulo se incluyen tres teoremas que señalan las diferencias fundamentales del comportamiento de las funciones en los tres tipos de puntos singulares aislados. 
+
+\paragraph{Ejemplo 1.} El punto \(z_0=0\) es una sigularidad evitable de la función 
+\[
+ f(z)=\frac{1-\cosh z}{z^2}
+\]
+ya que (ver la ecuación \ref{eq:taylor_series_cosh})
+\[
+ f(z)=\frac{1}{z^2}\left[1-\left(1+\frac{z^2}{2!}+\frac{z^4}{4!}+\frac{z^6}{6!}+\cdots\right)\right]
+  =-\frac{1}{2!}-\frac{z^2}{4!}-\frac{z^4}{6!}-\cdots,
+  \qquad\quad\textrm{cuando}\quad\qquad
+  0<|z|<\infty.
+\]
+Por lo tanto, la función
+\[
+ f(z)=
+ \left\{ 
+ \begin{array}{ll}
+  \dfrac{1-\cosh z}{z^2}, &\textrm{en }z\neq0\\[\medskipamount]
+  -\dfrac{1}{2}, &\textrm{en }z=0, 
+ \end{array}
+ \right.
+\]
+se hace completa.
+
+\paragraph{Ejemplo 2.} De la representación \ref{eq:taylor_series_exponential} reemplazando \(z\) por \(1/z\), se puede ver que 
+\[
+ e^{1/z}=\sum_{n=0}^\infty\frac{1}{n!}\cdot\frac{1}{z^n}=1+\frac{1}{1!}\cdot\frac{1}{z}+\frac{1}{2!}\cdot\frac{1}{z^2}+\cdots 
+ \qquad\quad\textrm{cuando}\quad\qquad
+  0<|z|<\infty,
+\]
+y por lo tanto \(e^{1/z}\) tiene una sigularidad esencial en \(z=0\), donde el residuo es \(b_1=1\).
+
+Este ejemplo sirve para ilustrar un resultado importante conocido como \emph{teorema de Picard}, que describe el comportamiento de una función cerca de un punto singular esencial. Indica que en cada entorno de un punto singular esencial, la función asume cada valor finito posible, con a lo sumo una excepción, un número infinito de veces. 
+
+Es fácil ver, por ejemplo, que \(e^{1/z}\) toma el valor \(-1\) un número infinito de veces en cada entorno del origen. Mas precisamente, como \(e^z=-1\) cuando (ver la sección \ref{sec:exponential_function})
+\[
+ z=(2n+1)\pi i
+ \qquad\qquad\textrm{con}\qquad\qquad
+ n=0,\,\pm1,\,\pm2,\,\dots,
+\]
+\(e^{1/z}=-1\) cuando
+\[
+ z=\frac{1}{(2n+1)\pi i}\cdot\frac{i}{i}=-\frac{i}{(2n+1)\pi}
+ \qquad\qquad\textrm{con}\qquad\qquad
+ n=0,\,\pm1,\,\pm2,\,\dots.
+\]
+Por lo tanto, si \(n\) es suficientemente grande, una cantidad infinita de esos puntos están contenidos en cualquier entorno \(\epsilon\) dado del origen. Cero es evidentemente el valor excepcional cuando el teorema de Picard se aplica a \(e^{1/z}\) en el origen.
+
+\paragraph{Ejemplo 3.} De la representación \ref{eq:taylor_series_geometric} se deduce que 
+\begin{align*}
+ f(z)&=\frac{1}{z^2(1-z)}\\
+   &=\frac{1}{z^2}\left(1+z+z^2+z^3+z^4+\cdots\right)\\
+   &=\left(\frac{1}{z^2}+\frac{1}{z}+1+z+z^2+\cdots\right)
+   \qquad\quad\textrm{cuando}\quad\qquad
+   0<|z|<1.
+\end{align*}
+Puede verse que \(f\) tiene un polo de orden \(m=2\) en el origen y que 
+\[
+ \Res_{z=0}f(z)=1.
+\]
+
+Como
+\[
+ \lim_{z\to0}\frac{1}{f(z)}=\lim_{z\to0}[z^2(1-z)]=0
+\]
+se cumple que (ver el teorema de la sección \ref{sec:limits_infinity_point})
+\[
+ \lim_{z\to0}f(z)=\infty.
+\]
+Dicho límite siempre ocurre en los polos, como se mostrará en la sección \ref{}.
+
+\subsection*{Ejercicios}
+
+\subsubsection*{Ejercicio 1}
+
+En cada caso, escribir la parte principal de la función en su punto singular aislado y determinar si el punto singular es evitable, esencial o un polo:
+\[
+ (\textit{a})\;z\exp\left(\frac{1}{z}\right);\qquad\qquad (\textit{b})\;\frac{z^2}{1+z};\qquad\qquad
+ (\textit{c})\;\frac{\sen z}{z};\qquad\qquad (\textit{d})\;\frac{\cos z}{z};\qquad\qquad
+ (\textit{e})\;\frac{1}{(2-z)^3}.
+\]
+
+\paragraph{Solución.}
+
+La parte principal de la expansión en series de Laurent está dada por la ecuación \ref{eq:series_principal_part}, por lo que en cada caso, hay que obtener la expansión en series en torno al punto singular.
+
+\begin{enumerate}
+ \item[(\textit{a})] La función tiene un punto singular aislado en \(z=0\). De la representación \ref{eq:taylor_series_exponential} reemplazando \(z\) por \(1/z\) se obtiene que 
+ \begin{align*}
+  z\exp\left(\frac{1}{z}\right)&=z\sum_{n=0}^\infty\frac{1}{n!}\cdot\frac{1}{z^n}\\
+   &=\sum_{n=0}^\infty\frac{1}{n!}\cdot\frac{1}{z^{n-1}}\\
+   &=\sum_{n=-1}^\infty\frac{1}{(n+1)!}\cdot\frac{1}{z^n}\\
+   &=z+1+\sum_{n=1}^\infty\frac{1}{(n+1)!}\cdot\frac{1}{z^n}
+   \qquad\quad\textrm{cuando}\quad\qquad
+   0<|z|<\infty.
+ \end{align*}
+ La parte principal en \(z=0\) es
+ \[
+  \sum_{n=1}^\infty\frac{1}{(n+1)!}\cdot\frac{1}{z^n}=\frac{1}{2!}\cdot\frac{1}{z}+\frac{1}{3!}\cdot\frac{1}{z^2}+\frac{1}{4!}\cdot\frac{1}{z^3}+\cdots,
+ \]
+ y como tiene infinitos términos en potencias negativas de \(z\), la singularidad en \(z=0\) es esencial.
+ \item[(\textit{b})] La función tiene un punto singular aislado en \(z=-1\). Para obtener la representación en series en torno al punto singular, se observa que 
+ \begin{align*}
+  \frac{z^2}{1+z}&=\frac{[(z+1)-1]^2}{z+1}\\  
+   &=\frac{(z+1)^2-2(z+1)+1}{z+1}\\
+   &=(z+1)-2+\frac{1}{z+1}
+   \qquad\quad\textrm{cuando}\quad\qquad
+   0<|z+1|<\infty.
+ \end{align*}
+ La parte principal es
+ \[
+  \frac{1}{z+1}
+ \]
+ por lo que la sigularidad en \(z=-1\) es un polo simple.
+ \item[(\textit{c})] La función tiene un punto singular aislado en \(z=0\). De la representación \ref{eq:taylor_series_sen},
+ \begin{align*}
+  \frac{\sen z}{z}&=\frac{1}{z}\sum_{n=0}^\infty(-1)^n\frac{z^{2n+1}}{(2n+1)!}\\
+    &=\sum_{n=0}^\infty(-1)^n\frac{z^{2n}}{(2n+1)!}\\
+    &=1-\frac{z^2}{3!}+\frac{z^4}{5!}-\frac{z^6}{7!}+\cdots
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<\infty.
+ \end{align*}
+ La parte principal es nula por lo que la singularidad es evitable. Si se define \(f(0)=1\), la función se hace completa.
+ \item[(\textit{d})] Nuevamente, la función tiene un punto singular aislado en \(z=0\). De la representación \ref{eq:taylor_series_cos},
+ \begin{align*}
+  \frac{\cos z}{z}&=\frac{1}{z}\sum_{n=0}^\infty(-1)^n\frac{z^{2n}}{(2n)!}\\
+    &=\sum_{n=0}^\infty(-1)^n\frac{z^{2n-1}}{(2n)!}\\
+    &=\frac{1}{z}-\frac{z}{2!}+\frac{z^3}{4!}-\frac{z^5}{6!}+\cdots
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<\infty.
+ \end{align*}
+ La parte principal es \(1/z\), por lo que la singularidad en \(z=0\) es un polo simple.
+ \item[(\textit{e})] La función 
+ \[
+  \frac{1}{(2-z)^3}=-\frac{1}{(z-2)^3}.
+ \]
+ tiene un punto singular aislado en \(z=2\), y ya está representada en series en torno a \(z=2\). Dicha representación muestra que \(z=2\) es un polo de orden \(m=3\).
+\end{enumerate}
+
+\subsubsection*{Ejercicio 2}
+
+Mostrar que el punto singular de cada una de las siguientes funciones es un polo. Determinar el orden \(m\) del polo y el correspondiente residuo \(B\).
+\[
+ (\textit{a})\;\frac{1-\cosh z}{z^3};\qquad\qquad (\textit{b})\;\frac{1-\exp(2z)}{z^4};\qquad\qquad
+ (\textit{c})\;\frac{\exp(2z)}{(z-1)^2}.
+\]
+
+\paragraph{Solución.} 
+\begin{enumerate}
+ \item[(\textit{a})] La función tiene un punto singular aislado en \(z=0\). Empleando la representación \ref{eq:taylor_series_cosh}, se ve que 
+ \begin{align*}
+  \frac{1-\cosh z}{z^3}&=\frac{1}{z^3}\left[1-\sum_{n=0}^\infty\frac{z^{2n}}{(2n)!}\right]\\
+   &=\frac{1}{z^3}\left[1-\left(1+\frac{z^2}{2!}+\frac{z^4}{4!}+\frac{z^6}{6!}+\dots\right)\right]\\
+   &=-\frac{1}{2!}\cdot\frac{1}{z}-\frac{z}{4!}-\frac{z^3}{6!}-\cdots
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<\infty.
+ \end{align*}
+ Se observa que la singularidad \(z=0\) se trata de un polo de orden \(m=1\) con residuo \(B=-1/2\).
+ \item[(\textit{b})] La función tiene un punto singular aislado en \(z=0\). De la representación \ref{eq:taylor_series_exponential} reemplazando \(z\) por \(2z\), se tiene que 
+ \begin{align*}
+  \frac{1-\exp(2z)}{z^4}&=\frac{1}{z^4}\left(1-\sum_{n=0}^\infty\frac{2^n}{n!}z^n\right)\\
+   &=-\frac{1}{z^4}\sum_{n=1}^\infty\frac{2^n}{n!}z^n\\
+   &=-\frac{1}{z^4}\left(\frac{2^1}{1!}z-\frac{2^2}{2!}z^2-\frac{2^3}{3!}z^3+\sum_{n=4}^\infty\frac{2^n}{n!}z^n\right)\\
+   &=-\frac{2^1}{1!}\cdot\frac{1}{z^3}-\frac{2^2}{2!}\cdot\frac{1}{z^2}-\frac{2^3}{3!}\cdot\frac{1}{z}-\sum_{n=4}^\infty\frac{2^n}{n!}z^{n-4}\\
+   &=-2\cdot\frac{1}{z^3}-2\cdot\frac{1}{z^2}-\frac{4}{3}\cdot\frac{1}{z}-\sum_{m=0}^\infty\frac{2^{m+4}}{(m+4)!}z^m
+  \qquad\qquad\textrm{cuando}\qquad\qquad
+  0<|z|<\infty,
+ \end{align*}
+ donde en la última igualdad se realizó el cambio de índice \(m=n+4\) en la sumatoria.
+ Del resultado, se concluye que la singularidad en \(z=0\) es un polo de orden \(m=3\) y el residuo es \(B=-4/3\).
+ \item[(\textit{c})] La función tiene el punto singular \(z=1\). Para obtener la representación en series de Laurent en torno a ese punto, se ve que 
+ \begin{align*}
+  \frac{e^{2z}}{(z-1)^2}&=\frac{e^2}{(z-1)^2}e^{2(z-1)}\\
+    &\overset{(a)}{=}\frac{e^2}{(z-1)^2}\sum_{n=0}^\infty \frac{2^n}{n!}(z-1)^n\\
+    &=e^2\left[\frac{1}{(z-1)^2}+\frac{2}{z-1}+\sum_{n=2}^\infty \frac{2^n}{n!}(z-1)^{n-2}\right]\\
+    &=e^2\left[\frac{1}{(z-1)^2}+\frac{2}{z-1}+\sum_{m=0}^\infty \frac{2^{m+2}}{(m+2)!}(z-1)^m\right]
+    \qquad\quad\textrm{cuando}\quad\qquad
+    0<|z-1|<\infty,
+ \end{align*}
+donde en \((a)\) se empleó la representación \ref{eq:taylor_series_exponential} reemplazando \(z\) por \(2(z-1)\). Por lo tanto, la singularidad \(z=1\) es un polo de orden \(m=2\) con residuo \(B=2e^2\).
+\end{enumerate}
+
+\subsubsection*{Ejercicio 3}
+
+Supóngase que una función \(f\) es analítica en \(z_0\) y sea \(g(z)=f(z)/(z-z_0)\). Mostrar que 
+\begin{enumerate}
+ \item[(\textit{a})] si \(f(z_0)\neq0\), \(z_0\) es un polo simple de \(g\) con residuo \(f(z_0)\).
+ \item[(\textit{b})] si \(f(z_0)=0\), \(z_0\) es un punto singular evitable de \(g\). 
+\end{enumerate}
+
+\paragraph{Solución.} Como \(f\) es analítica en \(z_0\) tiene una representación en series de Taylor (ver la ecuación \ref{eq:taylor_series_definition})
+\[
+ f(z)=f(z_0)+\frac{f'(z_0)}{1!}(z-z_0)+\frac{f''(z_0)}{2!}(z-z_0)^2+\cdots
+ \qquad\quad\textrm{cuando}\quad\qquad
+ |z-z_0|<R_2.
+\]
+\begin{enumerate}
+ \item[(\textit{a})] Si \(f(z_0)\neq0\),
+ \[
+  g(z)=\frac{f(z_0)}{z-z_0}+\frac{f'(z_0)}{1!}+\frac{f''(z_0)}{2!}(z-z_0)+\cdots
+  \qquad\quad\textrm{cuando}\quad\qquad
+  0<|z-z_0|<R_2.
+ \]
+ De esta representación se observa que \(z_0\) es un polo simple de \(g\) con residuo \(f(z_0)\).
+ \item[(\textit{b})] Si \(f(z_0)=0\),
+ \[
+  g(z)=\frac{f'(z_0)}{1!}+\frac{f''(z_0)}{2!}(z-z_0)+\cdots
+  \qquad\quad\textrm{cuando}\quad\qquad
+  0<|z-z_0|<R_2.
+ \]
+ Como la parte principal de \(g\) en \(z_0\) es nula, \(z_0\) es un punto singular evitable de \(g\). Si se define \(g(z_0)=f'(z_0)\), \(g\) es analítica en el disco \(|z-z_0|<R_2\).
+\end{enumerate}
+
+\subsubsection*{Ejercicio 4}
+
+Expresar a la función 
+\[
+ f(z)=\frac{8a^3z^2}{(z^2+a^2)^3}
+ \qquad\qquad\textrm{con}\qquad\qquad
+ a>0
+\]
+como 
+\[
+ f(z)=\frac{\phi(z)}{(z-ai)^3}
+ \qquad\qquad\textrm{donde}\qquad\qquad
+ \phi(z)=\frac{8a^3z^2}{(z+ai)^3}.
+\]
+Indicar porque \(\phi(z)\) tiene una representación en series de Taylor en torno a \(z=ai\) y luego emplear ese hecho para mostrar que la parte principal de \(f\) en ese punto es
+\[
+ \frac{\phi''(ai)/2}{z-ai}+\frac{\phi'(ai)}{(z-ai)^2}+\frac{\phi(ai)}{(z-ai)^3}=
+ -\frac{i/2}{z-ai}-\frac{a/2}{(z-ai)^2}-\frac{a^2i}{(z-ai)^3}.
+\]
+
+\paragraph{Solución.} Se parte observando que 
+\[
+ f(z)=\frac{8a^3z^2}{(z^2+a^2)^3}=\frac{8a^3z^2}{[(z-ai)(z+ai)]^3}=\frac{1}{(z-ai)^3}\cdot\frac{8a^3z^2}{(z+ai)^3}
+\]
+y por lo tanto, \(f\) se puede expresar como
+\[
+ f(z)=\frac{\phi(z)}{(z-ai)^3}
+ \qquad\qquad\textrm{donde}\qquad\qquad
+ \phi(z)=\frac{8a^3z^2}{(z+ai)^3}.
+\]
+La función \(\phi(z)\) tiene un único punto singular en \(z=-ai\), y en particular es analítica en el disco \(|z-ai|<R_2\) centrado en \(ai\) para cualquier \(R_2\leq2a\). Esto indica que \(\phi(z)\) tiene una representación en series de Taylor en torno a \(z=ai\), que es
+\[
+ \phi(z)=\phi(ai)+\frac{\phi'(ai)}{1!}(z-ai)+\frac{\phi''(ai)}{2!}(z-ai)^2+\frac{\phi'''(ai)}{3!}(z-ai)^3+\cdots.
+\]
+Reemplazando este resultado en la expresión de \(f\), se obtiene que 
+\begin{align*}
+ f(z)&=\frac{1}{(z-ai)^3}\left[\phi(ai)+\frac{\phi'(ai)}{1!}(z-ai)+\frac{\phi''(ai)}{2!}(z-ai)^2+\frac{\phi'''(ai)}{3!}(z-ai)^3+\cdots\right]\\ 
+ &=\frac{\phi(ai)}{(z-ai)^3}+\frac{\phi'(ai)}{(z-ai)^2}+\frac{\phi''(ai)/2}{z-ai}+\frac{\phi'''(ai)}{6}+\cdots
+ \qquad\quad\textrm{cuando}\quad\qquad
+  0<|z-ai|<R_2.
+\end{align*}
+Esto indica que la parte principal de \(f\) en \(z=ai\) es 
+\begin{equation}\label{eq:exercise_79_04_principal_part}
+ \frac{\phi''(ai)/2}{z-ai}+\frac{\phi'(ai)}{(z-ai)^2}+\frac{\phi(ai)}{(z-ai)^3}, 
+\end{equation}
+que es una parte de lo que se quería mostrar. 
+
+Para probar la otra parte hay que evaluar las derivadas de \(\phi(z)\) en \(z=ai\). Considerando que 
+\[
+ \phi(z)=\frac{8a^3z^2}{(z+ai)^3},
+\]
+primero se ve que 
+\begin{equation}\label{eq:exercise_79_04_derivative_0}
+ \phi(ai)=\frac{8a^3(ai)^2}{(2ai)^3}=\frac{a^2}{i}=-a^2i. 
+\end{equation}
+La derivada primera es
+\begin{align*}
+ \phi'(z)&=8a^3\left[\frac{2z(z+ai)^3-3z^2(z+ai)^2}{(z+ai)^6}\right]\\
+ &=8a^3z\left[\frac{2(z+ai)-3z}{(z+ai)^4}\right]\\
+ &=8a^3z\left[\frac{2z+2ai-3z}{(z+ai)^4}\right]\\
+ &=-\frac{8a^3z(z-2ai)}{(z+ai)^4},
+\end{align*}
+y evaluando en \(z=ai\) resulta en
+\begin{equation}\label{eq:exercise_79_04_derivative_1}
+ \phi'(ai)=-\frac{8a^3(ai)(-ai)}{(2ai)^4}=\frac{8a^3}{2\cdot8\cdot(ai)^2}=-\frac{a}{2}. 
+\end{equation}
+Continuando, la derivada segunda es
+\begin{align*}
+ \phi''(z)&=-8a^3\left\{\frac{[(z-2ai)+z](z+ai)^4-4z(z-2ai)(z+ai)^3}{(z+ai)^8}\right\}\\ 
+   &=-8a^3\left[\frac{2(z-ai)(z+ai)-4z(z-2ai)}{(z+ai)^5}\right]\\ 
+   &=-16a^3\left[\frac{(z^2+a^2)-2z(z-2ai)}{(z+ai)^5}\right]
+\end{align*}
+y nuevamente evaluando en \(z=ai\),
+\begin{equation}\label{eq:exercise_79_04_derivative_2}
+ \phi''(ai)=-16a^3\left[\frac{0-2ai(-ai)}{(2ai)^5}\right]=16a^3\left(\frac{2a^2}{2^5a^5i}\right)=\frac{1}{i}=-i. 
+\end{equation}
+Sustituyendo los resultados de las ecuaciones \ref{eq:exercise_79_04_derivative_0}, \ref{eq:exercise_79_04_derivative_1} y \ref{eq:exercise_79_04_derivative_2} en la ecuación \ref{eq:exercise_79_04_principal_part} se obtiene que  
+\[
+ \frac{\phi''(ai)/2}{z-ai}+\frac{\phi'(ai)}{(z-ai)^2}+\frac{\phi(ai)}{(z-ai)^3}=
+ -\frac{i/2}{z-ai}-\frac{a/2}{(z-ai)^2}-\frac{a^2i}{(z-ai)^3}.
+\]
+Observar que esta ecuación indica que \(z=ai\) es un polo de orden \(m=3\) de \(f\) con residuo \(B=\phi''(ai)/2\). Este resultado se generaliza en el teorema de la siguiente sección.
+
+\section{Residuos en los polos}\label{sec:residues_at_poles}
+
+Cuando una función \(f\) tiene una singularidad aislada en un punto \(z_0\), el método básico para identificar a \(z_0\) como un polo y encontrar su residuo es obtener la serie de Laurent apropiada y observar el coeficiente del término \(1/(z-z_0)\). El siguiente teorema brinda una caracterización alternativa de los polos y una forma de encontrar los residuos que usualmente es mas conveniente. 
+
+\paragraph{Teorema.} Sea \(z_0\) un punto singular aislado de una función \(f\). Las siguientes dos afirmaciones son equivalentes:
+\begin{enumerate}
+ \item[(\textit{a})] \(z_0\) es un polo de orden \(m\) de \(f\), con \(m=1,\,2,\,\dots\);
+ \item[(\textit{b})] \(f(z)\) se puede escribir de la forma 
+ \[
+  f(z)=\frac{\phi(z)}{(z-z_0)^m}
+  \qquad\qquad\textrm{con}\qquad\qquad
+  m=1,\,2,\,\dots,
+ \]
+ donde \(\phi(z)\) es analítica y no nula en \(z_0\).
+\end{enumerate}
+Además, si las declaraciones (\textit{a}) y (\textit{b}) son verdaderas,
+\[
+ \Res_{z=z_0}f(z)=\phi(z_0)
+ \qquad\qquad\textrm{cuando }m=1
+\]
+y
+\begin{equation}\label{eq:residues_at_poles_phi}
+ \Res_{z=z_0}f(z)=\frac{\phi^{(m-1)}(z_0)}{(m-1)!}
+ \qquad\qquad\textrm{cuando }m=2,\,3,\,\dots.
+\end{equation}
+Observar que no es necesario escribir por separado estas dos expresiones para los residuos, ya que con las convenciones \(\phi^{(0)}(z_0)=\phi(z_0)\) y \(0!=1\), la segunda expresión se reduce a la primera cuando \(m=1\). 
+
+Para probar el teorema se asume primero que la afirmación (\textit{a}) es verdadera. De esta forma, \(f(z)\) tiene una representación en series de Laurent 
+\[
+ f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n+\frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\cdots+\frac{b_{m-1}}{(z-z_0)^{m-1}}+\frac{b_m}{(z-z_0)^m}
+ \qquad\textrm{con}\qquad
+ b_m\neq0,
+\]
+que es válida en el disco perforado \(0<|z-z_0|<R_2\). Defínase la función \(\phi(z)\) como
+\[
+ \phi(z)=
+ \left\{ 
+ \begin{array}{ll}
+  (z-z_0)^mf(z) & \textrm{cuando }z\neq z_0\\
+  b_m & \textrm{cuando }z=z_0,
+ \end{array}
+ \right.
+\]
+que evidentemente tiene la representación en series 
+\[
+ \phi(z)=b_m+b_{m-1}(z-z_0)+\cdots+b_2(z-z_0)^{m-2}+b_1(z-z_0)^{m-1}+\sum_{n=0}^\infty a_n(z-z_0)^{n+m},
+\]
+que es válida en todo el disco \(|z-z_0|<R_2\). En consecuencia, \(\phi(z)\) es analítica en dicho disco (ver la sección \ref{sec:series_integration_differentiation}) y, en particular, en \(z_0\). Como \(\phi(z_0)=b_m\neq0\), se cumple la expresión para \(f(z)\) en la afirmación (\textit{b}).  
+
+Recíprocamente, supóngase que solo se sabe que \(f(z)\) tiene la forma indicada en la afirmación (\textit{b}). Como \(\phi(z)\) es analítica en \(z_0\) tiene una representación en series de Taylor (ver la sección \ref{sec:taylor_series}) 
+\[
+ \phi(z)=\phi(z_0)+\frac{\phi'(z_0)}{1!}(z-z_0)+\frac{\phi''(z_0)}{2!}(z-z_0)^2+\cdots+\frac{\phi^{(m-1)}(z_0)}{(m-1)!}(z-z_0)^{m-1}+\sum_{n=m}^\infty\frac{\phi^{(n)}(z_0)}{n!}(z-z_0)^n
+\]
+que es válida en algún entorno \(|z-z_0|<\epsilon\) de \(z_0\). El cociente en la afirmación (\textit{b}) indica que 
+\[
+ f(z)=\frac{\phi(z_0)}{(z-z_0)^m}+\frac{\phi'(z_0)/1!}{(z-z_0)^{m-1}}+\frac{\phi''(z_0)/2!}{(z-z_0)^{m-2}}+\cdots+\frac{\phi^{(m-1)}(z_0)/(m-1)!}{z-z_0}+\sum_{n=m}^\infty\frac{\phi^{(n)}(z_0)}{n!}(z-z_0)^{n-m}
+\]
+cuando \(0<|z-z_0|<\epsilon\). Esta representación en series de Laurent junto con el hecho de que \(\phi(z_0)\neq0\) revela que \(z_0\) es efectivamente un polo de orden \(m\) de \(f(z)\). El coeficiente de \(1/(z-z_0)\) indica que el residuo de \(f(z)\) en \(z_0\) es el declarado en el teorema, lo que completa la prueba. 
+
+\subsection*{Ejercicios}
+
+\subsubsection*{Ejercicio 1}
+
+En cada caso, mostrar que cada punto singular de la función es un polo. Determinar el orden \(m\) de cada polo y encontrar el residuo \(B\).
+\[
+ (\textit{a})\;\frac{z+1}{z^2+9};\qquad\qquad (\textit{b})\;\frac{z^2+2}{z-1};\qquad\qquad
+ (\textit{c})\;\left(\frac{z}{2z+1}\right)^3;\qquad\qquad (\textit{d})\;\frac{e^z}{z^2+\pi^2}.
+\]
+
+\paragraph{Solución.}
+
+\begin{enumerate}
+ \item[(\textit{a})] Se parte observando que la función
+ \[
+  \frac{z+1}{z^2+9}=\frac{z+1}{(z-3i)(z+3i)}
+ \]
+ tiene los puntos singulares aislados \(z=\pm3i\). Para determinar si la singularidad en \(z=3i\) es un polo, se define
+ \[
+  f(z)=\frac{\phi(z)}{z-3i}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{z+1}{z+3i}.
+ \]
+ \(\phi(z)\) es analítica en \(z=3i\) y además
+ \[
+  \phi(3i)=\frac{3i+1}{6i}=\frac{-3+i}{-6}=\frac{3-i}{6}\neq0.
+ \]
+ Del teorema en esta sección, \(z=3i\) es un polo simple de \(f(z)\) con residuo
+ \[
+  B=\frac{3-i}{6}.
+ \]
+ Procediendo de forma análoga con la singularidad en \(z=-3i\), se define 
+ \[
+  f(z)=\frac{\phi(z)}{z+3i}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{z+1}{z-3i}.
+ \]
+ \(\phi(z)\) es analítica en \(z=-3i\) y además
+ \[
+  \phi(-3i)=\frac{-3i+1}{-6i}=\frac{3+i}{6}\neq0.
+ \]
+ Por lo tanto, la singularidad es un polo simple con residuo
+ \[
+  B=\frac{3+i}{6}.
+ \]
+ \item[(\textit{b})] La función tiene un punto singular en \(z=1\). Definiendo
+ \[
+  f(z)=\frac{\phi(z)}{z-1}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=z^2+2.
+ \]
+ \(\phi(z)\) es completa y \(\phi(1)=3\neq0\). Por lo tanto, \(z=1\) es un polo simple de \(f(z)\) con residuo \(B=3\).
+ \item[(\textit{c})] La función
+ \[
+  f(z)=\left(\frac{z}{2z+1}\right)^3=\frac{z^3}{\left[2\left(z+\dfrac{1}{2}\right)\right]^3}
+    =\frac{\left(\dfrac{z}{2}\right)^3}{\left(z+\dfrac{1}{2}\right)^3}.
+ \]
+ tiene un punto singular en \(z=-1/2\). Sea 
+ \[
+  f(z)=\frac{\phi(z)}{\left(z+\dfrac{1}{2}\right)^3}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\left(\dfrac{z}{2}\right)^3.
+ \]
+ Como
+ \[
+  \phi\left(-\frac{1}{2}\right)=\left(-\dfrac{1}{4}\right)^3\neq0,
+ \]
+ el punto singular \(z=-1/2\) es un polo de orden \(m=3\) de \(f(z)\). Se aplicará la ecuación \ref{eq:residues_at_poles_phi} para encontrar el residuo. Como
+ \[
+  \phi'(z)=3\left(\dfrac{z}{2}\right)^2\frac{1}{2}=\frac{3}{2}\left(\dfrac{z}{2}\right)^2
+  \qquad\qquad\textrm{y}\qquad\qquad
+  \phi''(z)=3\left(\dfrac{z}{2}\right)\frac{1}{2}=\frac{3}{4}z,
+ \]
+ de la la ecuación \ref{eq:residues_at_poles_phi} con \(m=3\) se obtiene que 
+ \[
+  \Res_{z=-1/2}f(z)=\frac{\phi''\left(-\dfrac{1}{2}\right)}{2!}=\frac{-\dfrac{3}{8}}{2}=-\frac{3}{16}.
+ \]
+ \item[(\textit{d})] La función
+ \[
+  f(z)=\frac{e^z}{z^2+\pi^2}=\frac{e^z}{(z-\pi i)(z+\pi i)}
+ \]
+ tiene los puntos singulares \(z=\pm\pi i\). Sea 
+ \[
+  f(z)=\frac{\phi(z)}{z\mp\pi i}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{e^z}{z\pm\pi i}.
+ \]
+ Como
+ \[
+  \phi(\pm\pi i)=\frac{-1}{\pm2\pi i}=\mp\frac{1}{2\pi i}=\pm\frac{i}{2\pi},
+ \]
+ los puntos \(z=\pm\pi i\) son polos simples con residuos \(B=\pm i/(2\pi)\).
+\end{enumerate} 
+
+\subsubsection*{Ejercicio 2}
+
+Mostrar que
+\begin{enumerate}
+ \item[(\textit{a})] 
+ \(\displaystyle\Res_{z=-1}\frac{z^{1/4}}{z+1}=\frac{1+i}{\sqrt{2}},\qquad
+ |z|>0,\,0<\arg z<2\pi;\)
+ \item[(\textit{b})] 
+ \(\displaystyle\Res_{z=i}\frac{\Log z}{(z^2+1)^2}=\frac{\pi+2i}{8};\) 
+ \item[(\textit{c})] 
+ \(\displaystyle\Res_{z=i}\frac{z^{1/2}}{(z^2+1)^2}=\frac{1-i}{8\sqrt{2}},\qquad
+ |z|>0,\,0<\arg z<2\pi.\)
+\end{enumerate}
+
+\paragraph{Solución.} 
+\begin{enumerate}
+ \item[(\textit{a})] La función tiene una singularidad en \(z=-1\). Sea 
+ \[
+  f(z)=\frac{\phi(z)}{z+1}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=z^{1/4}\overset{(a)}{=}e^{\frac{1}{4}\log z},\qquad
+ |z|>0,\,0<\arg z<2\pi,
+ \]
+ donde en \((a)\) se empleó la definición \ref{eq:power_function} de la función potencia. La función \(\phi(z)\) es analítica en su dominio de definición, que es todo el plano complejo excepto el origen y el eje real positivo, que es el corte de rama. En particular, es analítica en el punto \(z=-1\). Además,
+ \[
+  \phi(-1)=(-1)^{1/4}=e^{\frac{1}{4}\log(-1)}\overset{(a)}{=}e^{\frac{1}{4}(\ln1+i\pi)}=e^{i\pi/4}=\frac{1+i}{\sqrt{2}}\neq0,
+ \]
+ donde en \((a)\) se tuvo en cuenta que \(\arg(-1)=\pi\) en la rama \(|z|>0,\,0<\arg z<2\pi\). Esto muestra que \(z=-1\) es un polo simple de \(f(z)\) con residuo 
+ \[
+  B=\frac{1+i}{\sqrt{2}}.
+ \]
+ \item[(\textit{b})] La función 
+ \[
+  f(z)=\frac{\Log z}{(z^2+1)^2}=\frac{\Log z}{(z-i)^2(z+i)^2}
+ \]
+ tiene singularidades en \(z=\pm i\). Sea 
+ \[
+  f(z)=\frac{\phi(z)}{(z-i)^2}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{\Log z}{(z+i)^2}.
+ \]
+ Teniendo en cuenta que la función \(\Log z\) es analítica en su dominio de definición, que es todo el plano complejo excepto el origen y el eje real negativo (ver la sección \ref{sec:logarithm_branches}), la función \(\phi(z)\) es analítica en \(z=i\). Además,
+ \[
+  \phi(i)=\frac{\Log i}{(2i)^2}=\frac{\ln1+\dfrac{i\pi}{2}}{-4}=-\frac{i\pi}{8}\neq0.
+ \]
+ Esto indica que \(f(z)\) tiene un polo de orden \(m=2\) en \(z=1\). Aplicando la ecuación \ref{eq:residues_at_poles_phi} para calcular el residuo, se ve primero que 
+ \[
+  \phi'(z)=\frac{\dfrac{1}{z}(z+i)^2-2(z+i)\Log z}{(z+i)^4}=\frac{(z+i)-2z\Log z}{z(z+i)^3}
+ \]
+ y
+ \[
+  \phi'(i)=\frac{2i-2i\Log i}{i(2i)^3}=\frac{1-\dfrac{i\pi}{2}}{i(2i)^2}=\frac{1-\dfrac{i\pi}{2}}{-4i}
+   =\frac{\dfrac{\pi}{2}+i}{4}=\frac{\pi+2i}{8}.
+ \]
+ De la ecuación \ref{eq:residues_at_poles_phi} con \(m=2\) se obtiene que el residuo es
+ \[
+  B=\frac{\pi+2i}{8}.
+ \]
+ \item[(\textit{c})] La función 
+ \[
+  f(z)=\frac{z^{1/2}}{(z^2+1)^2}=\frac{z^{1/2}}{(z-i)^2(z+i)^2}
+ \]
+ tiene singularidades en \(z=\pm i\). Sea 
+ \[
+  f(z)=\frac{\phi(z)}{(z-i)^2}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{z^{1/2}}{(z+i)^2}=\frac{e^{\frac{1}{2}\log z}}{(z+i)^2},\qquad
+  |z|>0,\,0<\arg z<2\pi.
+ \]
+ Por los mismos argumentos empleados en las partes anteriores, \(\phi(z)\) es analítica en \(z=i\). Además,
+ teniendo en cuenta que 
+ \[
+  i^{1/2}=e^{\frac{1}{2}\log i}=e^{\frac{1}{2}(\ln1+i\pi/2)}=e^{i\pi/4}=\frac{1+i}{\sqrt{2}},
+ \]
+ se cumple que 
+ \[
+  \phi(i)=\frac{i^{1/2}}{(2i)^2}=-\frac{1+i}{4\sqrt{2}}\neq0.
+ \]
+ Esto indica que \(z=i\) es un polo de orden \(m=2\) de \(f(z)\). Luego,
+ \[
+  \phi'(z)=\frac{\dfrac{1}{2}z^{-1/2}(z+i)^2-2z^{1/2}(z+i)}{(z+i)^4}
+    =\frac{z^{-1/2}(z+i)-4z^{1/2}}{2(z+i)^3}
+ \]
+ y como
+ \[
+  i^{-1/2}=e^{-\frac{1}{2}\log i}=e^{-\frac{1}{2}(\ln1+i\pi/2)}=e^{-i\pi/4}=\frac{1-i}{\sqrt{2}},
+ \]
+ se tiene que 
+ \[
+  \phi'(i)=\frac{\dfrac{1-i}{\sqrt{2}}(2i)-4\dfrac{1+i}{\sqrt{2}}}{2(2i)^3}
+    =\frac{(1-i)i-2(1+i)}{\sqrt{2}(-8i)}=\frac{-(1-i)-2(i-1)}{8\sqrt{2}}
+    =\frac{1-i}{8\sqrt{2}}.
+ \]
+ De la ecuación \ref{eq:residues_at_poles_phi}, se concluye que el residuo es
+ \[
+  B=\frac{1-i}{8\sqrt{2}}.
+ \]
+\end{enumerate}
+
+\subsubsection*{Ejercicio 3}
+
+En cada caso, encontrar el orden \(m\) del polo y el correspondiente residuo \(B\) en la singularidad \(z=0\).
+\[
+ (\textit{a})\;\frac{\senh z}{z^4};\qquad\qquad (\textit{b})\;\frac{1}{z(e^z-1)}.
+\]
+
+\paragraph{Solución.}
+
+\begin{enumerate}
+ \item[(\textit{a})] Sea 
+ \[
+  f(z)=\frac{\senh z}{z^4}=\frac{\phi(z)}{z^4}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\senh z.
+ \]
+ Si bien \(\phi(z)\) es completa, se cumple que \(\phi(0)=0\), por lo que no puede emplearse el teorema de esta sección, así que hay que calcular explícitamente la serie de Laurent en torno a \(z=0\). Empleando la expansión \ref{eq:taylor_series_senh} de \(\senh z\), se ve que 
+ \begin{align*}
+  \frac{\senh z}{z^4}&=\frac{1}{z^4}\left(z+\frac{z^3}{3!}+\frac{z^5}{5!}+\cdots\right)\\ 
+    &=\frac{1}{z^3}+\frac{1}{3!}\cdot\frac{1}{z}+\frac{1}{5!}\cdot z+\cdots. 
+ \end{align*}
+ La expansión indica que \(z=0\) es un polo de orden \(m=3\) y el residuo es \(B=1/6\).
+ \item[(\textit{b})] Sea 
+ \[
+  f(z)=\frac{1}{z(e^z-1)}=\frac{\phi(z)}{z}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{1}{e^z-1}.
+ \]
+ Como \(\phi(z)\) no es analítica en \(z=0\), no puede emplearse el teorema de esta sección para ver si la singularidad es un polo, y hay que calcular la expansión en series de Laurent. De la expansión en series de Maclaurin \ref{eq:taylor_series_exponential} de la función exponencial, se tiene que 
+ \begin{align*}
+  \frac{1}{z(e^z-1)}&=\frac{1}{z\left[\left(1+\dfrac{z}{1!}+\dfrac{z^2}{2!}+\dfrac{z^3}{3!}+\cdots\right)-1\right]}\\
+   &=\frac{1}{\dfrac{z^2}{1!}+\dfrac{z^3}{2!}+\dfrac{z^4}{3!}+\cdots}
+ \end{align*}
+ Realizando la división larga,
+\[
+%\setlength\arraycolsep{0pt} 
+\setlength\extrarowheight{10pt}
+\begin{array}[t]{cccccc}
+                       & \dfrac{1}{z^2} & -\dfrac{1}{2}\cdot\dfrac{1}{z} & +\dfrac{1}{12} & +\cdots&\\[\medskipamount]
+\cline{2-5}
+z^2+\dfrac{1}{2}z^3+
+\dfrac{1}{6}z^4+\cdots 
+                \bigg) & 1  &   &  &  &\\
+                       & 1  & +\dfrac{1}{2}z & +\dfrac{1}{6}z^2 & +\cdots &\\[\medskipamount]
+\cline{2-5}
+                       &    & -\dfrac{1}{2}z &  -\dfrac{1}{6}z^2 & +\cdots &\\
+                       &    & -\dfrac{1}{2}z &  -\dfrac{1}{4}z^2 & +\cdots &\\[\medskipamount]
+\cline{3-5}
+                       &    &                  &  \dfrac{1}{12}z^2 & +\cdots &(a)\\
+                       &    &                  &  \dfrac{1}{12}z^2 & +\cdots &\\[\medskipamount]
+\cline{4-5}
+                       &    &                  &   & \vdots&\\
+\end{array}
+\]
+ donde en \((a)\) se consideró que 
+ \[
+  \left(\frac{1}{4}-\frac{1}{6}\right)z^2=\left(\frac{3-2}{12}\right)z^2=\frac{1}{12}z^2.
+ \]
+ Se obtuvo que 
+ \[
+  \frac{1}{z(e^z-1)}=\frac{1}{z^2}-\frac{1}{2}\cdot\frac{1}{z}+\frac{1}{12}+\cdots.
+ \]
+ La expansión indica que \(z=0\) es un polo de orden \(m=2\) y el residuo es \(B=-1/2\).
+\end{enumerate}
+
+\subsubsection*{Ejercicio 4}
+
+Encontrar el valor de la integral
+\[
+ \int_C\frac{3z^3+2}{(z-1)(z^2+9)}\,dz
+\]
+tomada en sentido antihorario sobre el círculo (\textit{a}) \(|z-2|=2\); (\textit{b}) \(|z|=4\).
+
+\paragraph{Solución.}
+
+La función del integrando 
+\[
+ f(z)=\frac{3z^3+2}{(z-1)(z^2+9)}=\frac{3z^3+2}{(z-1)(z-3i)(z+3i)} 
+\]
+tiene puntos singulares en \(z=1\) y en \(z=\pm3i\). Para calcular las integrales puede emplearse el teorema de los residuos de Cauchy (ver la sección \ref{eq:cauchy_residue_theorem}).
+\begin{figure}[!htb]
+  \begin{minipage}[c]{0.58\textwidth}
+    \includegraphics[width=\textwidth]{figuras/exercise_81_04.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.32\textwidth}
+    \caption{
+       Singularidades del integrando y contornos de integración en el ejercicio 4.
+    }\label{fig:exercise_81_04}
+  \end{minipage}
+\end{figure}
+
+\begin{enumerate}
+ \item[(\textit{a})] El único punto singular del integrando interior al círculo \(C:|z-2|=2\) es \(z=1\), como se muestra en la figura \ref{fig:exercise_81_04}, por lo que se calculará el residuo en ese punto. Sea el integrando
+ \[
+  f(z)=\frac{\phi(z)}{z-1}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{3z^3+2}{z^2+9}.
+ \]
+ \(\phi(z)\) es analítica en \(z=1\) y 
+ \[
+  \phi(1)=\frac{3+2}{1+9}=\frac{1}{2}\neq0.
+ \]
+ Por lo tanto, del teorema de esta sección, la singularidad en \(z=1\) es un polo simple con residuo
+ \[
+  \Res_{z=1}\frac{3z^3+2}{(z-1)(z^2+9)}=\frac{1}{2},
+ \]
+ y de la ecuación \ref{eq:cauchy_residue_theorem} se obtiene que 
+ \[
+  \int_C\frac{3z^3+2}{(z-1)(z^2+9)}\,dz=2\pi i\left(\frac{1}{2}\right)=\pi i.
+ \]
+ \item[(\textit{b})] Los tres puntos singulares del integrando son interiores al círculo \(C:|z|=4\), como se muestra en la figura \ref{fig:exercise_81_04}. El residuo del polo simple \(z=1\) fue calculado en la parte (\textit{a}), y se calcularán los residuos en las singularidades \(\pm3i\). Para encontrar el residuo en \(z=3i\), sea el integrando
+ \[
+  f(z)=\frac{\phi(z)}{z-3i}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{3z^3+2}{(z-1)(z+3i)}.
+ \]
+ La función \(\phi(z)\) es analítica en \(z=3i\) y vale 
+ \begin{align*}
+  \phi(3i)&=\frac{3(3i)^3+2}{(3i-1)(6i)}=\frac{-81i+2}{6(-3-i)}=\frac{(2-81i)(-3+i)}{6\cdot10}
+     =\frac{81-6+i(243+2)}{60}=\frac{75+245i}{60}\\
+     &=\frac{15+49i}{12}. 
+ \end{align*}
+ Por lo tanto, \(z=3i\) es un polo simple con residuo
+ \[
+  \Res_{z=3i}\frac{3z^3+2}{(z-1)(z^2+9)}=\frac{15+49i}{12}.
+ \]
+ Para encontrar el residuo punto singular en \(z=-3i\), sea 
+ \[
+  f(z)=\frac{\phi(z)}{z+3i}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{3z^3+2}{(z-1)(z-3i)}.
+ \]
+ La función \(\phi(z)\) es analítica en \(z=-3i\) y operando igual que antes, puede obtenerse que el residuo es
+ \[
+  \Res_{z=-3i}\frac{3z^3+2}{(z-1)(z^2+9)}=\frac{15-49i}{12}.
+ \]
+ Por lo tanto, de la ecuación \ref{eq:cauchy_residue_theorem} se obtiene que 
+ \begin{align*}
+  \int_C\frac{3z^3+2}{(z-1)(z^2+9)}\,dz&=2\pi i\left(\frac{1}{2}+\frac{15+49i}{12}+\frac{15-49i}{12}\right)\\
+   &=2\pi i\left(\frac{1}{2}+\frac{15}{6}\right)\\
+   &=\pi i\left(1+\frac{15}{3}\right)\\
+   &=\pi i\left(\frac{18}{3}\right)\\
+   &=6\pi i.
+ \end{align*}
+\end{enumerate}
+
+\subsubsection*{Ejercicio 5}
+
+Encontrar el valor de la integral
+\[
+ \int_C\frac{1}{z^3(z+4)}\,dz
+\]
+tomada en sentido antihorario sobre el círculo (\textit{a}) \(|z|=2\); (\textit{b}) \(|z+2|=3\).
+
+\paragraph{Solución.}
+
+La función del integrando tiene puntos singulares en \(z=0\) y en \(z=-4\).
+\begin{figure}[!htb]
+  \begin{minipage}[c]{0.58\textwidth}
+    \includegraphics[width=\textwidth]{figuras/exercise_81_05.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.32\textwidth}
+    \caption{
+       Singularidades del integrando y contornos de integración en el ejercicio 5.
+    }\label{fig:exercise_81_05}
+  \end{minipage}
+\end{figure}
+ 
+\begin{enumerate}
+ \item[(\textit{a})] El único punto singular del integrando interior al círculo \(C:|z|=2\) es \(z=0\), como se muestra en la figura \ref{fig:exercise_81_05}, por lo que se calculará el residuo en ese punto. Sea el integrando
+ \[
+  f(z)=\frac{\phi(z)}{z^3}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{1}{z+4}.
+ \]
+ \(\phi(z)\) es analítica en \(z=0\) y 
+ \[
+  \phi(0)=\frac{1}{4}\neq0.
+ \]
+ Por lo tanto, del teorema de esta sección, la singularidad en \(z=0\) es un polo de orden \(m=3\). El residuo puede calcularse con la ecuación \ref{eq:residues_at_poles_phi}. Para hacerlo se ve que 
+ \[
+  \phi'(z)=-\frac{1}{(z+4)^2}
+  \qquad\qquad\textrm{y}\qquad\qquad
+  \phi''(z)=\frac{2}{(z+4)^3}
+ \]
+ y por lo tanto,
+ \[
+  \phi''(0)=\frac{2}{4^3}=\frac{2}{64}
+ \]
+ resultando en que 
+ \[
+  \Res_{z=0}\frac{1}{z^3(z+4)}=\frac{\phi''(0)}{2!}=\frac{1}{64}.
+ \]
+ Finalmente, de la ecuación \ref{eq:cauchy_residue_theorem} se obtiene que 
+ \[
+  \int_C\frac{1}{z^3(z+4)}\,dz=2\pi i\left(\frac{1}{64}\right)=\frac{\pi i}{32}.
+ \] 
+ \item[(\textit{b})] Como se muestra en la figura \ref{fig:exercise_81_05}, las dos singularidades del integrando son interiores al círculo de integración \(C:|z+2|=3\). El residuo de la singularidad en \(z=0\) se calculó en la parte (\textit{a}), por lo que solo queda calcular el residuo en el punto singular \(z=-4\). Con 
+ \[
+  f(z)=\frac{\phi(z)}{(z+4)}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{1}{z^3}
+ \]
+ y observando que \(\phi(z)\) es analítica en \(z=-4\) y que 
+ \[
+  \phi(-4)=\frac{1}{(-4)^3}=-\frac{1}{64},
+ \]
+ se concluye que \(z=-4\) es un polo simple de \(f(z)\) con residuo
+ \[
+  \Res_{z=-4}\frac{1}{z^3(z+4)}=-\frac{1}{64}.
+ \]
+ Por lo tanto, de la ecuación \ref{eq:cauchy_residue_theorem} se obtiene que 
+ \[
+  \int_C\frac{1}{z^3(z+4)}\,dz=2\pi i\left(\frac{1}{64}-\frac{1}{64}\right)=0.
+ \]
+\end{enumerate} 
+ 
+\subsubsection*{Ejercicio 6}
+
+Evaluar la integral
+\[
+ \int_C\frac{\cosh\pi z}{z(z^2+1)}\,dz
+\]
+cuando \(C\) es el círculo \(|z|=2\) orientado en sentido positivo. 
+
+\paragraph{Solución.}
+
+La función del integrando 
+\[
+ f(z)=\frac{\cosh\pi z}{z(z^2+1)}=\frac{\cosh\pi z}{z(z-i)(z+i)}
+\]
+tiene puntos singulares en \(z=0\) y en \(z=\pm i\), todos interiores al círculo \(C\). Por lo tanto, la integral puede evaluarse calculando el residuo de cada uno de los puntos singulares. Previamente, de la ecuación \ref{eq:hyperbolic_functions_definition}, se ve que 
+\[
+ \cosh0=\frac{e^0+e^0}{2}=1
+ \qquad\qquad\textrm{y}\qquad\qquad
+ \cosh(\pm\pi i)=\frac{e^{\pm\pi i}+e^{\mp\pi i}}{2}=\frac{(-1)+(-1)}{2}=(-1).
+\]
+\begin{itemize}
+ \item Residuo en \(z=0\): siendo
+ \[
+  f(z)=\frac{\phi(z)}{z}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{\cosh\pi z}{(z^2+1)}
+ \]
+ y considerando que \(\phi(0)=1\neq0\), resulta en que \(z=0\) es un polo simple con residuo
+ \[
+  \Res_{z=0}\frac{\cosh\pi z}{z(z^2+1)}=1.
+ \]
+ \item Residuo en \(z=i\): siendo
+ \[
+  f(z)=\frac{\phi(z)}{z-i}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{\cosh\pi z}{z(z+i)}
+ \]
+ se observa que
+ \[
+  \phi(i)=\frac{\cosh\pi i}{i(2i)}=\frac{-1}{-2}=\frac{1}{2}\neq=0.
+ \]
+ Por lo tanto, \(z=i\) es un polo simple con residuo
+ \[
+  \Res_{z=i}\frac{\cosh\pi z}{z(z^2+1)}=\frac{1}{2}.
+ \]
+ \item Residuo en \(z=-i\): siendo
+ \[
+  f(z)=\frac{\phi(z)}{z+i}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  \phi(z)=\frac{\cosh\pi z}{z(z-i)}
+ \]
+ se observa que
+ \[
+  \phi(-i)=\frac{\cosh(-\pi i)}{-i(-2i)}=\frac{-1}{-2}=\frac{1}{2}\neq=0.
+ \]
+ Por lo tanto, \(z=i\) es un polo simple con residuo
+ \[
+  \Res_{z=-i}\frac{\cosh\pi z}{z(z^2+1)}=\frac{1}{2}.
+ \]
+\end{itemize}
+Combinando los resultados, resulta en que 
+\[
+ \int_C\frac{\cosh\pi z}{z(z^2+1)}\,dz=2\pi i\left(1+\frac{1}{2}+\frac{1}{2}\right)=4\pi i.
+\] 
+ 
+\subsubsection*{Ejercicio 7}
+
+Empleando el teorema de la sección \ref{sec:residue_at_infinity}, que involucra un único residuo, evaluar la integral de \(f(z)\) sobre el círculo \(|z|=3\) orientado positivamente cuando 
+\[
+ (\textit{a})\;f(z)=\frac{(3z+2)^2}{z(z-1)(2z+5)};\qquad\qquad(\textit{b})\;f(z)=\frac{z^3e^{1/z}}{1+z^3}.
+\]
+
+\paragraph{Solución.}
+
+\begin{enumerate}
+ \item[(\textit{a})] Las singularidades de \(f(z)\) son los puntos \(z=0\), \(z=1\) y \(z=-5/2\), todas interiores al círculo de integración \(|z|=3\). Para evaluar la integral se empleará la ecuación \ref{eq:residue_at_infinity_integral_evaluation}. Para hacerlo, se ve que 
+ \begin{align*}
+  \frac{1}{z^2}f\left(\frac{1}{z}\right)&=\frac{1}{z^2}\frac{\left(\dfrac{3}{z}+2\right)^2}{\dfrac{1}{z}\left(\dfrac{1}{z}-1\right)\left(\dfrac{2}{z}+5\right)}\\
+   &=\frac{1}{z^2}\frac{\dfrac{1}{z^2}(3+2z)^2}{\dfrac{1}{z^3}(1-z)(2+5z)}\\
+   &=\frac{(3+2z)^2}{z(1-z)(2+5z)}.
+ \end{align*}
+ Para calcular el residuo en la singularidad \(z=0\) de esta función puede emplearse el teorema de esta sección. Sea 
+ \[
+   \frac{1}{z^2}f\left(\frac{1}{z}\right)=\frac{\phi(z)}{z}
+   \qquad\qquad\textrm{donde}\qquad\qquad
+   \phi(z)=\frac{(3+2z)^2}{(1-z)(2+5z)}.
+ \]
+ \(\phi(z)\) es analítica en \(z=0\) y 
+ \[
+  \phi(0)=\frac{9}{2}\neq0.
+ \]
+ Esto indica que 
+ \[
+  \Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right]=\frac{9}{2}.
+ \]
+ Por lo tanto,
+ \[
+  \int_C\frac{(3z+2)^2}{z(z-1)(2z+5)}\,dz=2\pi i\left(\frac{9}{2}\right)=9\pi i.
+ \]
+ \item[(\textit{b})] Las singularidades de \(f(z)\) son los puntos que cumplen que \(z^3=-1\) o \(z=(-1)^{1/3}\) y son
+ \[
+  (-1)^{1/3}\overset{(a)}{=}e^{\frac{1}{3}\log(-1)}=e^{\frac{1}{3}[\ln1+i(1+2n)\pi]}=e^{i(1+2n)\pi/3}
+  \qquad\qquad\textrm{con}\qquad\qquad
+  n=0,\,1,\,2,
+ \]
+ donde en \((a)\) se empleó la definición \ref{eq:power_function}. Como los puntos singulares tienen módulo unidad, son todos interiores al círculo de integración \(|z|=3\), y se puede emplear la ecuación  \ref{eq:residue_at_infinity_integral_evaluation} para el cálculo de la integral. De esta forma,
+ \[
+  \frac{1}{z^2}f\left(\frac{1}{z}\right)=\frac{1}{z^2}\frac{\dfrac{1}{z^3}e^{z}}{1+\dfrac{1}{z^3}}=\frac{e^{z}}{z^2(z^3+1)}.
+ \]
+ El residuo en cero de esta función puede calcularse empleando el teorema de esta sección (ver la ecuación \ref{eq:residues_at_poles_phi}). Sea 
+ \[
+  \frac{1}{z^2}f\left(\frac{1}{z}\right)=\frac{\phi(z)}{z^2}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+   \phi(z)=\frac{e^z}{z^3+1}.
+ \]
+ \(\phi(z)\) es analítica en \(z=0\) y \(\phi(0)=1\). Por lo tanto, el punto \(z=0\) es un polo de orden \(m=2\) de esta función. Para calcular el residuo, se ve que 
+ \[
+  \phi'(z)=\frac{e^z(1+z^3)-3e^zz^2}{(1+z^3)^2}=\frac{e^z(z^3-3z^2+1)}{(1+z^3)^2},
+ \]
+ y por lo tanto \(\phi'(0)=1\), resultando en que 
+ \[
+  \Res_{z=0}\left[\frac{1}{z^2}f\left(\frac{1}{z}\right)\right]=1.
+ \] 
+ Se concluye que 
+ \[
+  \int_C\frac{z^3e^{1/z}}{1+z^3}\,dz=2\pi i.
+ \] 
+\end{enumerate} 
+
+\subsubsection*{Ejercicio 8}
+
+Sea \(z_0\) un punto singular aislado de una función \(f\) y supóngase que 
+\[
+ f(z)=\frac{\phi(z)}{(z-z_0)^m},
+\]
+donde \(m\) es un entero positivo y \(\phi(z)\) es analítica y no nula en \(z_0\). Aplicando la extensión de la fórmula integral de Cauchy (ver la sección \ref{sec:cauchy_integral_formula_extension}) a la función \(\phi(z)\), mostrar que 
+\[
+ \Res_{z=z_0}f(z)=\frac{\phi^{(m-1)}(z_0)}{(m-1)!},
+\]
+como indica el teorema de esta sección.
+
+\emph{Sugerencia:} como hay un entorno \(|z-z_0|<\epsilon\) en el cual \(\phi(z)\) es analítica (ver la sección \ref{sec:analytic_functions}), el contorno empleado en la fórmula integral de Cauchy extendida puede ser el círculo \(|z-z_0|<\epsilon/2\).
+
+\paragraph{Solución.} Como \(\phi(z)\) es analítica en \(z_0\), existe algún entorno en \(|z-z_0|<\epsilon\) donde \(\phi(z)\) es analítica (ver la sección \ref{sec:analytic_functions}). Por lo tanto, si \(C\) es el círculo \(|z-z_0|<\epsilon/2\) orientado positivamente, \(\phi(z)\) es analítica en el interior y sobre \(C\), por lo que puede aplicarse la extensión de la fórmula integral de Cauchy dada por la ecuación \ref{eq:cauchy_integral_formula_extension}, obteniendo que 
+\[
+ \int_Cf(z)\,dz=\int_C\frac{\phi(z)}{(z-z_0)^m}\,dz=2\pi i\frac{\phi^{(m-1)}(z_0)}{(m-1)!}.
+\]
+Por otro lado, como \(\phi(z)\) es analítica en \(|z-z_0|<\epsilon\), \(f(z)\) es analítica en el entorno reducido \(0<|z-z_0|<\epsilon\). Por lo tanto, como \(z_0\) es el único punto singular de \(f(z)\) interior al contorno \(C\), de la ecuación \ref{eq:residues_integral_evaluation_res} del teorema de los residuos de Cauchy se cumple que
+\[
+ \int_C f(z)\,dz=2\pi i\Res_{z=z_0}f(z).
+\]
+Combinando estos dos resultados, se obtiene lo que se quería mostrar.
+
+\section{Ceros de funciones analíticas}\label{sec:zeros_of_analytic_functions}
+
+Los ceros y los polos de funciones están estrechamente relacionados. De hecho, en la sección siguiente se verá como los ceros pueden ser una fuente de polos. Para eso, se necesitan algunos resultados previos respecto a los ceros de funciones analíticas.
+
+Supóngase que una función es analítica en un punto \(z_0\). Del teorema 1 de la sección \ref{sec:cauchy_integral_formula_extension_consecuences} se sabe que todas las derivadas \(f^{(n)}(z)\) con \(n=1,\,2,\,\dots\) existen en \(z_0\). Si \(f(z_0)=0\) y hay un entero positivo \(m\) tal que 
+\begin{equation}\label{eq:zero_order_m_condition}
+ f(z_0)=f'(z_0)=f''(z_0)=\cdots=f^{(m-1)}(z_0)=0 
+ \qquad\qquad\textrm{y}\qquad\qquad
+ f^{(m)}(z_0)\neq0,
+\end{equation}
+se dice que \(f\) tiene un \emph{cero de orden \(m\)} en \(z_0\). Como siempre, se considera que \(f^{(0)}(z_0)=f(z_0)\) cuando \(m=1\). El siguiente primer teorema brinda una definición alternativa útil de los  ceros de orden \(m\).
+
+\paragraph{Teorema 1.} Sea \(f\) una función analítica en un punto \(z_0\). Las siguientes dos afirmaciones son equivalentes:
+\begin{enumerate}
+ \item[(\textit{a})] \(f\) tiene un cero de orden \(m\) en \(z_0\);
+ \item[(\textit{b})] existe una función \(g\), que es analítica y no nula en \(z_0\), tal que 
+ \begin{equation}\label{eq:zero_order_m_condition_alt}
+  f(z)=(z-z_0)^mg(z).  
+ \end{equation}
+\end{enumerate}
+
+La prueba del teorema tiene dos partes. Primero se probará que la afirmación (\textit{a}) implica la afirmación (\textit{b}) y luego que la afirmación (\textit{b}) implica la afirmación (\textit{a}). Ambas partes emplean el hecho de que si una función es analítica en un punto \(z_0\), debe tener una representación en series de Taylor en potencias de \((z-z_0)\) que es válida en algún entorno \(|z-z_0|<\epsilon\) de \(z_0\) (ver la sección \ref{sec:taylor_series}).
+
+\subsubsection*{(\textit{a}) implica (\textit{b})}
+
+Se comienza la primera parte de la prueba asumiendo que \(f\) tiene un cero de orden \(m\) en \(z_0\) y mostrando como eso implica la afirmación (\textit{b}). La analiticidad de \(f\) en \(z_0\) y las condiciones \ref{eq:zero_order_m_condition} implican que en algún entorno \(|z-z_0|<\epsilon\) hay una representación en series
+\begin{align*}
+ f(z)&=\frac{f^{(m)}(z_0)}{m!}(z-z_0)^m+\frac{f^{(m+1)}(z_0)}{(m+1)!}(z-z_0)^{m+1}+\frac{f^{(m+2)}(z_0)}{(m+2)!}(z-z_0)^{m+2}+\cdots\\
+  &=(z-z_0)^m\left[\frac{f^{(m)}(z_0)}{m!}+\frac{f^{(m+1)}(z_0)}{(m+1)!}(z-z_0)+\frac{f^{(m+2)}(z_0)}{(m+2)!}(z-z_0)^2+\cdots\right].
+\end{align*}
+En consecuencia, \(f(z)\) tiene la forma que indica la afirmación (\textit{b}) donde 
+\[
+ g(z)=\frac{f^{(m)}(z_0)}{m!}+\frac{f^{(m+1)}(z_0)}{(m+1)!}(z-z_0)+\frac{f^{(m+2)}(z_0)}{(m+2)!}(z-z_0)^2+\cdots
+ \qquad\quad\textrm{cuando}\qquad\quad
+ |z-z_0|<\epsilon.
+\]
+La convergencia de esta serie cuando \(|z-z_0|<\epsilon\) asegura que \(g\) es analítica en dicho entorno y, en particular, en \(z_0\) (ver la sección \ref{sec:series_integration_differentiation}). Además,
+\[
+ g(z_0)=\frac{f^{(m)}(z_0)}{m!}\neq0.
+\]
+Esto completa la prueba de la primera parte del teorema.
+
+\subsubsection*{(\textit{b}) implica (\textit{a})}
+
+Ahora se asume que \(f(z)\) tiene la expresión indicada en la parte (\textit{b}), y se observa que como \(g(z)\) es analítica en \(z_0\) tiene una representación en series 
+\[
+ g(z)=g(z_0)+\frac{g'(z_0)}{1!}(z-z_0)+\frac{g''(z_0)}{2!}(z-z_0)^2+\cdots 
+\]
+en algún entorno \(|z-z_0|<\epsilon\) en \(z_0\). Por lo tanto, la expresión para \(f(z)\) en la parte (\textit{b}) toma la forma 
+\[
+ f(z)=g(z_0)(z-z_0)^m+\frac{g'(z_0)}{1!}(z-z_0)^{m+1}+\frac{g''(z_0)}{2!}(z-z_0)^{m+2}+\cdots 
+\]
+cuando \(|z-z_0|<\epsilon\). Pero por el teorema 1 de la sección \ref{sec:series_representation_unicity}, esta es la representación en series de Taylor de \(f(z)\), y las condiciones \ref{eq:zero_order_m_condition} se cumplen. En particular (ver la ecuación \ref{eq:taylor_series_an_definition}),
+\[
+ f^{(m)}(z_0)=m!g(z_0)\neq0.
+\]
+Se concluye que \(z_0\) es un cero de orden \(m\) de \(f\), completando la prueba.
+
+El siguiente teorema es la declaración formal del hecho de que una función analítica \(f(z)\) tiene únicamente \emph{ceros aislados} cuando no es idénticamente nula. Esto significa que si \(z_0\) es un cero de dicha función \(f(z)\), existe un entorno reducido \(0<|z-z_0|<\epsilon\) de \(z_0\) en el cual \(f(z)\) no es nula. Notar la analogía con la definición de singularidad aislada de la sección \ref{sec:isolated_singular_points}. 
+
+\paragraph{Teorema 2.} Dada una función \(f\) y un punto \(z_0\), supóngase que
+\begin{enumerate}
+ \item[(\textit{a})] \(f\) es analítica en \(z_0\);
+ \item[(\textit{b})] \(f(z_0)=0\) pero \(f(z)\) no es idénticamente nula en ningún entorno de \(z_0\).
+\end{enumerate}
+Entonces, \(f(z)\neq0\) en algún entorno reducido \(0<|z-z_0|<\epsilon\) de \(z_0\).
+
+Para la prueba, sea \(f\) como en las hipótesis y obsérvese que no todas las derivadas de \(f\) en \(z_0\) son nulas. Si así fuera, todos los coeficientes de la serie de Taylor de \(f\) en \(z_0\) serían cero, y eso significaría que \(f(z)\) es idénticamente nula en algún entorno de \(z_0\), contradiciendo las hipótesis. Por lo tanto, de la definición de ceros de orden \(m\) al comienzo de esta sección, es claro que \(f\) debe tener un cero de algún orden \(m\) finito en \(z_0\). Entonces, de acuerdo al teorema 1,
+\begin{equation}\label{eq:zero_order_m_condition_alt_tmp}
+ f(z)=(z-z_0)^mg(z), 
+\end{equation}
+donde \(g(z)\) es analítica y no nula en \(z_0\). Pero además de ser no nula, \(g\) es continua en \(z_0\) por ser analítica allí. Por lo tanto, hay algún entorno \(|z-z_0|<\epsilon\) de \(z_0\) en donde se cumple la condición \ref{eq:zero_order_m_condition_alt_tmp} en donde \(g(z)\neq0\), como indica el teorema 2 de la sección \ref{sec:continuity_definition}. En consecuencia, \(f(z)\neq0\) en el entorno reducido \(0<|z-z_0|<\epsilon\), completando la prueba.
+
+El siguiente último teorema aquí trata de funciones con ceros que no son aislados. Fue referido previamente en la sección \ref{sec:uniquely_determined_analytic_functions} y establece un contraste interesante con el teorema 2.
+
+\paragraph{Teorema 3.} Dada una función \(f\) y un punto \(z\), supóngase que 
+\begin{enumerate}
+ \item[(\textit{a})] \(f\) es analítica en un entorno \(N_0\) de \(z_0\);
+ \item[(\textit{b})] \(f(z)=0\) en cada punto \(z\) de un dominio \(D\) o segmento de recta \(L\) que contiene a \(z_0\) (ver la figura \ref{fig:zeros_theorem_3}).
+\end{enumerate}
+Entonces, \(f(z)=0\) en \(N_0\), es decir, \(f(z)\) es idénticamente nula en \(N_0\).
+\begin{figure}[!htb]
+  \begin{minipage}[c]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figuras/zeros_theorem_3.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.4\textwidth}
+    \caption{
+       Teorema 3. Entorno \(N_0\) de \(z_0\) y dominio \(D\) y segmento \(L\) que contienen a \(z_0\).
+    }\label{fig:zeros_theorem_3}
+  \end{minipage}
+\end{figure}
+
+Se comienza la prueba observando que bajo las hipótesis indicadas, \(f(z)\equiv0\) en algún entorno \(N\) de \(z_0\). De no ser así, de acuerdo al teorema 2, existiría un entorno reducido de \(z_0\) en el cual \(f(z)\neq0\), y eso es inconsistente con la condición de que \(f(z)=0\) en todos lados en el dominio \(D\) o en el segmento \(L\) que contiene a \(z_0\). Como \(f(z)\equiv0\) en el entorno \(N\), se cumple que todos los coeficientes 
+\[
+ a_n=\frac{f^{(n)}(z_0)}{n!}
+ \qquad\qquad\textrm{con}\qquad\qquad
+ n=0,\,1,\,2,\,\dots
+\]
+de la serie de Taylor de \(f(z)\) en torno a \(z_0\) deben ser cero. Por lo tanto, \(f(z)\equiv0\) en el entorno \(N_0\), ya que la serie también representa a \(f(z)\) en \(N_0\). Esto completa la prueba.
+
+\section{Ceros y polos}\label{sec:zeros_and_poles}
+
+El siguiente teorema establece una conexión entre ceros de orden \(m\) y polos de orden \(m\).
+
+\paragraph{Teorema 1.} Supóngase que 
+\begin{enumerate}
+ \item[(\textit{a})] dos funciones \(p\) y \(q\) son analíticas en un punto \(z_0\);
+ \item[(\textit{b})] \(p(z_0)\neq0\) y \(q\) tiene un cero de orden \(m\) en \(z_0\).
+\end{enumerate}
+Entonces, el cociente \(p(z)/q(z)\) tiene un polo de orden \(m\) en \(z_0\). 
+
+La prueba es sencilla. Sean \(p\) y \(q\) como indican las hipótesis del teorema. Como \(q\) tiene un cero de orden \(m\) en \(z_0\), del teorema 2 de la sección \ref{sec:zeros_of_analytic_functions} se sabe que hay un entorno reducido de \(z_0\) en el cual \(q(z)\neq0\). Esto indica que \(z_0\) es un punto singular aislado del cociente \(p(z)/q(z)\). Adicionalmente, el teorema 1 de la sección \ref{sec:zeros_of_analytic_functions} indica que 
+\[
+ q(z)=(z-z_0)^mg(z),
+\]
+donde \(g(z)\) es analítica y no nula en \(z_0\). En consecuencia,
+\begin{equation}\label{eq:zeros_and_poles_quotient_phi}
+ \frac{p(z)}{q(z)}=\frac{\phi(z)}{(z-z_0)^m}
+ \qquad\qquad\textrm{donde}\qquad\qquad
+ \phi(z)=\frac{p(z)}{g(z)}. 
+\end{equation}
+Como \(\phi(z)\) es analítica y no nula en \(z_0\), el teorema de la sección \ref{sec:residues_at_poles} indica que \(z_0\) es un polo de orden \(m\) de \(p(z)/q(z)\).  
+
+Este teorema conduce a otro método para identificar polos simples y calcular sus correspondientes residuos. El método se establece en el siguiente teorema y en ocasiones es mas simple de usar que el del teorema de la sección \ref{sec:residues_at_poles}.
+
+\paragraph{Teorema 2.} Sean dos funciones \(p\) y \(q\) analíticas en \(z_0\). Si 
+\[
+ p(z_0)\neq0,\qquad 
+ q(z_0)=0\qquad\textrm{y}\qquad 
+ q'(z_0)\neq0,
+\]
+entonces \(z_0\) es un polo simple del cociente \(p(z)/q(z)\) y 
+\begin{equation}\label{eq:zeros_and_poles_quotient_residue_order_1}
+ \Res_{z=z_0}\frac{p(z)}{q(z)}=\frac{p(z_0)}{q'(z_0)}. 
+\end{equation}
+
+Para la prueba, asúmase que \(p\) y \(q\) son como indican las hipótesis, y por las condiciones sobre \(q\), \(z_0\) es un cero de orden \(m=1\) de esa función. Por lo tanto, de acuerdo al teorema 1 de la sección \ref{sec:zeros_of_analytic_functions},
+\begin{equation}\label{eq:zero_order_1_tmp}
+ q(z)=(z-z_0)g(z), 
+\end{equation}
+donde \(g(z)\) es analítica y no nula en \(z_0\). Es mas, el teorema 1 de esta sección indica que \(z_0\) es un polo simple del cociente \(p(z)/q(z)\), y la expresión \ref{eq:zeros_and_poles_quotient_phi} de \(p(z)/q(z)\) de la prueba de ese teorema es en este caso
+\[
+ \frac{p(z)}{q(z)}=\frac{\phi(z)}{z-z_0}
+ \qquad\qquad\textrm{donde}\qquad\qquad
+ \phi(z)=\frac{p(z)}{g(z)}. 
+\]
+Como \(\phi(z)\) es analítica y no nula en \(z_0\), del teorema de la sección \ref{sec:residues_at_poles} se sabe que 
+\begin{equation}\label{eq:zeros_and_poles_theorem_2_tmp}
+ \Res_{z=z_0}\frac{p(z)}{q(z)}=\frac{p(z_0)}{g(z_0)}.
+\end{equation}
+Pero diferenciando ambos lados de la ecuación \ref{eq:zero_order_1_tmp}, se obtiene que 
+\[
+ q'(z)=g(z)+(z-z_0)g'(z)
+\]
+y por lo tanto,
+\[
+ q'(z_0)=g(z_0).
+\]
+Sustituyendo este resultado en la ecuación \ref{eq:zeros_and_poles_theorem_2_tmp} se obtiene la ecuación \ref{eq:zeros_and_poles_quotient_residue_order_1}, concluyendo la prueba.
+
+Existen expresiones similares a la expresión \ref{eq:zeros_and_poles_quotient_residue_order_1} para residuos de polos de mayor orden, pero en general son mas complicadas y no son prácticas.
+
+\subsection*{Ejercicios}
+
+\subsubsection{Ejercicio 1}
+
+Mostrar que el punto \(z=0\) es un polo simple de la función
+\[
+ f(z)=\csc z=\frac{1}{\sen z}
+\]
+y que el residuo es la unidad recurriendo al teorema 2 de esta sección. Comparar con el ejercicio 3 de la sección \ref{sec:series_multiplication_division}, donde el resultado es evidente de la serie de Laurent.
+
+\paragraph{Solución.} Las funciones \(p(z)=1\) y \(q(z)=\sen z\) son completas y 
+\[
+ p(0)=1\neq0,
+ \qquad\qquad 
+ q(0)=0
+ \qquad\qquad\textrm{y}\qquad\qquad
+ q'(0)=\cos0=1\neq0.
+\]
+Por lo tanto, el teorema 2 de esta sección indica que \(z=0\) es un polo simple con residuo (ver la ecuación \ref{eq:zeros_and_poles_quotient_residue_order_1})
+\[
+ B_0=\frac{p(0)}{q'(0)}=1.
+\]
+
+En el ejercicio 3 de la sección \ref{sec:series_multiplication_division} se calculó la serie de Laurent de \(f(z)\) en torno al punto \(z=0\), y se observa que el coeficiente del término \(1/z\), que es el residuo correspondiente a ese punto singular, es \(1\), acorde al resultado obtenido en este ejercicio.
+
+
+
+\subsubsection{Ejercicio 2} 
+ 
+Emplear las condiciones \ref{eq:zero_order_m_condition} para mostrar que la función 
+\[
+q(z)=1-\cos z 
+\]
+tiene un cero de orden \(m=2\) en el punto \(z_0=0\). 
+
+\paragraph{Solución.} Observando que \(q\) es completa y que
+\[
+ q(0)=1-1=0,
+ \qquad\qquad 
+ q'(z)=\sen z
+ \quad\Rightarrow\quad 
+ q'(0)=0,
+ \qquad\qquad 
+ q''(z)=\cos z
+ \quad\Rightarrow\quad 
+ q''(0)=1.
+\]
+Esto indica que el punto \(z_0=0\) es un cero de orden \(m=2\) de \(q\).
+
+\subsubsection{Ejercicio 3}
+
+Mostrar que 
+\begin{enumerate}
+ \item[(\textit{a})] \(\displaystyle\Res_{z=\pi i/2}\frac{\senh z}{z^2\cosh z}=-\frac{4}{\pi^2}\);
+ \item[(\textit{b})] 
+ \(\displaystyle\Res_{z=\pi i}\frac{\exp(zt)}{\senh z}+\Res_{z=-\pi i}\frac{\exp(zt)}{\senh z}=-2\cos(\pi t)\).
+\end{enumerate}
+
+\paragraph{Solución.} 
+
+Para calcular los residuos, se empleará el teorema 2 de esta sección.
+
+\begin{enumerate}
+ \item[(\textit{a})] Las funciones \(p(z)=\senh z\) y \(q(z)=z^2\cosh z\) son completas, y se quiere calcular el residuo en el punto \(z=\pi i/2\). Se observa que 
+ \[
+  p(\pi i/2)=\senh(\pi i/2)=\frac{e^{i\pi/2}-e^{-i\pi/2}}{2}=\frac{i-(-i)}{2}=i\neq0,
+ \]
+ y además, como \(\cosh(\pi i/2)=0\), como indica el teorema de la sección \ref{sec:hyperbolic_functions},
+ \[
+  q(\pi i/2)=0.
+ \]
+ Además, de la ecuación \ref{eq:sinh_cosh_derivatives},
+ \[
+  q'(z)=2z\cosh z+z^2\senh z,
+ \]
+ y por lo tanto,
+ \[
+  q'(\pi i/2)=2(\pi i/2)\cosh(\pi i/2)+(\pi i/2)^2\senh(\pi i/2)=\left(\frac{\pi i}{2}\right)^2i=-\frac{\pi^2i}{4}\neq0.
+ \]
+ Finalmente, de la ecuación \ref{eq:zeros_and_poles_quotient_residue_order_1},
+ \[
+  \Res_{z=\pi i/2}\frac{p(z)}{q(z)}=\frac{p(\pi i/2)}{q'(\pi i/2)}=\dfrac{i}{-\dfrac{\pi^2i}{4}}=-\frac{4}{\pi^2}.
+ \]
+ \item[(\textit{b})] Para calcular el residuo en el punto \(z=\pi i\), siendo las funciones completas \(p(z)=\exp(zt)\) y \(q(z)=\senh z\), se ve que 
+ \[
+  p(\pi i)=e^{i\pi t}\neq0
+  \quad\textrm{para todo }t,
+ \]
+ \(q(\pi i)=\senh(\pi i)=0\), como indica el teorema de la sección \ref{sec:hyperbolic_functions}, y considerando la ecuación \ref{eq:sinh_cosh_derivatives},
+ \[
+  q'(z)=\cosh z
+  \qquad\Rightarrow\qquad 
+  q'(\pi i)=\cosh(\pi i)=\frac{e^{i\pi}+e^{-i\pi}}{2}=\frac{(-1)+(-1)}{2}=-1\neq0.
+ \]
+ Por lo tanto,
+ \[
+  \Res_{z=\pi i}\frac{p(z)}{q(z)}=\frac{p(\pi i)}{q'(\pi i)}=\frac{e^{i\pi t}}{(-1)}=-e^{i\pi t}.
+ \]
+ De forma similar, para calcular el residuo en \(z=-\pi i\), se ve que 
+ \[
+  p(-\pi i)=e^{-i\pi t}\neq0
+  \quad\textrm{para todo }t,
+ \]
+ \(q(-\pi i)=\senh(-\pi i)=0\) y
+ \[
+  q'(-\pi i)=\cosh(-\pi i)=\frac{e^{-i\pi}+e^{i\pi}}{2}=\frac{(-1)+(-1)}{2}=-1\neq0,
+ \]
+ resultando en que 
+ \[
+  \Res_{z=-\pi i}\frac{p(z)}{q(z)}=\frac{p(-\pi i)}{q'(-\pi i)}=\frac{e^{-i\pi t}}{(-1)}=-e^{-i\pi t}.
+ \]
+ Combinando los resultados, se obtiene que 
+ \[
+  \Res_{z=\pi i}\frac{\exp(zt)}{\senh z}+\Res_{z=-\pi i}\frac{\exp(zt)}{\senh z}=-e^{i\pi t}-e^{-i\pi t}=-2\cos(\pi t).
+ \]
+\end{enumerate}
+
+\subsubsection{Ejercicio 4}
+
+Mostrar que 
+\begin{enumerate}
+ \item[(\textit{a})] \(\displaystyle\Res_{z=z_n}(z\sec z)=(-1)^{n+1}z_n\) donde \(\displaystyle z_n=\frac{\pi}{2}+n\pi\) con \(n=0,\,\pm1,\,\pm2,\,\dots\);
+ \item[(\textit{b})] 
+ \(\displaystyle\Res_{z=z_n}(\tanh z)=1\) donde \(\displaystyle z_n=\left(\frac{\pi}{2}+n\pi\right)i\) con \(n=0,\,\pm1,\,\pm2,\,\dots\).
+\end{enumerate}
+
+\paragraph{Solución.} 
+
+Para calcular los residuos, se empleará el teorema 2 de esta sección.
+
+\begin{enumerate}
+ \item[(\textit{a})] Considerando que (ver la ecuación \ref{eq:tan_cot_sec_csc_definition})
+ \[
+  z\sec z=\frac{z}{\cos z},
+ \]
+ se quiere calcular los residuos en los puntos
+ \[
+  z_n=\frac{\pi}{2}+n\pi 
+  \qquad\qquad\textrm{con}\qquad\qquad
+  n=0,\,\pm1,\,\pm2,\,\dots.
+ \]
+ Con \(p(z)=z\) y \(q(z)=\cos z\), se tiene que \(p(z_n)=z_n\neq0\) para todo \(n\). Además, del teorema de la sección \ref{sec:zeros_singularities_trigonometric}, \(q(z_n)=\cos z-n=0\) para todo \(n\), y como
+ \(q'(z)=-\sen z\),  se cumple que
+ \[
+  q'(z_n)=-\sen\left(\frac{\pi}{2}+n\pi\right)\overset{(a)}{=}-\cos(n\pi)=-\frac{e^{in\pi}+e^{-in\pi}}{2}
+   =-\frac{(-1)^n+(-1)^n}{2}=-(-1)^n=(-1)^{n+1},
+ \]
+ donde en \((a)\) se empleó la identidad trigonométrica en \ref{eq:sin_and_cosine_double_angle}. Se concluye que 
+ \[
+  \Res_{z=z_n}(z\sec z)=\frac{p(z_n)}{q'(z_n)}=\frac{z_n}{(-1)^{n+1}}=z_n(-1)^{n+1}.
+ \]
+ \item[(\textit{b})] Se quiere calcular los residuos de
+ \[
+  \tanh z=\frac{\senh z}{\cosh z}
+ \]
+ en los puntos
+ \[
+  z_n=\left(\frac{\pi}{2}+n\pi\right)i 
+  \qquad\qquad\textrm{con}\qquad\qquad
+  n=0,\,\pm1,\,\pm2,\,\dots.
+ \]
+ Con \(p(z)=\senh z\) y \(q(z)=\cosh z\),  se ve que 
+ \[
+  p(z_n)=\senh\left[\left(\frac{\pi}{2}+n\pi\right)i\right]=\frac{e^{i\pi/2}e^{in\pi}-e^{-i\pi/2}e^{-in\pi}}{2}=\frac{i(-1)^n-(-i)(-1)^n}{2}=(-1)^ni\neq0.
+ \]
+ Además
+ \[
+  q(z_n)=\cosh\left[\left(\frac{\pi}{2}+n\pi\right)i\right]=\frac{e^{i\pi/2}e^{in\pi}+e^{-i\pi/2}e^{-in\pi}}{2}=\frac{i(-1)^n+(-i)(-1)^n}{2}=0.
+ \]
+ y como (ver la ecuación \ref{eq:sinh_cosh_derivatives})
+ \[
+  q'(z)=\senh z,
+ \]
+ se cumple que 
+ \[
+  q'(z_n)=(-1)^ni\neq0.
+ \]
+ Por lo tanto,
+ \[
+  \Res_{z=z_n}(\tanh z)=\frac{p(z_n)}{q'(z_n)}=\frac{(-1)^ni}{(-1)^ni}=1.
+ \]
+\end{enumerate}
+
+\subsubsection{Ejercicio 5}
+
+Siendo \(C\) el círculo \(|z|=2\) orientado positivamente, evaluar la integral
+\[
+ (\textit{a})\;\int_C\tan z\,dz;\qquad\qquad (\textit{b})\;\int_C\frac{1}{\senh 2z}\,dz.
+\]
+
+\paragraph{Solución.}
+
+Para calcular las integrales se empleará el teorema de los residuos de Cauchy en la sección \ref{sec:cauchy_residues_theorem}.
+
+\begin{enumerate}
+ \item[(\textit{a})] El integrando es
+ \[
+  \tan z=\frac{\sen z}{\cos z}.
+ \]
+ Los puntos singulares son los que cumplen que \(\cos z=0\), y del teorema de la sección \ref{sec:zeros_singularities_trigonometric} están en
+ \[
+  z=\frac{\pi}{2}+n\pi
+  \qquad\textrm{con}\qquad 
+  n=0,\,\pm1,\,\pm2,\,\dots.
+ \]
+ Se observa que los únicos interiores a \(C\) son \(z=\pm\pi/2\). Para calcular los residuos, sea \(p(z)=\sen z\) y \(q(z)=\cos z\).
+ Como
+ \[
+  p(\pm\pi/2)=\sen(\pm\pi/2)=\frac{e^{\pm\pi/2}-e^{\mp\pi/2}}{2}=\frac{\pm i-(\mp i)}{2}=\pm i\neq0.
+ \]
+ Además, \(q(\pm\pi/2)=0\), y como \(q'(z)=-\sen z\), se cumple que \(q(\pm\pi/2)=\mp i\neq0\). Por lo tanto,
+ \[
+  \Res_{z=\pi/2}\tan z=\frac{p(\pi/2)}{q'(\pi/2)}=\frac{i}{-i}=-1
+  \qquad\qquad\textrm{y}\qquad\qquad 
+  \Res_{z=-\pi/2}\tan z=\frac{p(-\pi/2)}{q'(-\pi/2)}=\frac{-i}{i}=-1.  
+ \]
+ Finalmente, de la ecuación \ref{eq:cauchy_residue_theorem} del teorema de los residuos de Cauchy,
+ \[
+  \int_C\tan z\,dz=2\pi i(-1-1)=-4\pi i.
+ \]
+ \item[(\textit{b})] El integrando es
+ \[
+  \frac{1}{\senh2z}.
+ \]
+ Del teorema de la sección \ref{sec:hyperbolic_functions}, 
+\[
+ \senh z=0
+ \qquad\Leftrightarrow\qquad
+ z=n\pi i
+ \qquad\textrm{con}\qquad 
+ n=0,\,\pm1,\,\pm2,\,\dots,
+\]
+y por lo tanto, los puntos singulares del integrando son
+\[
+ \senh 2z=0
+ \qquad\Leftrightarrow\qquad
+ 2z=n\pi i
+ \qquad\Leftrightarrow\qquad
+ z=\frac{n\pi i}{2}
+ \qquad\textrm{con}\qquad 
+ n=0,\,\pm1,\,\pm2,\,\dots.
+\]
+Se ve que los puntos singulares interiores a \(C\) son \(z=0\) y \(z=\pm\pi i/2\). Para calcular los residuos en esos puntos, sea \(p(z)=1\neq0\) y \(q(z)=\senh2z\). Como \(q'(z)=2\cosh2z\), se tiene que 
+\(q'(0)=2\neq0\) y 
+\[
+ q'(\pm\pi i/2)=2\frac{e^{\pm\pi i}+e^{\mp\pi i}}{2}=(-1)+(-1)=-2.
+\]
+Esto indica que los puntos singulares son polos simples con residuos
+\[
+ \Res_{z=0}\left(\frac{1}{\senh2z}\right)=\frac{p(0)}{q'(0)}=\frac{1}{2}
+ \qquad\qquad\textrm{y}\qquad\qquad
+ \Res_{z=\pm\pi i/2}\left(\frac{1}{\senh2z}\right)=\frac{p(\pm\pi i/2)}{q'(\pm\pi i/2)}=\frac{1}{-2}=-\frac{1}{2}.
+\]
+Se concluye que 
+\[
+ \int_C\frac{1}{\senh 2z}\,dz=2\pi i\left(\frac{1}{2}-\frac{1}{2}-\frac{1}{2}\right)=2\pi i\left(-\frac{1}{2}\right)=-\pi i.
+\]
+\end{enumerate} 
+ 
+\subsubsection{Ejercicio 6} 
+
+Sea \(C_N\) la frontera orientada positivamente del cuadrado cuyos lados están sobre las líneas
+\[
+ x=\pm\left(N+\frac{1}{2}\right)\pi
+ \qquad\qquad\textrm{y}\qquad\qquad
+ y=\pm\left(N+\frac{1}{2}\right)\pi,
+\]
+donde \(N\) es un entero positivo. Mostrar que 
+\[
+ \int_{C_N}\frac{1}{z^2\sen z}\,dz=2\pi i\left[\frac{1}{6}+2\sum_{n=1}^N\frac{(-1)^n}{n^2\pi^2}\right]
+\]
+Luego, empleando el hecho de que la integral tiende a cero cuando \(N\) tiende a infinito, como se mostró en el ejercicio 8 de la sección \ref{sec:upper_bounds_for_moduli_of_contour_integrals}, señalar como surge que 
+\[
+ \sum_{n=1}^\infty\frac{(-1)^{n+1}}{n^2}=\frac{\pi^2}{12}.
+\]
+
+\paragraph{Solución} Para calcular la integral se empleará el teorema de los residuos de Cauchy. Se parte  observando que los puntos singulares cumplen que (ver el teorema de la sección \ref{sec:zeros_singularities_trigonometric}) 
+\[
+ z^2\sen z=0
+ \qquad\Leftrightarrow\qquad
+ z=0\qquad\textrm{y}\qquad z=n\pi
+ \qquad\textrm{con}\qquad 
+ n=\pm1,\,\pm2,\,\dots.
+\]
+Por lo tanto, los puntos singulares interiores al contorno son
+\[
+ z=0\qquad\textrm{y}\qquad  z=n\pi
+ \qquad\textrm{con}\qquad 
+ n=\pm1,\,\pm2,\,\dots,\,\pm N.
+\]
+
+Observar que no es posible calcular el residuo en \(z=0\) empleando el teorema 2 de esta sección, ya que con \(p(z)=1\) y \(q(z)=z^2\sen z\) se tiene que 
+\[
+ q'(z)=2z\sen z+z^2\cos z
+ \qquad\qquad\Rightarrow\qquad\qquad
+ q'(0)=0.
+\]
+Por lo tanto, para calcular el residuo en \(z=0\) hay que encontrar la serie de Laurent en torno a \(z=0\). En el ejercicio 3 de la sección \ref{sec:series_multiplication_division} se encontró que 
+\[
+ \frac{1}{\sen z}=\frac{1}{z}+\frac{1}{3!}z+\left[\frac{1}{(3!)^2}-\frac{1}{5!}\right]z^3+\cdots
+ =\frac{1}{z}+\frac{1}{6}z+\frac{1}{360}z^3+\cdots
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<\pi,
+\]
+y por lo tanto,
+\[
+ \frac{1}{z^2\sen z}=\frac{1}{z^3}+\frac{1}{6z}+\frac{1}{360}z+\cdots
+ \qquad\qquad\textrm{cuando}\qquad\qquad
+ 0<|z|<\pi.
+\]
+La serie de Laurent evidencia que hay un polo de orden \(m=3\) en \(z=0\) con residuo
+\[
+ \Res_{z=0}\left(\frac{1}{z^2\sen z}\right)=\frac{1}{6}.
+\]
+Para calcular los residuos en los puntos \(z_n=n\pi\) con \(n=\pm1,\,\pm2,\,\dots,\,\pm N\), sea \(p(z)=1\) y \(q(z)=z^2\sen z\). De esta forma, \(q(z_n)=0\). Además, como
+\[
+ q'(z)=2z\sen z+z^2\cos z
+\]
+y 
+\[
+ \sen z_n=0
+ \qquad\qquad\textrm{y}\qquad\qquad
+ \cos z_n=\frac{e^{in\pi}+e^{-in\pi}}{2}=\frac{(-1)^n+(-1)^n}{2}=(-1)^n,
+\]
+resulta en que 
+\[
+ q'(z_n)=(n\pi)^2(-1)^n
+ \qquad\qquad\textrm{con}\qquad\qquad 
+ n=\pm1,\,\pm2,\,\dots,\,\pm N.
+\]
+Por lo tanto,
+\[
+ \Res_{z=n\pi}\left(\frac{1}{z^2\sen z}\right)=\frac{p(z_n)}{q'(z_n)}=\frac{1}{(n\pi)^2(-1)^n}=\frac{(-1)^n}{n^2\pi^2}
+ \qquad\qquad\textrm{con}\qquad\qquad 
+ n=\pm1,\,\pm2,\,\dots,\,\pm N.
+\]
+Observando que
+\[
+ \Res_{z=n\pi}\left(\frac{1}{z^2\sen z}\right)=\Res_{z=-n\pi}\left(\frac{1}{z^2\sen z}\right)
+\]
+se obtiene que 
+\[
+ \int_{C_N}\frac{1}{z^2\sen z}\,dz=2\pi i\left[\frac{1}{6}+2\sum_{n=1}^N\frac{(-1)^n}{n^2\pi^2}\right]
+\]
+
+En el ejercicio 8 de la sección \ref{sec:upper_bounds_for_moduli_of_contour_integrals} se mostró que la integral tiende a cero cuando \(N\) tiende a infinito, y por lo tanto,
+\[
+ 2\sum_{n=1}^\infty\frac{(-1)^n}{n^2\pi^2}=-\frac{1}{6}
+\]
+o
+\[
+ \sum_{n=1}^\infty\frac{(-1)^{n+1}}{n^2}=\frac{\pi^2}{12}.
+\]
+
+\subsubsection{Ejercicio 7} 
+
+Mostrar que
+\[
+ \int_C\frac{1}{(z^2-1)^2+3}\,dz=\frac{\pi}{2\sqrt{2}}
+\]
+donde \(C\) es la frontera orientada positivamente del rectángulo cuyos lados se encuentran en las rectas \(x=\pm2\), \(y=0\) y \(y=1\). 
+
+\emph{Sugerencia:} observando que los cuatro ceros del polinomio \(q(z)=(z^2-1)^2+3\) son las raíces cuadradas de los números \(1\pm\sqrt{3}i\), mostrar que \(1/q(z)\) es analítica dentro y sobre \(C\) excepto en los puntos
+\[
+ z_0=\frac{\sqrt{3}+i}{\sqrt{2}}
+ \qquad\qquad\textrm{y}\qquad\qquad
+ -\overline{z_0}=\frac{-\sqrt{3}+i}{\sqrt{2}}.
+\]
+
+\paragraph{Solución}
+
+Los ceros de \(q(z)=(z^2-1)^2+3\) son los puntos singulares del integrando. Para calcularos, se ve que 
+\[
+ (z^2-1)^2+3=0
+ \qquad\Leftrightarrow\qquad 
+ (z^2-1)^2=-3
+ \qquad\Leftrightarrow\qquad
+ (z^2-1)^2=3e^{i\pi}
+\]
+y por lo tanto
+\begin{align*}
+ z^2-1&=\sqrt{3}e^{i(\pi/2+n\pi)}\qquad\textrm{con}\qquad n=0,\,1 \\
+  &=\pm\sqrt{3}i.
+\end{align*}
+Luego,
+\[
+ z^2=1\pm\sqrt{3}i=2e^{\pm\pi i/3}
+\]
+donde en la última igualdad se tuvo en cuenta que el módulo es \(\sqrt{1+3}=2\) y la fase es \(\arctan(\pm\sqrt{3})=\pm\pi/3\). Tomando raíz cuadrada en ambos lados de la igualdad,
+\[
+ z=\sqrt{2}e^{(\pm\pi/6+n\pi)i},
+\]
+obteniendo los cuatro números complejos
+\[
+ z=\pm\sqrt{2}e^{\pm\pi i/6}. 
+\]
+Observar que el módulo de la parte real es
+\[
+ \sqrt{2}\cos\frac{\pi}{6}=\sqrt{2}\cdot\frac{\sqrt{3}}{2}=\frac{\sqrt{3}}{\sqrt{2}}.
+\]
+y el módulo de la parte imaginaria es 
+\[
+ \sqrt{2}\sen\frac{\pi}{6}=\sqrt{2}\cdot\frac{1}{2}=\frac{1}{\sqrt{2}}.
+\]
+Por lo tanto, los cuatro ceros de \(q(z)\) son 
+\[
+ z=\frac{\sqrt{3}+i}{\sqrt{2}},\quad\frac{-\sqrt{3}+i}{\sqrt{2}},\quad\frac{-\sqrt{3}-i}{\sqrt{2}},\quad\frac{\sqrt{3}-i}{\sqrt{2}},
+\]
+y se muestran en la figura \ref{fig:exercise_83_07}. Como se ve en la figura, los ceros de \(q(z)\) interiores a \(C\) son
+\[
+ z_0=\frac{\sqrt{3}+i}{\sqrt{2}}\qquad\qquad\textrm{y}\qquad\qquad -\overline{z_0}=\frac{-\sqrt{3}+i}{\sqrt{2}}.
+\]
+\begin{figure}[!htb]
+  \begin{minipage}[c]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figuras/exercise_83_07.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.4\textwidth}
+    \caption{
+       Contorno \(C\) y puntos singulares del integrando del ejercicio 7.
+    }\label{fig:exercise_83_07}
+  \end{minipage}
+\end{figure}
+
+Para calcular los residuos se empleará el teorema 2 de esta sección. Sea \(p(z)=1\) y \(q(z)=(z^2-1)^2+3\). Para calcular el residuo en \(z=z_0\) se ve que \(p(z_0)=1\neq0\) y \(q(z_0)=0\). Además
+\[
+ q'(z)=2(z^2-1)2z=4z(z^2-1),
+\]
+y
+\[
+ q'(z_0)=4\left(\frac{\sqrt{3}+i}{\sqrt{2}}\right)\left(\frac{3-1+2\sqrt{3}i}{2}-1\right)
+  =4\left(\frac{\sqrt{3}+i}{\sqrt{2}}\right)\sqrt{3}i
+  =2\sqrt{2}(-\sqrt{3}+3i)=-2\sqrt{6}+6\sqrt{2}i\neq0.
+\]
+Por lo tanto,
+\[
+ \Res_{z=z_0}\left[\frac{1}{(z^2-1)^2+3}\right]=\frac{p(z_0)}{q'(z_0)}=\frac{1}{-2\sqrt{6}+6\sqrt{2}i}
+  =\frac{-2\sqrt{6}-6\sqrt{2}i}{4\cdot6+36\cdot2}
+  =\frac{-\sqrt{6}-3\sqrt{2}i}{2\cdot6+36}
+  =\frac{-\sqrt{6}-3\sqrt{2}i}{48}.
+\]
+De forma similar, el residuo en \(z=-\overline{z_0}\)
+\[
+ q'(-\overline{z_0})=4\left(\frac{-\sqrt{3}+i}{\sqrt{2}}\right)\left(\frac{3-1-2\sqrt{3}i}{2}-1\right)
+  =4\left(\frac{-\sqrt{3}+i}{\sqrt{2}}\right)(-\sqrt{3}i)
+  =2\sqrt{2}(\sqrt{3}+3i)=2\sqrt{6}+6\sqrt{2}i.
+\]
+y por lo tanto
+\[
+ \Res_{z=-\overline{z_0}}\left[\frac{1}{(z^2-1)^2+3}\right]=\frac{p(-\overline{z_0})}{q'(-\overline{z_0})}
+  =\frac{1}{2\sqrt{6}+6\sqrt{2}i}
+  =\frac{2\sqrt{6}-6\sqrt{2}i}{4\cdot6+36\cdot2}
+  =\frac{\sqrt{6}-3\sqrt{2}i}{2\cdot6+36}
+  =\frac{\sqrt{6}-3\sqrt{2}i}{48}.
+\]
+Finalmente, del teorema de los residuos de Cauchy (ver la sección \ref{sec:cauchy_residues_theorem})
+\[
+ \int_C\frac{1}{(z^2-1)^2+3}\,dz=2\pi i\left(\frac{-\sqrt{6}-3\sqrt{2}i}{48}+\frac{\sqrt{6}-3\sqrt{2}i}{48}\right)=2\pi i\left(-\frac{3\sqrt{2}i}{24}\right)=\frac{\sqrt{2}}{4}\pi=\frac{\pi}{2\sqrt{2}}.
+\]
+
+\subsubsection{Ejercicio 8} 
+
+Se considera la función
+\[
+ f(z)=\frac{1}{[q(z)]^2}
+\]
+donde \(q\) es analítica en \(z_0\), \(q(z_0)=0\) y \(q'(z_0)\neq0\). Mostrar que \(z_0\) es un polo de orden \(m=2\) de la función \(f\), con residuo
+\begin{equation}\label{eq:residue_q_square_reciprocal}
+ B_0=-\frac{q''(z_0)}{[q'(z_0)]^3}. 
+\end{equation}
+
+\emph{Sugerencia:} notar que \(z_0\) es un cero de orden \(m=1\) de la función \(q\), y por lo tanto,
+\[
+ q(z)=(z-z_0)g(z)
+\]
+donde \(g(z)\) es analítica y no nula en \(z_0\). Luego escribir
+\[
+ f(z)=\frac{\phi(z)}{(z-z_0)^2}
+ \qquad\qquad\textrm{con}\qquad\qquad
+ \phi(z)=\frac{1}{[g(z)]^2}.
+\]
+
+La forma deseada del residuo \(B_0=\phi'(z_0)\) puede obtenerse mostrando que 
+\[
+ q'(z_0)=g(z_0)
+ \qquad\qquad\textrm{y}\qquad\qquad
+ q''(z_0)=2g'(z_0).
+\]
+
+\paragraph{Solución.} Como \(q\) es analítica en \(z_0\), \(q(z_0)=0\) y \(q'(z_0)\neq0\), de la definición de cero de una función, dada en la sección \ref{sec:zeros_of_analytic_functions}, \(z_0\) es un cero de orden \(m=1\) de \(q\), y del teorema 1 de esa sección, \(q(z)\) se puede escribir como
+\begin{equation}\label{eq:exercise_83_08_q}
+ q(z)=(z-z_0)g(z), 
+\end{equation}
+donde \(g(z)\) es analítica y no nula en \(z_0\). Por lo tanto, \(f(z)\) se puede escribir como
+\[
+ f(z)=\frac{1}{(z-z_0)^2g^2(z)}=\frac{\phi(z)}{(z-z_0)^2}
+ \qquad\qquad\textrm{con}\qquad\qquad
+ \phi(z)=\frac{1}{g^2(z)}.
+\]
+Observar que como \(g(z)\) es analítica y no nula en \(z_0\), \(\phi(z)\) es analítica y no nula en \(z_0\), y el teorema de la sección \ref{sec:residues_at_poles} asegura que \(z_0\) es un polo de orden \(m=2\) de \(f(z)\) con residuo
+\[
+ \Res_{z=z_0}f(z)=\phi'(z_0).
+\]
+Además,
+\begin{equation}\label{eq:exercise_83_08_phi_derivative}
+ \phi'(z)=\frac{-2g(z)g'(z)}{g^4(z)}=-\frac{2g'(z)}{g^3(z)}
+ \qquad\qquad\Rightarrow\qquad\qquad
+ \phi'(z_0)=-\frac{2g'(z_0)}{g^3(z_0)}. 
+\end{equation}
+y de la ecuación \ref{eq:exercise_83_08_q} se cumple que 
+\begin{equation}\label{eq:exercise_83_08_q_derivative}
+ q'(z)=g(z)+(z-z_0)g'(z)
+ \qquad\qquad\Rightarrow\qquad\qquad
+ q'(z_0)=g(z_0) 
+\end{equation}
+y 
+\begin{equation}\label{eq:exercise_83_08_q_second_derivative}
+ q''(z)=g'(z)+g'(z)+(z-z_0)g''(z)=2g'(z)+(z-z_0)g''(z)
+ \qquad\qquad\Rightarrow\qquad\qquad
+ q''(z_0)=2g'(z_0). 
+\end{equation}
+Sustituyendo los resultados de las ecuaciones \ref{eq:exercise_83_08_q_derivative} y \ref{eq:exercise_83_08_q_second_derivative} en la ecuación \ref{eq:exercise_83_08_phi_derivative} se obtiene que el residuo es 
+\[
+ B_0=-\frac{q''(z_0)}{[q'(z_0)]^3}.
+\]
+
+\subsubsection{Ejercicio 9} 
+
+Emplear el resultado del ejercicio 8 para encontrar el residuo en \(z=0\) de la función
+\[
+ (\textit{a})\;f(z)=\csc^2z;\qquad\qquad (\textit{b})\;f(z)=\frac{1}{(z+z^2)^2}.
+\]
+
+\paragraph{Solución.} 
+\begin{enumerate}
+ \item[(\textit{a})] Sea 
+ \[
+  f(z)=\csc^2z=\frac{1}{\sen^2z}=\frac{1}{q^2(z)}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  q(z)=\sen z.
+ \]
+ Como \(q(z)\) es completa, \(q(0)=0\) y \(q'(0)=\cos0=1\neq0\), la función \(f(z)\) cumple las condiciones del problema anterior, por lo que \(z=0\) es un polo de orden \(m=2\) de \(f(z)\) con residuo dado por la ecuación \ref{eq:residue_q_square_reciprocal}. Como \(q''(0)=-\sen 0=0\), el residuo es 
+ \[
+  B_0=-\frac{q''(z_0)}{[q'(z_0)]^3}=0.
+ \]
+ \item[(\textit{b})] Sea 
+ \[
+  f(z)=\frac{1}{(z+z^2)^2}=\frac{1}{q^2(z)}
+  \qquad\qquad\textrm{donde}\qquad\qquad
+  q(z)=z+z^2.
+ \]
+ Como \(q(z)\) es completa, \(q(0)=0\) y \(q'(z)=1+2z\) por lo que \(q'(0)=1\neq0\), la función \(f(z)\) cumple las condiciones del problema 8, por lo que \(z=0\) es un polo de orden \(m=2\) de \(f(z)\) con residuo dado por la ecuación \ref{eq:residue_q_square_reciprocal}. Como \(q''(0)=2\), el residuo es
+ \[
+  B_0=-\frac{q''(z_0)}{[q'(z_0)]^3}=-\frac{2}{1^3}=-2.
+ \]
+\end{enumerate}
+
+\subsubsection{Ejercicio 10} 
+
+Sean \(p\) y \(q\) funciones analíticas en el punto \(z=z_0\), donde \(p(z_0)\neq0\) y \(q(z_0)=0\). Mostrar que si el cociente \(p(z)/q(z)\) tiene un polo de orden \(m\) en \(z_0\), se cumple que \(z_0\) es un cero de orden \(m\) de \(q\). Comparar con el teorema 1 de esta sección.
+
+\emph{Sugerencia:} notar que el teorema de la sección \ref{sec:residues_at_poles} permite escribir 
+\[
+ \frac{p(z)}{q(z)}=\frac{\phi(z)}{(z-z_0)^m},
+\]
+donde \(\phi(z)\) es analítica y no nula en \(z_0\). Luego, resolver para \(q(z)\). 
+
+\paragraph{Solución.} Como el cociente \(p(z)/q(z)\) tiene un polo de orden \(m\) en \(z_0\), el teorema de la sección \ref{sec:residues_at_poles} indica que  
+\[
+ \frac{p(z)}{q(z)}=\frac{\phi(z)}{(z-z_0)^m},
+\]
+donde \(\phi(z)\) es analítica y no nula en \(z_0\). Por lo tanto,
+\[
+ q(z)=(z-z_0)^m\frac{p(z)}{\phi(z)}=(z-z_0)^mg(z)
+ \qquad\qquad\textrm{donde}\qquad\qquad
+ g(z)=\frac{p(z)}{\phi(z)}.
+\]
+Como \(g(z)\) es analítica y no nula en \(z_0\) por ser \(p(z)\) y \(\phi(z)\) analíticas y no nulas en \(z_0\), el teorema 1 de la sección \ref{sec:zeros_of_analytic_functions} indica que \(z_0\) es un cero de orden \(m\) de \(q(z)\).
+
+\subsubsection{Ejercicio 11} 
+
+Recordar que un punto \(z_0\) es un punto de acumulación de un conjunto \(S\) si cada entorno reducido de \(z_0\) contiene al menos un punto de \(S\) (ver la sección \ref{sec:complex_plane_regions}). Una forma del \emph{teorema de Bolzano-Weierstrass} puede declararse como sigue: un conjunto infinito de puntos que se encuentran en una región \(R\) cerrada y acotada tiene al menos un punto de acumulación en \(R\). Emplear este teorema y el teorema 2 de la sección \ref{sec:zeros_of_analytic_functions} para mostrar que si una función \(f\) es analítica en la región \(R\) que consiste en todos los puntos dentro y sobre un contorno \(C\) cerrado simple, excepto posiblemente por polos en \(C\), y si todos los ceros de \(f\) en \(R\) son interiores a \(C\) y son de orden finito, entonces esos ceros deben ser una cantidad finita. 
+
+\paragraph{Solución.} La prueba se realizará por contradicción. Supóngase que la cantidad de ceros de \(f\) interiores a \(R\) es infinita. Entonces, por el teorema de Bolzano-Weierstrass, hay un punto \(z_0\) de acumulación de ceros de \(f\). Observar que \(z_0\) no puede ser un polo de \(f\). Si así fuera, para todo número positivo \(M\), existiría un entorno reducido \(0<|z-z_0|<\epsilon\) tal que \(|f(z)|>M\) (ver la sección \ref{}). Esto indica que \(f(z)\neq0\) en dicho entorno reducido, contradiciendo la hipótesis de que \(z_0\) es un punto de acumulación de ceros. Por lo tanto, \(f(z)\) debe ser analítica en \(z_0\). Mas aún, como los polos de \(f\) son aislados, \(f(z)\) es analítica en algún entorno de \(z_0\). Además, se debe cumplir que \(f(z_0)=0\). Esto es porque \(z_0\) un punto de acumulación de ceros y \(f(z)\) es continua en \(z_0\) por ser analítica allí. Pero por hipótesis, \(z_0\) es un cero de orden \(m\) finito, lo que implica que \(f(z)\) no es idénticamente nula en ningún entorno de \(z_0\). Si así fuera, todos los coeficientes de la serie de Taylor deberían ser nulos, implicando que todas las derivadas son nulas, contradiciendo la hipótesis de que el cero \(z_0\) es de orden finito. En este punto se sabe que \(f\) es analítica en \(z_0\), \(f(z_0)=0\) y \(f(z)\) no es idénticamente nula en ningún entorno de \(z_0\), y el teorema 2 de la sección \ref{sec:zeros_of_analytic_functions} establece que \(f(z)\neq0\) en algún entorno reducido de \(z_0\). Esto contradice la hipótesis de que \(z_0\) es un punto de acumulación, concluyendo que la cantidad de ceros de \(f\) interiores a \(R\) debe ser finita.
+
+\subsubsection{Ejercicio 12} 
+
+Sea \(R\) la región que consiste en todos los puntos dentro y sobre un contorno \(C\) cerrado simple. Emplear el teorema de Bolzano-Weierstrass (ver el ejercicio 11) y el hecho de que los polos son puntos sigulares aislados para mostrar que si \(f\) es analítica en la región \(R\) excepto por polos interiores a \(C\), entonces esos polos deben ser una cantidad finita.
+
+\paragraph{Solución.} El teorema de Bolzano-Weierstrass dice que un conjunto infinito de puntos en una región \(R\) cerrada y acotada tiene al menos un punto de acumulación en \(R\). Por lo tanto, si el conjunto \emph{no} tiene un punto de acumulación en \(R\), debe consistir en una cantidad finita de puntos.
+
+\(f\) es analítica en \(R\) excepto por polos interiores a \(R\). Como los polos son por definición puntos singulares aislados, para cada polo \(z_0 \) existe un entorno reducido \(0<|z-z_0|<\epsilon\) en donde \(f\) es analítica. Por lo tanto, no puede haber otro polo en dicho entorno reducido, lo que implica que no puede haber un punto de acumulación de polos, concluyendo que \(f\) tiene una cantidad finita de polos.
+
+\section{Comportamiento de funciones cerca de puntos singulares aislados}
+
+El comportamiento de una función \(f\) cerca de un punto singular aislado depende del tipo de singularidad. En esta sección se describe ese comportamiento.
+
+\subsection*{(\textit{a}) Puntos singulares evitables}
+ 
+Se comienza con dos teoremas sobre puntos singulares evitables. 
+
+\paragraph{Teorema 1.} Si \(z_0\) es un punto singular evitable de una función \(f\), entonces \(f\) es acotada y analítica en algún entorno reducido \(0<|z-z_0|<\epsilon\) de \(z_0\). 
+
+La prueba es sencilla y se basa en el hecho de que \(f\) es analítica en un disco \(|z-z_0|<R_2\) cuando \(f(z_0)\) se define apropiadamente. Por lo tanto, \(f\) es continua en cualquier disco cerrado \(|z-z_0|\leq\epsilon\) cuando \(\epsilon<R_2\). En consecuencia, de acuerdo al teorema 4 de la sección \ref{sec:continuity_definition}, \(f\) es acotada en dicho disco, y esto significa que además de ser analítica, \(f\) es acotada en el entorno reducido \(0<|z-z_0|<\epsilon\).
+
+El siguiente teorema se conoce como \emph{teorema de Riemann} y está estrechamente vinculado al teorema 1.
+
+\paragraph{Teorema 2.} Supóngase que una función es analítica y acotada en algún entorno reducido \(0<|z-z_0|<\epsilon\) de \(z_0\). Si \(f\) no es analítica en \(z_0\), tiene una singularidad evitable allí. 
+
+Para la prueba, asúmase que \(f\) no es analítica en \(z_0\). Como consecuencia, el punto \(z_0\) debe ser una singularidad aislada de \(f\), y \(f(z)\) se representa por la serie de Laurent (ver la sección \ref{sec:laurent_series})
+\begin{equation}\label{eq:singularity_behaivor_removable_laurent}
+ f(z)=\sum_{n=0}^\infty a_n(z-z_0)^n+\sum_{n=1}^\infty\frac{b_n}{(z-z_0)^n} 
+\end{equation}
+en el entorno reducido \(0<|z-z_0|<\epsilon\). Si \(C\) denota el círculo \(|z-z_0|=\rho\) orientado positivamente, donde \(\rho<\epsilon\), de la ecuación \ref{eq:laurent_series_bn_definition} se sabe que los coeficientes \(b_n\) en \ref{eq:singularity_behaivor_removable_laurent} pueden escribirse como
+\begin{equation}\label{eq:singularity_behaivor_removable_laurent_bn}
+ b_n=\frac{1}{2\pi i}\int_C\frac{f(z)}{(z-z_0)^{-n+1}}\,dz
+ \qquad\qquad\textrm{con}\qquad\qquad
+ n=1,\,2,\,\dots. 
+\end{equation}
+Ahora, la condición de acotada de \(f\) implica que hay un número positivo \(M\) tal que \(|f(z)|\leq M\) cuando \(0<|z-z_0|<\epsilon\). Por lo tanto, de la ecuación \ref{eq:singularity_behaivor_removable_laurent_bn} se obtiene que 
+\[
+ |b_n|\leq\frac{1}{2\pi}\cdot\frac{M}{\rho^{-n+1}}2\pi\rho=M\rho^n 
+ \qquad\qquad\textrm{con}\qquad\qquad
+ n=1,\,2,\,\dots. 
+\]
+
+Como los coeficientes \(b_n\) son constantes y como \(\rho\) puede elegirse arbitrariamente pequeño, se puede concluir que \(b_n=0\) para \(n=1,\,2,\,\dots\) en la serie de Laurent \ref{eq:singularity_behaivor_removable_laurent}. Esto indica que \(z_0\) es una singularidad evitable de \(f\), completando la prueba.
+
+\subsection*{(\textit{b}) Puntos singulares esenciales}
+
+En el ejemplo 2 de la sección \ref{sec:isolated_singular_points_types} se vio que el comportamiento de una función cerca de un punto singular esencial puede ser bastante irregular. El siguiente teorema, concerniente a dicho comportamiento, está vinculado al teorema de Picard mencionado en ese ejemplo y es usualmente referido como \emph{teorema de Casorati-Weierstrass}. Establece que en un entorno reducido de un punto singular esencial, una función asume valores arbitrariamente cercanos a cualquier número dado.
+
+\paragraph{Teorema 3.} Supóngase que \(z_0\) es un punto singular esencial de una función \(f\), y sea \(w_0\) cualquier número complejo. Entonces, para cualquier número positivo \(\epsilon\), la desigualdad 
+\begin{equation}\label{eq:singularity_behaivor_esential_epsilon_condition}
+ |f(z)-w_0|<\epsilon 
+\end{equation}
+se satisface en algún punto \(z\) en cada entorno reducido \(0<|z-z_0|<\delta\) de \(z_0\).
+
+La prueba se hará por contradicción. Como \(z_0\) es una singularidad aislada de \(f\), hay un entorno reducido \(0<|z-z_0|<\delta\) en el cual \(f\) es analítica. Se asumirá que la condición \ref{eq:singularity_behaivor_esential_epsilon_condition} no se cumple allí. Por lo tanto, \(|f(z)-w_0|\geq\epsilon\) cuando \(0<|z-z_0|<\delta\), así que la función
+\[
+ g(z)=\frac{1}{f(z)-w_0}
+ \qquad\qquad\textrm{en}\qquad\qquad
+ 0<|z-z_0|<\delta
+\]
+es acotada y analítica en su dominio de definición. De esta forma, de acuerdo al teorema 2, \(z_0\) es una singularidad evitable de \(g\). Defínase \(g\) en \(z_0\) tal que sea analítica allí.
+
+Si \(g(z_0)\neq0\), la función \(f(z)\), que puede escribirse como 
+\begin{equation}\label{eq:singularity_behaivor_esential_f}
+ f(z)=\frac{1}{g(z)}+w_0 
+\end{equation}
+cuando \(0<|z-z_0|<\delta\), se hace analítica en \(z_0\) cuando se define allí como
+\[
+ f(z_0)=\frac{1}{g(z_0)}+w_0.
+\]
+Pero esto significa que \(z_0\) es una singularidad evitable de \(f\), y no una singularidad esencial, obteniendo una contradicción.
+
+Si \(g(z_0)=0\), la función \(g\) debe tener un cero de algún orden \(m\) finito en \(z_0\) debido a que \(g(z)\) no es idénticamente nula en el entorno \(|z-z_0|<\delta\). Pero entonces, por la ecuación \ref{eq:singularity_behaivor_esential_f}, \(f\) tiene un polo de orden \(m\) en \(z_0\) (ver el teorema 1 de la sección \ref{sec:zeros_and_poles}). Nuevamente se obtuvo una contradicción, concluyendo la prueba.
+  
+\subsection*{(\textit{c}) Polos de orden \(m\)}
+
+El siguiente teorema muestra como el comportamiento de una función cerca de un polo es fundamentalmente diferente al comportamiento cerca de singularidades esenciales y evitables.
+
+\paragraph{Teorema 4.} Si \(z_0\) es un polo de una función \(f\), se cumple que 
+\begin{equation}\label{eq:singularity_behaivor_pole}
+ \lim_{z\to z_0}f(z)=\infty. 
+\end{equation}
+
+Para verificar el límite \ref{eq:singularity_behaivor_pole}, se asume que \(f\) tiene un polo de orden \(m\) en \(z_0\) y se emplea el teorema de la sección \ref{sec:residues_at_poles}, que indica que 
+\[
+ f(z)=\frac{\phi(z)}{(z-z_0)^m},
+\]
+donde \(\phi(z)\) es analítica y no nula en \(z_0\). Como
+\[
+ \lim_{z\to z_0}\frac{1}{f(z)}=\lim_{z\to z_0}\frac{(z-z_0)^m}{\phi(z)}=\frac{\lim\limits_{z\to z_0}(z-z_0)^m}{\lim\limits_{z\to z_0}\phi(z)}=\frac{0}{\phi(z_0)}=0,
+\]
+de acuerdo al teorema de la sección \ref{sec:limits_infinity_point} sobre límites que involucran el punto en el infinito, el límite \ref{eq:singularity_behaivor_pole} se cumple.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13114,7 +13114,7 @@ Supóngase que la serie
 \[
  \sum_{n=-\infty}^\infty x[n]z^{-n}
 \]
-converge a una función \(X(z)\) analítica en algún anillo \(R_1<|z|<R_2\). La suma \(X(z)\) se llama \emph{transformada} \(z\) de \(z[n]\) con \(n=0,\,\pm1,\,\pm2,\,\dots\). Emplear la ecuación \ref{eq:laurent_series_definition_alt_cn} de los coeficientes de una serie de Laurent para mostrar que si el anillo contiene el círculo unidad \(|z|=1\), entonces la \emph{transformada} \(z\) \emph{inversa} de \(X(z)\) puede escribirse como
+converge a una función \(X(z)\) analítica en algún anillo \(R_1<|z|<R_2\). La suma \(X(z)\) se llama \emph{transformada} \(z\) de \(x[n]\) con \(n=0,\,\pm1,\,\pm2,\,\dots\). Emplear la ecuación \ref{eq:laurent_series_definition_alt_cn} de los coeficientes de una serie de Laurent para mostrar que si el anillo contiene el círculo unidad \(|z|=1\), entonces la \emph{transformada} \(z\) \emph{inversa} de \(X(z)\) puede escribirse como
 \[
  x[n]=\frac{1}{2\pi}\int_{-\infty}^\infty X(e^{i\theta})e^{in\theta}\,d\theta
  \qquad\qquad\textrm{con}\qquad\qquad
@@ -14855,7 +14855,7 @@ La teoría de residuos en este capítulo se centra en un tipo especial de punto 
  \qquad\qquad
  r>0,\,-\pi<\Theta<\pi, 
 \]
-de la función logarítmica. Sin embargo, no es un punto singular aisaldo ya que cada entorno \(\epsilon\) reducido de él contiene puntos del eje real negativo, donde la rama ni siquiera está definida allí. La misma observación es válida para cualquier rama
+de la función logarítmica. Sin embargo, no es un punto singular aisaldo ya que cada entorno \(\epsilon\) reducido de él contiene puntos del eje real negativo, donde la rama ni siquiera está definida. La misma observación es válida para cualquier rama
 \[
  f(z)=\log z=\ln r+i\theta,
  \qquad\qquad
@@ -14966,7 +14966,7 @@ resultando en que
 
 \paragraph{Ejemplo 2.} Se mostrará que 
 \begin{equation}\label{eq:residues_integral_evaluation_example_2}
- \int_C\cosh\left(\frac{1}{z^2}\right)\,dz=0. 
+ \int_C\cosh\left(\frac{1}{z^2}\right)\,dz=0,
 \end{equation}
 donde \(C\) es el círculo \(|z|=1\) orientado positivamente. La función compuesta \(\cosh(1/z^2)\) es analítica en todos lados excepto en el origen, ya que lo mismo es cierto para \(1/z^2\) y \(\cosh z\) es completa. El punto singular aislado \(z=0\) es interior a \(C\). De la representación en series de Maclaurin \ref{eq:taylor_series_cosh} reemplazando \(z\) por \(1/z^2\), se obtiene que 
 \[
@@ -15576,7 +15576,7 @@ Cuando cada \(b_n\) es cero, tal que
 
 \subsection*{(\textit{b}) Puntos singulares esenciales}
 
-Si un número infinito de coeficientes \(b_n\) en la parte principal \ref{eq:series_principal_part} son no nulos, \(z_0\) se dice ser un \emph{punto singular esencial} de \(f\).
+Si un número infinito de coeficientes \(b_n\) en la parte principal \ref{eq:series_principal_part} son no nulos, \(z_0\) se dice que es un \emph{punto singular esencial} de \(f\).
 
 \subsection*{(\textit{c}) Polos de orden \(m\)}
 
@@ -22676,7 +22676,7 @@ y con \(n=\pm k\) con \(k=1,\,2,\,\dots\) (ver la ecuación \ref{eq:laplace_inve
 \]
 Finalmente,
 \[
- f(t)=\frac{2}{\pi}-\dfrac{4}{\pi(4n^2-1)}\sum_{n=1}^\infty\dfrac{1}{4n^2-1}\cos2nt.
+ f(t)=\frac{2}{\pi}-\dfrac{4}{\pi}\sum_{n=1}^\infty\dfrac{1}{4n^2-1}\cos2nt.
 \]
 
 \subsubsection*{Ejercicio 9}
